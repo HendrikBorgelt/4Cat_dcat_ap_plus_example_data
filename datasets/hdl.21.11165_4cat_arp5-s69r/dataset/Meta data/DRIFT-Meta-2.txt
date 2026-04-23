@@ -1,0 +1,29 @@
+DRIFT	
+Optics settings 	
+External synchronisation 	off
+Source setting 	MIR
+Beam splitter	KBr
+Optical filter setting	Open
+Aperture setting	6 mm
+Accessory 	Any
+Measurement channel	sample compartment
+Background meas. Channel	sample compartment
+Detector setting	LN-MCT Mid VP[internal pos. 2]
+Scanner velocity 	20 kHz
+Sample signal gain 	Automatic 
+Background signal gain 	Automatic 
+Sample preamp. Gain	Ref
+Background preamp.gain 	Ref
+Delay after device charge 	5 sec
+Delay before measurement 	0
+Optical bench ready 	off
+	
+Device	VERTEX 70 FTIR spectrometer (Bruker) equipped with Praying Mantis diffuse reflection optics (Harrick) and a liquid nitrogen-cooled mercury cadmium telluride detector. 
+Sample quantity 	50 mg
+Sieve fraction 	100 to 200 micron 
+in situ cell 	Harrick 
+window	CaF2
+gas flow	50 ml/min
+Atmosphere	4000 ppm CO and rest Ar 
+Flush 	Ar (50 ml/min)
+Mode of spectra collection	reflectance

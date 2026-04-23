@@ -1,0 +1,156 @@
+{
+    "General_information": {
+        "Publication": "",
+        "Title": "Sustainable carbonylation catalysis of renewable synthons through active-site engineering",
+        "Date": "",
+        "Contributor": "Arjun Neyyathala, Felix Jung, Simon Barth, Claus Feldmann, Jan-Dierk Grunwaldt, Ivana Jevtovikj, Stephan A. Schunk, Schirin Hanf",
+        "Institution": "KIT"
+    },
+    "Catalytic_test": {
+        "Reaction_type": "Carbonylation ",
+        "Catalytic_test_type": "Batch",
+        "Dataset": ""
+    },
+    "Catalyst": {
+        "Catalyst_name_internal": "ARNE01",
+        "Sample_PID": "",
+        "Catalyst": "Pd3P/SiO2 (5 wt.% Pd)",
+        "Catalyst_type": "Supported ",
+        "Support": {
+            "Support_Name": "Silica ",
+            "Support_SMILES": "O=[Si]=O  ",
+            "Support_InChi": "InChI=1S/O2Si/c1-3-2  ",
+            "Support_InChiKey": "VYPSYNLAJGMNEJ-UHFFFAOYSA-N  ",
+            "Sample_Pretreatment": "",
+            "Sample_mass": ""
+        },
+        "Active_species": "Pd",
+        "Catalyst_loading_wt%": 5,
+        "Metal_loading_mol%": "0.5 ",
+        "Catalyst_mass_g": "0.01"
+    },
+    "Reactor": {
+        "reactor_equipment_name": "Parr 5500 series compact reactor "
+    },
+    "Operation_mode": {
+        "Batch_operation": {
+            "Reactor_temperature": "100 degC",
+            "Experiment_duration": "2 hours",
+            "Reaction_chamber": {
+                "volume": "25 mL",
+                "dimension": "25.4 x 50. 8 (ID) mm",
+                "shape": "Cylinder",
+                "material": "Stainless Steel",
+                "inner_diameter": "25.4 mm"
+            },
+            "Stirrer": {
+                "type": "Overhead",
+                "speed": "1000 rpm ",
+                "diameter": ""
+            },
+            "Experiment_initial_pressure": "6 bar",
+            "Experiment_final_pressure": "",
+            "Experiment_pressure_drop": "",
+            "heating_type": "Electric",
+            "Observation": ""
+        }
+    },
+    "Reactants": {
+        "Gas": {
+            "Gas1_Composition": "CO",
+            "Gas1_SMILES": "[C-]#[O+]  ",
+            "Gas1_InChi": "InChI=1S/CO/c1-2  ",
+            "Gas1_InChiKey": "UGFAIRIUMAVXCW-UHFFFAOYSA-N  ",
+            "Gas1_pressure": "6 bar ",
+            "Gas_feed": ""
+        },
+        "Liquid_sample": {
+            "Substrate1": {
+                "Substrate1_Name": "Iodobenzene",
+                "Substrate1_SMILES": "C1=CC=C(C=C1)I  ",
+                "Substrate1_InChi": " InChI=1S/C6H5I/c7-6-4-2-1-3-5-6/h1-5H  ",
+                "Substrate1_InChiKey": "InChIKey: SNHMUERNLJLMHN-UHFFFAOYSA-N  ",
+                "Substrate1_mass": "204 mg",
+                "Substrate1_Molar_equivalents": "1 mmol ",
+                "Substrate1_Reactant_concentration": "",
+                "Substrate1_Role": "Reactant "
+            },
+            "Substrate2": {
+                "Substrate2_Name": "Triethylamine",
+                "Substrate2_SMILES": "",
+                "Substrate2_InChi": "",
+                "Substrate2_InChiKey": "ZMANZCXQSJIPKH-UHFFFAOYSA-N",
+                "Substrate2_mass": "303 mg",
+                "Substrate2_Molar_equivalents": "3 mmol",
+                "Substrate2_Reactant_flow_rate": "",
+                "Substrate2_Reactant_concentration": "",
+                "Substrate2_Role": "Base "
+            },
+            "Substrate3": {
+                "Substrate3_Name": "",
+                "Substrate3_SMILES": "",
+                "Substrate3_InChi": "",
+                "Substrate3_InChiKey": "",
+                "Substrate3_mass": "",
+                "Substrate3_Molar_equivalents": "",
+                "Substrate3_Reactant_flow_rate": "",
+                "Substrate3_Reactant_concentration": "",
+                "Substrate3_Role": ""
+            }
+        },
+        "Comments": ""
+    },
+    "Solvent": {
+        "Dry_solvent": false,
+        "Solvent1_Name": "Ethanol",
+        "Solvent1_SMILES": "CCO",
+        "Solvent1_InChi": "",
+        "Solvent1_InChiKey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N  ",
+        "Solvent1_Volume": "4 mL",
+        "Solvent1_Mass": ""
+    },
+    "Product_identification_method": {
+        "Dataset": "",
+        "Data_object": "",
+        "Metadata_ID": "",
+        "Characterization_technique": {
+            "Characterization_technique_Name": "gas chromatography-mass spectrometry",
+            "Internal_standard": {
+                "Internal_standard_Name": "n-decane",
+                "Internal_standard_SMILES": "CCCCCCCCCC  ",
+                "Internal_standard_InChi": "",
+                "Internal_standard_InChiKey": "DIOQZVSQGTUSAI-UHFFFAOYSA-N  ",
+                "Internal_standard_concentration_vol%": "2.2 %"
+            },
+            "Liquid_phase_characterization": {
+                "Reactant": {
+                    "Reactant_1_Name": "Iodobenzene",
+                    "Reactant_1_SMILES": "C1=CC=C(C=C1)I  ",
+                    "Reactant_1_InChi": " InChI=1S/C6H5I/c7-6-4-2-1-3-5-6/h1-5H  ",
+                    "Reactant_1_InChiKey": "InChIKey: SNHMUERNLJLMHN-UHFFFAOYSA-N  ",
+                    "Reactant_1_concentration_wt%": "",
+                    "Reactant_1_concentration_vol%": "",
+                    "Reactant_1_conversion": 0.97
+                },
+                "Reaction_Product": {
+                    "Product_1_Name": "Ethyl benzoate",
+                    "Product_1_SMILES": "O=C(OCC)c1ccccc1",
+                    "Product_1_InChi": "InChI=1S/C9H10O2/c1-2-11-9(10)8-6-4-3-5-7-8/h3-7H,2H2,1H3  ",
+                    "Product_1_InChiKey": "MTZQAGJQAFMTAQ-UHFFFAOYSA-N  ",
+                    "Product_1_concentration_wt%": "",
+                    "Product_1_concentration_vol%": "",
+                    "Product_1_yield": 0.97,
+                    "Product_1_selectivity": 1,
+                    "Product_2_Name": "",
+                    "Product_2_SMILES": "",
+                    "Product_2_InChi": "",
+                    "Product_2_InChiKey": "",
+                    "Product_2_concentration_wt%": "",
+                    "Product_2_concentration_vol%": "",
+                    "Product_2_yield": "",
+                    "Product_2_selectivity": ""
+                }
+            }
+        }
+    }
+}

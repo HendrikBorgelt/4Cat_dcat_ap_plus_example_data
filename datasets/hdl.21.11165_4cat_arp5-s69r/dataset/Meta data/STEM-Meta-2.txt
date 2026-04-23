@@ -1,0 +1,60 @@
+STEM	
+Title	Sustainable carbonylation catalysis of renewable synthons through active-site engineering
+Date	
+Starting time	
+Contributor	
+Creator	
+Operator	Felix Jung
+Comments	
+Sample	
+Label internal           	ARNE01_Pd3P, ARNE02_Pd, ARNE03_Pd3P_rec
+ID	
+Amount                  	3
+Volume	
+Size	
+Sample preparation	
+Type of sample preparation	
+Suspension	
+Solvent	
+Solvent_name                        	  Ethanol
+Solvent_ID	
+Solvent_volume       	 1 ml
+Sample carrier type             	 5 mm copper grid, lacey carbon with amorphous carbon film
+TEM carrier film                  	 3 nm amorphous carbon film
+Purification steps                   	Drying at 70 °C over night
+Solvent_comments                           	
+Additive	
+Comments	
+Devices used for the measurement	
+Instrument     	 FEI Osiris ChemiSTEM
+Type               	Transmission electron microscope
+Type-details    	Combined TEM and STEM with ChemiSTEM EDX detector
+Brand             	FEI / Thermo Fisher
+Settings describing the measurement	
+Gun type                   	Schottky field emission gun
+High tension               	200 keV
+Extraction voltage                	3950 V      
+Gun lens                     	5
+Emission                    	 240 ?A (micro amp.)
+Mode                          	HRTEM, STEM, STEM-EDXS
+Defocus                    	  ~ 0 nm
+Magnification             	160-800 kx
+Camera length                       	115 mm
+Spot size                 	    6
+Software used for TEM data generation	
+Software                   	  Digital Micrograph (Gatan)
+Software version        	2.32
+Method                      	HRTEM
+Software used for STEM data generation	
+Software                     	TEM Imaging and Microscopy (FEI)
+Software version       	 4.6
+Method                    	  HAADF-STEM
+Software used for STEM-EDXS data generation	
+Software                    	 Esprit (Bruker)
+Software version       	 2.3
+Method                      	STEM-EDXS mapping, quantification via Cliff-Lorimer method
+                            	
+Results of the characterization	
+	Particle size and distribution
+	Chemical characterization
+	Crystal structure determination

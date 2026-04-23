@@ -1,0 +1,11 @@
+Catalyst - surface area m^2/g
+Pd/Al2O3 - 119
+Pd/1PAl2O3 - 118
+Pd/2PAl2O3 - 116
+Pd/3PAl2O3 - 105
+Pd/4PAl2O3 - 112
+Pd/5PAl2O3 - 108
+Pd/SiO2 - 126
+Pd/1PSiO2 - 118
+Pd/3PSiO2 - 98
+Pd/5PSiO2 - 72

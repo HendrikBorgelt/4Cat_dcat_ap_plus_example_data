@@ -1,0 +1,8 @@
+FR175 - 2Pd1PAl2O3 - 1,8 wt% Pd; 0,8 wt% P
+FR176 - 2Pd3PAl2O3 - 1,8 wt% Pd; 2,5 wt% P
+FR505 - 2Pd2PAl2O3 - 2,0 wt% Pd; 2,0 wt% P
+FR506 - 2Pd4PAl2O3 - 2,0 wt% Pd; 3,7 wt% P
+FR507 - 2Pd5PAl2O3 - 1,9 wt% Pd; 4,6 wt% P
+FR720 - 2Pd3PSiO2 - 1,8 wt% Pd; 2,6 wt% P
+FR765 - 2Pd1PSiO2 - 2,0 wt% Pd; 1,1 wt% P
+FR766 - 2Pd5PSiO2 - 2,0 wt% Pd; 4,8 wt% P

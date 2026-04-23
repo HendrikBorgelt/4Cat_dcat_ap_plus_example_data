@@ -1,0 +1,213 @@
+---
+# CoreMeta4Cat metadata — Catalytic Reaction (hydrogenation testing) sub-dataset
+# Dataset: hdl:21.11165/4cat/32x1-99x6 (NFDI4Cat Central Data Repository)
+# Schema: https://w3id.org/nfdi4cat/coremeta4cat (v1.0.0)
+#
+# Source file:
+#   catalytic_data.xlsx  (hdl:21.11165/4cat/32x1-99x6/9, also as .tab /9)
+#   Sheet 1 "Initial Experiments": screening conditions (50°C, 5 bar, 30 min)
+#   Sheet 2 "Pd-XPAl2O3_CCD_CAL": Central Composite Design on Al2O3, cinnamyl alcohol
+#   Sheet 3 "Pd-XPSiO2_FF_CAL":   Factorial Design on SiO2, cinnamyl alcohol
+#   Sheet 4 "Pd-XPAl2O3_FF_Citral": Factorial Design on Al2O3, citral
+#   Sheet 5 "Pd-XPSiO2_FF_Citral":  Factorial Design on SiO2, citral
+
+id: hdl:21.11165/4cat/32x1-99x6#reaction_dataset
+title:
+  - Catalytic hydrogenation testing data – selective hydrogenation of cinnamyl alcohol and citral over Pd/P catalysts
+description:
+  - >-
+    Catalytic performance data for the selective hydrogenation of α,β-unsaturated
+    aldehydes (cinnamyl alcohol = CAL; citral) over Pd-based catalysts with
+    phosphorus loading (0–5 wt%) on Al2O3 and SiO2 supports. The dataset contains
+    47 experimental runs across five experimental design sheets:
+    (1) Initial screening at fixed conditions (50°C, 5 bar, 30 min),
+    (2) Central Composite Design (CCD) for Pd/P/Al2O3 with CAL (27 runs),
+    (3) Factorial Design for Pd/P/SiO2 with CAL (9 runs),
+    (4) Factorial Design for Pd/P/Al2O3 with citral (9 runs),
+    (5) Factorial Design for Pd/P/SiO2 with citral (9 runs).
+    Response variables: substrate conversion (%) and product yield (%) with
+    standard deviations. Source: catalytic_data.xlsx (hdl:21.11165/4cat/32x1-99x6/9).
+    Part of the parent dataset hdl:21.11165/4cat/32x1-99x6.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6
+theme:
+  - preferred_label:
+      - Chemistry
+      - Engineering
+
+# ---------- THE CATALYTIC REACTION BEING STUDIED ----------
+# Reaction is an EvaluatedActivity — the process this dataset is *about*.
+# It is linked to the CatalysisDataset via is_about_activity.
+
+is_about_activity:
+  - id: hdl:21.11165/4cat/32x1-99x6#hydrogenation_reaction
+    title:
+      - Pd-catalysed selective hydrogenation of α,β-unsaturated aldehydes
+    description:
+      - >-
+        Selective hydrogenation of cinnamyl alcohol (CAL) and citral over
+        Pd/P catalysts on Al2O3 and SiO2. Target reaction: C=C double bond
+        hydrogenation to form the saturated alcohol (hydrocinnamyl alcohol, HCAL,
+        for CAL; geraniol/nerol for citral). Catalytic testing performed under
+        batch conditions.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    reactant:
+      - cinnamyl alcohol (CAL)  # Sheet 1, column header; Sheets 2–3
+      - citral                  # Sheets 4–5
+    catalyst_type: Pd/P on Al2O3 or SiO2, ~2 wt% Pd, 0–5 wt% P
+    reactor_temperature_range: 30–70°C  # catalytic_data.xlsx Sheets 2–5, coded variables T: -2 to +2 → 30–70°C
+    experiment_pressure: 1.0     # bar; minimum in design space (catalytic_data.xlsx Sheet 2)
+    # Note: screening used 5 bar (Sheet 1), optimization range 1–9 bar (Sheets 2–5)
+    feed_composition_range: >-
+      P loading varied 1–5 wt% as a factor in the CCD/factorial designs
+      (catalytic_data.xlsx Sheets 2–5)
+    experiment_duration: 0.5   # hours (30 min); initial screening (Sheet 1, row 2)
+    # Optimization range: 10–50 min (Sheets 2–5, coded time variable: -2 to +2)
+    atmosphere:
+      - H2  # implied by hydrogenation reaction; not explicitly stated in data files
+    carried_out_by:
+      - id: hdl:21.11165/4cat/32x1-99x6#autoclave_reactor
+        title: Batch autoclave reactor
+        description: >-
+          Pressurised batch reactor (autoclave or similar sealed vessel) implied
+          by 5 bar working pressure and filtration/work-up procedures noted in
+          Sheet 1 (filtration test entry). Specific reactor model not stated.
+    had_input_entity:
+      - id: hdl:21.11165/4cat/32x1-99x6#reactant_CAL
+        title: Cinnamyl alcohol (CAL)
+        description: >-
+          α,β-unsaturated allylic alcohol; primary substrate in Sheets 1–3 of
+          catalytic_data.xlsx. CAS: 104-54-1.
+        rdf_type:
+          id: CHEBI:15554
+          title: cinnamyl alcohol
+      - id: hdl:21.11165/4cat/32x1-99x6#reactant_citral
+        title: Citral
+        description: >-
+          Mixture of geranial and neral; substrate in Sheets 4–5 of
+          catalytic_data.xlsx.
+        rdf_type:
+          id: CHEBI:29085
+          title: citral
+    product_identification_method:
+      - id: hdl:21.11165/4cat/32x1-99x6#product_analysis_method
+        title: GC-based product quantification
+        description: >-
+          Conversion and yield (%) reported with standard deviations in
+          catalytic_data.xlsx. Specific analytical instrument not explicitly
+          stated; GC analysis is the standard method for this reaction class.
+
+# ---------- INITIAL SCREENING CONDITIONS (Sheet 1: "Initial Experiments") ----------
+# Fixed conditions: T = 50°C, P = 5 bar, t = 30 min; substrate = CAL
+# 7 catalyst/blank entries; includes blank and filtration test controls
+
+has_qualitative_attribute:
+  - value: Central Composite Design (CCD) and full-factorial designs
+    description: >-
+      Experimental design strategy used for optimisation (catalytic_data.xlsx,
+      Sheets 2–5). Coded factor levels: -2, -1, 0, +1, +2 for T, P, P-loading, t.
+  - value: >-
+      Initial screening fixed conditions: 50°C, 5 bar, 30 min (Sheet 1);
+      optimisation ranges: T 30–70°C, P 1–9 bar, P-loading 1–5 wt%,
+      t 10–50 min (Sheets 2–5)
+    description: Reaction condition summary across all sheets of catalytic_data.xlsx
+
+# ---------- ENTITIES THIS DATASET IS ABOUT ----------
+# The catalysts tested (subset with known ICP/BET data)
+
+is_about_entity:
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_PdAl2O3
+    title: Pd/Al2O3
+    description: Reference catalyst without P. Tested in initial experiments (Sheet 1).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_PdSiO2
+    title: Pd/SiO2
+    description: Reference catalyst without P on SiO2. Tested in initial experiments (Sheet 1).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd1PAl2O3
+    title: Pd/1P/Al2O3
+    description: >-
+      ICP-measured: 1.8 wt% Pd, 0.8 wt% P (FR175). Tested across CCD design
+      on Al2O3 (Sheet 2) and initial screening (Sheet 1).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 1.8
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: ICP-measured Pd loading in wt% (icp_results.txt, line 1)
+      - value: 0.8
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: ICP-measured P loading in wt% (icp_results.txt, line 1)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd2PAl2O3
+    title: Pd/2P/Al2O3
+    description: ICP-measured: 2.0 wt% Pd, 2.0 wt% P (FR505). Tested in CCD design (Sheet 2).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd3PAl2O3
+    title: Pd/3P/Al2O3
+    description: ICP-measured: 1.8 wt% Pd, 2.5 wt% P (FR176). Tested in CCD design (Sheet 2).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd4PAl2O3
+    title: Pd/4P/Al2O3
+    description: ICP-measured: 2.0 wt% Pd, 3.7 wt% P (FR506). Tested in CCD design (Sheet 2).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd5PAl2O3
+    title: Pd/5P/Al2O3
+    description: ICP-measured: 1.9 wt% Pd, 4.6 wt% P (FR507). Tested in CCD design (Sheet 2).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd1PSiO2
+    title: Pd/1P/SiO2
+    description: ICP-measured: 2.0 wt% Pd, 1.1 wt% P (FR765). Tested in factorial design (Sheet 3).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd3PSiO2
+    title: Pd/3P/SiO2
+    description: ICP-measured: 1.8 wt% Pd, 2.6 wt% P (FR720). Tested in factorial design (Sheet 3).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd5PSiO2
+    title: Pd/5P/SiO2
+    description: ICP-measured: 2.0 wt% Pd, 4.8 wt% P (FR766). Tested in factorial design (Sheet 3).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder

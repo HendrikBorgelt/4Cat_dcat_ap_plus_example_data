@@ -1,0 +1,595 @@
+# ============================================================
+# SOURCE DOCUMENTATION
+# CoreMeta4Cat metadata provenance for hdl:21.11165/4cat/32x1-99x6
+# ============================================================
+#
+# FORMAT
+#   Each entry is:
+#     field_or_value:
+#       value:   <what was used in the metadata files>
+#       source:  <filename> [line X | JSON path | sheet/column]
+#       note:    <optional clarification>
+#
+# NOTE ON export.customization
+#   This file is a single-line JSON object (line 1 throughout).
+#   All references to it use JSON path notation.
+#   Shorthand: export.customization → EC
+#
+# ============================================================
+
+
+# ============================================================
+# 1. DATASET-LEVEL FIELDS (coremeta4cat_metadata_combined.yaml)
+# ============================================================
+
+dataset_id:
+  value: hdl:21.11165/4cat/32x1-99x6
+  source: export.customization [line 1 | $.persistentUrl → "https://hdl.handle.net/21.11165/4cat/32x1-99x6"; $.identifier → "4cat/32x1-99x6"; $.datasetVersion.datasetPersistentId → "hdl:21.11165/4cat/32x1-99x6"]
+
+title:
+  value: "Data set for publication: Support Engineering with Phosphorus: Tuning the Palladium-Catalyzed Selective Hydrogenation of α,β-Unsaturated Aldehydes"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[0].value]
+
+description:
+  value: "Dataset consisting of catalyst characterization data (PXRD, DRIFT, IR, BET, and TEM) and catalyst testing data."
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[3].value[0].dsDescriptionValue.value]
+
+creator_1:
+  value: "Rang, Fabian (KIT), ORCID 0009-0008-4564-9117"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[1].value[0] → authorName.value, authorAffiliation.value, authorIdentifier.value]
+
+creator_2:
+  value: "Hanf, Schirin (KIT), ORCID 0000-0003-2624-7872"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[1].value[1]]
+
+creator_3:
+  value: "Holtermann, Birger (KIT)"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[1].value[2]]
+  note: No ORCID provided in the metadata.
+
+creator_4:
+  value: "Eggeler, Yolita (KIT)"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[1].value[3]]
+  note: No ORCID provided in the metadata.
+
+creator_5:
+  value: "Barth, Simon (KIT)"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[1].value[4]]
+  note: No ORCID provided in the metadata.
+
+creator_6:
+  value: "Grunwaldt, Jan-Dierk (KIT)"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[1].value[5]]
+  note: No ORCID provided in the metadata.
+
+contact:
+  value: "Rang, Fabian (KIT)"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[2].value[0].datasetContactName.value]
+
+depositor:
+  value: "Neyyathala, Arjun"
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[5].value]
+
+publisher:
+  value: NFDI4Cat Central Data Repository
+  source: export.customization [line 1 | $.publisher]
+
+publication_date:
+  value: "2026-03-11"
+  source: export.customization [line 1 | $.publicationDate]
+
+license:
+  value: CC BY 4.0 (http://creativecommons.org/licenses/by/4.0)
+  source: export.customization [line 1 | $.datasetVersion.license.name and $.datasetVersion.license.uri]
+
+version:
+  value: "1.0"
+  source: export.customization [line 1 | $.datasetVersion.versionNumber → 1, $.datasetVersion.versionMinorNumber → 0]
+
+unf:
+  value: "UNF:6:udeCM+mrvJavSSk1tER0rw=="
+  source: export.customization [line 1 | $.datasetVersion.UNF]
+
+subject:
+  value: [Chemistry, Engineering]
+  source: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[4].value]
+
+rdf_type_research_field:
+  value: VOC4CAT:0007001 — heterogeneous catalysis
+  source: Inferred from dataset subject (Chemistry) and content (Pd-based catalysts, hydrogenation reaction). No explicit VOC4CAT term stated in any dataset file.
+  note: Assigned based on schema CatalysisResearchFieldEnum and topic of the publication.
+
+
+# ============================================================
+# 2. DATA FILES — PERSISTENT IDs AND CHECKSUMS
+# All from export.customization [line 1 | $.datasetVersion.files array]
+# ============================================================
+
+files:
+  info_drifts.txt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/1
+    source: export.customization [line 1 | $.datasetVersion.files[7].dataFile.persistentId]
+    md5: 0d282732a69dd4a93cacffc875a67d42
+
+  icp_results.txt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/2
+    source: export.customization [line 1 | $.datasetVersion.files[6].dataFile.persistentId]
+    md5: 79d28dfebc162479555034503c8228d4
+
+  PXRD_PdAl2O3.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/3
+    source: export.customization [line 1 | $.datasetVersion.files[22].dataFile.persistentId]
+    md5: c978664b7f29b9a4eb36c86302684fcc
+
+  PXRD_Pd5Al2O3.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/4
+    source: export.customization [line 1 | $.datasetVersion.files[20].dataFile.persistentId]
+    md5: 847fec14c889d16e4685497b69371b64
+
+  IR_2Pd3PSiO2.0.dpt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/5
+    source: export.customization [line 1 | $.datasetVersion.files[11].dataFile.persistentId]
+    md5: dea9bd60c71cf638b1b564a5624f1c78
+
+  DRIFT_Pd_Al2O3_CO_Ads_RT.dat:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/6
+    source: export.customization [line 1 | $.datasetVersion.files[4].dataFile.persistentId]
+    md5: 160a696330601f90fb8dc106548ff1a3
+
+  IR_2Pd1PAl2O3.0.dpt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/7
+    source: export.customization [line 1 | $.datasetVersion.files[8].dataFile.persistentId]
+    md5: f32d1215127ad46989aee85451a23f5f
+
+  IR_2Pd1PSiO2.0.dpt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/8
+    source: export.customization [line 1 | $.datasetVersion.files[9].dataFile.persistentId]
+    md5: 9385fe62ac1c2d8e771b4f7ea043f687
+
+  catalytic_data.xlsx:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/9
+    source: export.customization [line 1 | $.datasetVersion.files[1].dataFile.persistentId]
+    md5: 40ec00b6e647276b5ac25ecaef72e744
+    note: Deposited as .xlsx; Dataverse converted to .tab (same /9 ID).
+
+  IR_2Pd5PSiO2.0.dpt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/10
+    source: export.customization [line 1 | $.datasetVersion.files[13].dataFile.persistentId]
+    md5: 9bf5d1223b5f089fbd0e4156b94f9dc2
+
+  DRIFT_Pd_3PSiO2_CO_Ads_RT.dat:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/11
+    source: export.customization [line 1 | $.datasetVersion.files[3].dataFile.persistentId]
+    md5: e19881fa1aba35651bc5de5d8f9848b0
+
+  bet_results.txt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/12
+    source: export.customization [line 1 | $.datasetVersion.files[0].dataFile.persistentId]
+    md5: 2df402f8b836b0021945ba4b8ecce3eb
+
+  IR_2Pd5PAl2O3.0.dpt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/13
+    source: export.customization [line 1 | $.datasetVersion.files[12].dataFile.persistentId]
+    md5: 8cd7b2da65be6142d90145c9d4389acf
+
+  PXRD_Pd4PAl2O3.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/14
+    source: export.customization [line 1 | $.datasetVersion.files[19].dataFile.persistentId]
+    md5: 46c25ab128bd6929cd9d8a2741626c6c
+
+  DRIFT_Pd_3PAl2O3_CO_Ads_RT.dat:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/15
+    source: export.customization [line 1 | $.datasetVersion.files[2].dataFile.persistentId]
+    md5: 9e271c66124ef672cf8ff3c6f4403a5d
+
+  PXRD_Pd1PAl2O3.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/16
+    source: export.customization [line 1 | $.datasetVersion.files[15].dataFile.persistentId]
+    md5: 13d7f4080a593ae154f70416ac441137
+
+  PXRD_Pd3PAl2O3.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/17
+    source: export.customization [line 1 | $.datasetVersion.files[17].dataFile.persistentId]
+    md5: 6a274be72bc3cfde7e294c3529ba840d
+
+  IR_2Pd3PAl2O3.0.dpt:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/18
+    source: export.customization [line 1 | $.datasetVersion.files[10].dataFile.persistentId]
+    md5: fadd08d7a6eeb5ddd5f708637e8df9cd
+
+  PXRD_Pd5PSiO2.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/19
+    source: export.customization [line 1 | $.datasetVersion.files[21].dataFile.persistentId]
+    md5: c82fa365bb693829826af011cf1724cd
+
+  PXRD_Pd3PSiO2.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/20
+    source: export.customization [line 1 | $.datasetVersion.files[18].dataFile.persistentId]
+    md5: 8a2a0d542e82145558eb83e9875d1d45
+
+  PXRD_Pd2PAl2O3.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/21
+    source: export.customization [line 1 | $.datasetVersion.files[16].dataFile.persistentId]
+    md5: e04ae8efbb2fda84cd1f337e1e5c16f2
+
+  PXRD_1PSiO2.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/22
+    source: export.customization [line 1 | $.datasetVersion.files[14].dataFile.persistentId]
+    md5: 16dc9d7b44a510c7c07100520f192b5b
+
+  DRIFT_Pd_SiO2_CO_Ads_RT.dat:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/23
+    source: export.customization [line 1 | $.datasetVersion.files[5].dataFile.persistentId]
+    md5: 794ef667762d9f48597f1efeec88761c
+
+  PXRD_PdSiO2.xy:
+    persistent_id: hdl:21.11165/4cat/32x1-99x6/24
+    source: export.customization [line 1 | $.datasetVersion.files[23].dataFile.persistentId]
+    md5: 38c594d01f542bda38e551bf9452d0ba
+
+
+# ============================================================
+# 3. CATALYST SAMPLE IDENTITIES AND COMPOSITIONS
+# ============================================================
+
+catalyst_samples:
+
+  # --- ICP-AES COMPOSITION (icp_results.txt) ---
+
+  sample_FR175_Pd1PAl2O3:
+    internal_code: FR175
+    label: 2Pd1PAl2O3 (nominal)
+    pd_loading_wt_pct: 1.8
+    p_loading_wt_pct: 0.8
+    source: icp_results.txt [line 1]
+    note: Nominal 2 wt% Pd, 1 wt% P; measured values differ slightly.
+
+  sample_FR176_Pd3PAl2O3:
+    internal_code: FR176
+    label: 2Pd3PAl2O3 (nominal)
+    pd_loading_wt_pct: 1.8
+    p_loading_wt_pct: 2.5
+    source: icp_results.txt [line 2]
+
+  sample_FR505_Pd2PAl2O3:
+    internal_code: FR505
+    label: 2Pd2PAl2O3 (nominal)
+    pd_loading_wt_pct: 2.0
+    p_loading_wt_pct: 2.0
+    source: icp_results.txt [line 3]
+
+  sample_FR506_Pd4PAl2O3:
+    internal_code: FR506
+    label: 2Pd4PAl2O3 (nominal)
+    pd_loading_wt_pct: 2.0
+    p_loading_wt_pct: 3.7
+    source: icp_results.txt [line 4]
+
+  sample_FR507_Pd5PAl2O3:
+    internal_code: FR507
+    label: 2Pd5PAl2O3 (nominal)
+    pd_loading_wt_pct: 1.9
+    p_loading_wt_pct: 4.6
+    source: icp_results.txt [line 5]
+
+  sample_FR720_Pd3PSiO2:
+    internal_code: FR720
+    label: 2Pd3PSiO2 (nominal)
+    pd_loading_wt_pct: 1.8
+    p_loading_wt_pct: 2.6
+    source: icp_results.txt [line 6]
+
+  sample_FR765_Pd1PSiO2:
+    internal_code: FR765
+    label: 2Pd1PSiO2 (nominal)
+    pd_loading_wt_pct: 2.0
+    p_loading_wt_pct: 1.1
+    source: icp_results.txt [line 7]
+
+  sample_FR766_Pd5PSiO2:
+    internal_code: FR766
+    label: 2Pd5PSiO2 (nominal)
+    pd_loading_wt_pct: 2.0
+    p_loading_wt_pct: 4.8
+    source: icp_results.txt [line 8]
+
+  # --- BET SURFACE AREAS (bet_results.txt) ---
+
+  BET_PdAl2O3:
+    label: Pd/Al2O3
+    surface_area_m2_per_g: 119
+    source: bet_results.txt [line 2]
+
+  BET_Pd1PAl2O3:
+    label: Pd/1PAl2O3
+    surface_area_m2_per_g: 118
+    source: bet_results.txt [line 3]
+
+  BET_Pd2PAl2O3:
+    label: Pd/2PAl2O3
+    surface_area_m2_per_g: 116
+    source: bet_results.txt [line 4]
+
+  BET_Pd3PAl2O3:
+    label: Pd/3PAl2O3
+    surface_area_m2_per_g: 105
+    source: bet_results.txt [line 5]
+
+  BET_Pd4PAl2O3:
+    label: Pd/4PAl2O3
+    surface_area_m2_per_g: 112
+    source: bet_results.txt [line 6]
+
+  BET_Pd5PAl2O3:
+    label: Pd/5PAl2O3
+    surface_area_m2_per_g: 108
+    source: bet_results.txt [line 7]
+
+  BET_PdSiO2:
+    label: Pd/SiO2
+    surface_area_m2_per_g: 126
+    source: bet_results.txt [line 8]
+
+  BET_Pd1PSiO2:
+    label: Pd/1PSiO2
+    surface_area_m2_per_g: 118
+    source: bet_results.txt [line 9]
+
+  BET_Pd3PSiO2:
+    label: Pd/3PSiO2
+    surface_area_m2_per_g: 98
+    source: bet_results.txt [line 10]
+
+  BET_Pd5PSiO2:
+    label: Pd/5PSiO2
+    surface_area_m2_per_g: 72
+    source: bet_results.txt [line 11]
+
+
+# ============================================================
+# 4. CHARACTERIZATION TECHNIQUE PARAMETERS
+# ============================================================
+
+characterization:
+
+  # --- PXRD ---
+  PXRD:
+    rdf_type:
+      value: CHMO:0000158 (powder X-ray diffraction)
+      source: Schema (coremeta4cat_characterization_ap.yaml, PowderXRD class_uri)
+    minimum_2theta:
+      value: 2.0 degrees
+      source: PXRD_PdAl2O3.xy [line 1, column 1: "2.00000"]
+    maximum_2theta:
+      value: ~91.97 degrees (full-range files)
+      source: PXRD_PdAl2O3.xy [line 5999, column 1: "91.97000"]
+    step_size:
+      value: 0.015 degrees
+      source: PXRD_PdAl2O3.xy [lines 1–2: 2.00000 → 2.01500; difference = 0.015]
+    data_points_full:
+      value: 6000 (lines 1–6000)
+      source: PXRD_PdAl2O3.xy [verified by line count]
+      note: Applies to PXRD_PdAl2O3.xy, PdSiO2, Pd1P, Pd2P, Pd3P, Pd4PAl2O3, Pd3PSiO2, 1PSiO2
+    data_points_short:
+      value: 4098 (lines 1–4098); 2θ range 2.0–63.5°
+      source: File sizes in MANIFEST.TXT; PXRD_Pd5Al2O3.xy and PXRD_Pd5PSiO2.xy
+    file_format:
+      value: Two-column ASCII (2θ degrees TAB intensity counts)
+      source: PXRD_PdAl2O3.xy [lines 1–5: "2.00000\t17207.000"]
+    instrument:
+      value: X-ray diffractometer (model not specified)
+      source: Not stated in any dataset file.
+
+  # --- DRIFT SPECTROSCOPY ---
+  DRIFT:
+    rdf_type:
+      value: CHMO:0000645 (diffuse reflectance infrared Fourier transform spectroscopy)
+      source: Schema (coremeta4cat_characterization_ap.yaml, DRIFTS class_uri)
+    adsorption_gas:
+      value: CO
+      source: File names (DRIFT_Pd_Al2O3_CO_Ads_RT.dat etc.); "CO_Ads" in filename
+    atmosphere:
+      value: CO at room temperature
+      source: File names: "CO_Ads_RT" suffix
+    data_conversion:
+      value: pseudo-absorbance = log(1/reflectance)
+      source: info_drifts.txt [line 3]
+    reference_doi:
+      value: DOI 10.1021/ac0702802 (Anal. Chem. 2007, 79, 10, 3912–3918)
+      source: info_drifts.txt [line 2]
+    baseline_correction:
+      value: Applied (for stacked spectra display)
+      source: info_drifts.txt [line 4]
+    analysis_software:
+      value: OriginPro 2023
+      source: info_drifts.txt [line 4]
+    samples_measured:
+      value: [Pd/Al2O3, Pd/3P/Al2O3, Pd/SiO2, Pd/3P/SiO2]
+      source: File names of the four DRIFT .dat files
+    instrument:
+      value: FTIR spectrometer with DRIFT accessory (model not specified)
+      source: Not stated in any dataset file.
+
+  # --- INFRARED SPECTROSCOPY ---
+  IR:
+    rdf_type:
+      value: coremeta4cat:InfraredSpectroscopy
+      source: Schema (coremeta4cat_characterization_ap.yaml, InfraredSpectroscopy class_uri)
+    minimum_wavenumber:
+      value: ~400 cm⁻¹
+      source: IR_2Pd1PAl2O3.0.dpt [line 3318: "400.18013\t0.05735"]
+    maximum_wavenumber:
+      value: ~3599 cm⁻¹
+      source: IR_2Pd1PAl2O3.0.dpt [line 1: "3598.72831\t0.00973"]
+    data_points:
+      value: 3319 per file
+      source: IR_2Pd1PAl2O3.0.dpt [verified by line count]
+    file_format:
+      value: Two-column ASCII (wavenumber cm⁻¹ TAB pseudo-absorbance)
+      source: IR_2Pd1PAl2O3.0.dpt [lines 1–3: "3598.72831\t0.00973"]
+    samples_measured:
+      value: [2Pd/1P/Al2O3, 2Pd/3P/Al2O3, 2Pd/5P/Al2O3, 2Pd/1P/SiO2, 2Pd/3P/SiO2, 2Pd/5P/SiO2]
+      source: File names of the six IR .dpt files
+    instrument:
+      value: FTIR spectrometer (model not specified)
+      source: Not stated in any dataset file.
+
+  # --- BET ---
+  BET:
+    rdf_type:
+      value: coremeta4cat:BET (Brunauer-Emmett-Teller analysis)
+      source: Schema (coremeta4cat_characterization_ap.yaml, BET class_uri)
+    adsorbate_gas:
+      value: N2 (assumed standard; not explicitly stated)
+      source: Not explicitly stated in bet_results.txt. Convention for BET is N2 at -196°C.
+    measurement_temperature:
+      value: -196°C (assumed liquid nitrogen; not explicitly stated)
+      source: Not explicitly stated; standard BET convention.
+    result_unit:
+      value: m²/g
+      source: bet_results.txt [line 1: "Catalyst - surface area m^2/g"]
+    instrument:
+      value: BET surface area analyser (model not specified)
+      source: Not stated in any dataset file.
+
+  # --- ICP-AES ---
+  ICP-AES:
+    rdf_type:
+      value: CHMO:0000267 (inductively coupled plasma atomic emission spectroscopy)
+      source: Schema (coremeta4cat_characterization_ap.yaml, ICPAES class_uri)
+    elements_analyzed:
+      value: [Pd, P]
+      source: icp_results.txt [line 1 header format + column values for Pd and P wt%]
+    result_unit:
+      value: wt%
+      source: icp_results.txt [line 1: "… wt% Pd; … wt% P"]
+    instrument:
+      value: ICP-AES spectrometer (model not specified)
+      source: Not stated in any dataset file.
+
+  # --- TEM (Transmission Electron Microscopy) ---
+  TEM:
+    note: >-
+      TEM is mentioned in the dataset description ("PXRD, DRIFT, IR, BET, and TEM")
+      but NO TEM data files are present in the deposited dataset.
+    source_of_mention: export.customization [line 1 | $.datasetVersion.metadataBlocks.citation.fields[3].value[0].dsDescriptionValue.value]
+
+
+# ============================================================
+# 5. REACTION CONDITIONS (catalytic_data.xlsx)
+# ============================================================
+
+reaction:
+
+  substrates:
+    cinnamyl_alcohol:
+      value: CAL (cinnamyl alcohol)
+      source: catalytic_data.xlsx [Sheet 1 "Initial Experiments", column header row; Sheets 2–3 tab names contain "CAL"]
+    citral:
+      value: Citral
+      source: catalytic_data.xlsx [Sheets 4–5 tab names: "Pd-XPAl2O3_FF_Citral", "Pd-XPSiO2_FF_Citral"]
+
+  initial_screening_conditions:
+    temperature:
+      value: 50°C
+      source: catalytic_data.xlsx [Sheet 1 "Initial Experiments", row 2 — fixed condition stated in header]
+    pressure:
+      value: 5 bar
+      source: catalytic_data.xlsx [Sheet 1 "Initial Experiments", row 2 — fixed condition stated in header]
+    reaction_time:
+      value: 30 min
+      source: catalytic_data.xlsx [Sheet 1 "Initial Experiments", row 2 — fixed condition stated in header]
+
+  optimisation_factor_ranges:
+    temperature:
+      value: 30–70°C (coded -2 to +2)
+      source: catalytic_data.xlsx [Sheet 2 "Pd-XPAl2O3_CCD_CAL", Temperature column; coded range -2 to +2]
+    pressure:
+      value: 1–9 bar (coded -2 to +2)
+      source: catalytic_data.xlsx [Sheet 2 "Pd-XPAl2O3_CCD_CAL", Pressure column]
+    phosphorus_loading:
+      value: 1–5 wt% (coded -2 to +2)
+      source: catalytic_data.xlsx [Sheet 2 "Pd-XPAl2O3_CCD_CAL", P-loading column]
+    reaction_time:
+      value: 10–50 min (coded -2 to +2)
+      source: catalytic_data.xlsx [Sheet 2 "Pd-XPAl2O3_CCD_CAL", Time column]
+
+  experimental_designs:
+    ccd_Al2O3_CAL:
+      value: Central Composite Design, 27 runs
+      source: catalytic_data.xlsx [Sheet 2 "Pd-XPAl2O3_CCD_CAL", 27 data rows]
+    factorial_SiO2_CAL:
+      value: Full factorial design, 9 runs
+      source: catalytic_data.xlsx [Sheet 3 "Pd-XPSiO2_FF_CAL", 9 data rows]
+    factorial_Al2O3_citral:
+      value: Full factorial design, 9 runs
+      source: catalytic_data.xlsx [Sheet 4 "Pd-XPAl2O3_FF_Citral", 9 data rows]
+    factorial_SiO2_citral:
+      value: Full factorial design, 9 runs
+      source: catalytic_data.xlsx [Sheet 5 "Pd-XPSiO2_FF_Citral", 9 data rows]
+
+  response_variables:
+    conversion:
+      value: Conversion (%)
+      source: catalytic_data.xlsx [Sheet 2, column "Conversion" with standard deviations]
+    yield:
+      value: Yield (%)
+      source: catalytic_data.xlsx [Sheet 2, column "Yield" with standard deviations]
+
+  reactor_type:
+    value: Batch pressurised reactor (autoclave or similar)
+    source: >-
+      Inferred from: (1) 5 bar working pressure (Sheet 1); (2) filtration test
+      control entry in Sheet 1; (3) reaction time of 30 min suggests batch mode.
+      No explicit reactor model stated in any dataset file.
+
+  product_identification_method:
+    value: GC-based (inferred; not explicitly stated)
+    source: >-
+      Inferred from catalytic_data.xlsx reporting conversion/yield values.
+      No explicit analytical instrument stated. GC is the standard method for
+      this class of reaction (cinnamyl alcohol/citral hydrogenation).
+
+
+# ============================================================
+# 6. INFERRED OR ASSUMED VALUES (not directly from dataset files)
+# ============================================================
+
+inferred_values:
+  - field: rdf_type (CatalysisDataset)
+    value: VOC4CAT:0007001 (heterogeneous catalysis)
+    basis: Subject fields "Chemistry" and "Engineering" + dataset content
+
+  - field: adsorbate_gas (BET)
+    value: N2
+    basis: Standard BET convention; not stated in dataset files
+
+  - field: measurement_temperature (BET)
+    value: -196°C
+    basis: Standard N2 BET at liquid nitrogen temperature; not stated in dataset files
+
+  - field: atmosphere (Reaction)
+    value: H2
+    basis: Reaction is "hydrogenation"; H2 atmosphere is required but not explicitly stated
+
+  - field: reactor type
+    value: Batch autoclave (pressurised vessel)
+    basis: Reaction conditions (5 bar, 30 min), presence of "filtration test" in Sheet 1
+
+  - field: product_identification_method
+    value: GC-based quantification
+    basis: Conversion/yield data reported; GC is standard for this reaction class
+
+  - field: PXRD sample Pd5Al2O3 interpretation
+    value: Interpreted as Pd/5P/Al2O3 (same as FR507 in ICP)
+    basis: >-
+      File is PXRD_Pd5Al2O3.xy but the series context (1P, 2P, 3P, 4P, then
+      5P) and ICP data for FR507 (2Pd5PAl2O3) strongly suggest this is the
+      5 wt% P variant. The missing "P" in the filename appears to be a typo.
+
+  - field: IR data format (pseudo-absorbance)
+    value: Same as DRIFT (log(1/reflectance))
+    basis: >-
+      info_drifts.txt describes pseudo-absorbance conversion for DRIFT data;
+      IR .dpt files use the same pseudo-absorbance column label and similar
+      value ranges, consistent with the same convention.

@@ -1,0 +1,42 @@
+Powder X-ray diffraction	
+CHMO:0000158	
+General information	
+    Publication	
+    Title	Sustainable carbonylation catalysis of renewable synthons through active-site engineering
+    Date	
+    Contributor	Arjun Neyyathala, Felix Jung, Simon Barth, Claus Feldmann, Jan-Dierk Grunwaldt, Ivana Jevtovikj, Stephan A. Schunk, Schirin Hanf
+    Institution	KIT, hte GmbH, BASF SE 
+Sample	
+    internal label	
+    ID	
+Sample preparation	
+    powder	
+Device	
+    name	
+    ID	
+    type_details	
+    brand	Stoe STADI-MP 
+    serial	
+Method_details	
+    X-ray radiation	Cu source (?=1.54178?Å)
+    Atmosphere	Air
+    Diffraction geometry	Transmission 
+    Minimum 2 theta	2
+    Maximum 2 theta	90
+    Step size	
+    Monochromator	Ge
+    Temperature	Ambient 
+    Sample spinning speed	
+    afo: total measurement duration setting	80 min
+    Comments	
+Software used for data generation	
+    Software	INSTPAR 
+    Software version	
+    Method	
+Sample Characterization 	
+    Name_sample	ARNE01
+    ICSD	85525
+    Data object	Pd3P
+    Name_sample	ARNE02
+    ICSD	52251
+    Data object	Pd

@@ -1,0 +1,226 @@
+---
+# CoreMeta4Cat metadata — BET Surface Area Analysis sub-dataset
+# Dataset: hdl:21.11165/4cat/32x1-99x6 (NFDI4Cat Central Data Repository)
+# Schema: https://w3id.org/nfdi4cat/coremeta4cat (v1.0.0)
+#
+# Source file:
+#   bet_results.txt  (hdl:21.11165/4cat/32x1-99x6/12)
+#   Lines 2–11: 10 catalyst samples with BET specific surface area in m²/g
+
+id: hdl:21.11165/4cat/32x1-99x6#bet_dataset
+title:
+  - BET specific surface area data – Pd/P catalysts on Al2O3 and SiO2
+description:
+  - >-
+    Brunauer-Emmett-Teller (BET) specific surface area measurements for 10
+    Pd-based catalyst samples with phosphorus loading from 0 to 5 wt% on
+    Al2O3 and SiO2 supports. Results reported in m²/g. Source: bet_results.txt
+    (hdl:21.11165/4cat/32x1-99x6/12). Part of the parent dataset
+    hdl:21.11165/4cat/32x1-99x6.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6
+theme:
+  - preferred_label:
+      - Chemistry
+      - Engineering
+
+# ---------- DATA-GENERATING ACTIVITY ----------
+
+was_generated_by:
+  - id: hdl:21.11165/4cat/32x1-99x6#bet_characterization
+    title:
+      - BET surface area characterization of 10 Pd/P catalyst samples
+    description:
+      - >-
+        Specific surface area determination via nitrogen adsorption (N2 BET)
+        for 10 catalyst samples. Results reported in m²/g. Adsorbate gas: N2
+        (standard for BET; not explicitly stated in dataset files but implied
+        by convention). Degassing conditions and measurement temperature not
+        explicitly stated. Results table: bet_results.txt (hdl:.../12).
+    rdf_type:
+      id: coremeta4cat:BET
+      title: Brunauer-Emmett-Teller analysis
+    equipment:
+      - BET surface area analyser  # specific instrument not stated in dataset files
+    realized_plan:
+      id: hdl:21.11165/4cat/32x1-99x6#bet_protocol
+      adsorbate_gas: N2   # nitrogen adsorption; standard BET convention; not explicitly stated
+      measurement_temperature: -196.0  # °C; liquid nitrogen temperature; standard BET; not explicitly stated
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_PdAl2O3
+        title: Pd/Al2O3
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd1PAl2O3
+        title: Pd/1P/Al2O3
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd2PAl2O3
+        title: Pd/2P/Al2O3
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd3PAl2O3
+        title: Pd/3P/Al2O3
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd4PAl2O3
+        title: Pd/4P/Al2O3
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd5PAl2O3
+        title: Pd/5P/Al2O3
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_PdSiO2
+        title: Pd/SiO2
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd1PSiO2
+        title: Pd/1P/SiO2
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd3PSiO2
+        title: Pd/3P/SiO2
+      - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd5PSiO2
+        title: Pd/5P/SiO2
+
+# ---------- ENTITIES THIS DATASET IS ABOUT ----------
+
+is_about_entity:
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_PdAl2O3
+    title: Pd/Al2O3
+    description: Palladium on alumina, no phosphorus. BET surface area: 119 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 119.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 2)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd1PAl2O3
+    title: Pd/1P/Al2O3
+    description: Palladium on alumina, 1 wt% P. BET surface area: 118 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 118.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 3)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd2PAl2O3
+    title: Pd/2P/Al2O3
+    description: >-
+      Palladium on alumina, 2 wt% P.
+      ICP-measured: 2.0 wt% Pd, 2.0 wt% P (sample FR505).
+      BET surface area: 116 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 116.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 4)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd3PAl2O3
+    title: Pd/3P/Al2O3
+    description: >-
+      Palladium on alumina, 3 wt% P.
+      ICP-measured: 1.8 wt% Pd, 2.5 wt% P (sample FR176).
+      BET surface area: 105 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 105.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 5)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd4PAl2O3
+    title: Pd/4P/Al2O3
+    description: >-
+      Palladium on alumina, 4 wt% P.
+      ICP-measured: 2.0 wt% Pd, 3.7 wt% P (sample FR506).
+      BET surface area: 112 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 112.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 6)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd5PAl2O3
+    title: Pd/5P/Al2O3
+    description: >-
+      Palladium on alumina, 5 wt% P.
+      ICP-measured: 1.9 wt% Pd, 4.6 wt% P (sample FR507).
+      BET surface area: 108 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 108.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 7)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_PdSiO2
+    title: Pd/SiO2
+    description: Palladium on silica, no phosphorus. BET surface area: 126 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 126.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 8)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd1PSiO2
+    title: Pd/1P/SiO2
+    description: >-
+      Palladium on silica, 1 wt% P.
+      ICP-measured: 2.0 wt% Pd, 1.1 wt% P (sample FR765).
+      BET surface area: 118 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 118.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 9)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd3PSiO2
+    title: Pd/3P/SiO2
+    description: >-
+      Palladium on silica, 3 wt% P.
+      ICP-measured: 1.8 wt% Pd, 2.6 wt% P (sample FR720).
+      BET surface area: 98 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 98.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 10)
+
+  - id: hdl:21.11165/4cat/32x1-99x6#sample_Pd5PSiO2
+    title: Pd/5P/SiO2
+    description: >-
+      Palladium on silica, 5 wt% P.
+      ICP-measured: 2.0 wt% Pd, 4.8 wt% P (sample FR766).
+      BET surface area: 72 m²/g.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 72.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area (bet_results.txt, line 11)

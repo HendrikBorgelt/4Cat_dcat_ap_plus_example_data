@@ -1,0 +1,72 @@
+{
+  "title": "exp16",
+  "publication": {"DOI": 10.1021/acs.iecr.1c00389}
+  "catalyst": {
+    "metal": "Ni",
+    "support": "Al2O3",
+    "metal_loading": 0.15,
+    "particles_mean_diameter": 630e-06,
+    "specific_surface_area": 8.72e03,
+    "mass": 0.3e-03
+  },
+  "surface": {
+    "H2_uptake": "null",
+    "CO-uptake": "null",
+    "NP_diameter": "null",
+    "dispersion": 0.105,
+    "metal_SSA": "null",
+    "volume-specific_surface_area": "null",
+    "ratio catalytic_to_geometric area": "null"
+  },
+  "inlet": {
+    "temperature": {"$data": "T"},
+    "velocity": {"$data": "u"},
+    "mole_fractions": {
+      "H2": 0.72,
+      "CO": 0,
+      "CO2": 0.18,
+      "AR": 0.1
+    },
+    "pressure": 100000
+  },
+  "geometry": {
+    "reactor": "cylindrical",
+    "radius": 0.008,
+    "sections": [
+      {
+        "particle_geometry": "sphere",
+        "length": 0.009644999088974067,
+        "porosity": 0.381,
+        "particle_diameter": 0.00063,
+        "particle_thermal_conductivity": 0,
+        "radial_thermal_conductivity_solid": 0,
+        "area_to_volume_ratio": 5895.238095238095,
+        "f_cat_geo": 1101.133758692331,
+        "wall_temperature": {"$data": "T"}
+      }
+    ],
+    "wall": {
+      "wall_thickness": 0,
+      "thermal_conductivity_wall": 0,
+      "heat_trans_coeff_outside": 0,
+      "overall_heat_trans_coeff": 0,
+      "heat_flux": 0
+    }
+  },
+  "process": {
+    "isothermal": true,
+    "adiabatic": false,
+    "mass_transfer": false
+  },
+  "resources": {
+    "name": "data",
+    "path": "./Exp16_data.csv",
+    "format": "csv",
+    "options": {
+        "columns": ["u", "T", "CO2"],
+        "primaryKey": "T",
+        "delimiter": ","
+      },
+    "form": "conversions"
+  }
+}
