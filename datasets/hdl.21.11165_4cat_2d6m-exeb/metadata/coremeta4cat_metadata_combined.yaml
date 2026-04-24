@@ -1,0 +1,128 @@
+---
+# CoreMeta4Cat metadata — Combined CatalysisDataset
+# Dataset: hdl:21.11165/4cat/2d6m-exeb (NFDI4Cat Central Data Repository)
+# Schema: https://w3id.org/nfdi4cat/coremeta4cat (v1.0.0, CC-BY-4.0)
+#
+# This file integrates all sub-datasets into a single CatalysisDataset entry.
+# Refer to the individual technique files for full parameter detail:
+#   metadata_Reaction.yaml   — CO methanation kinetics (19 runs)
+#
+# Note: No separate characterization data files are present in this dataset.
+# Catalyst properties (BET SSA: 14 m²/g, particle diameter: 630 µm, 20 wt% Ni)
+# are reported inline in the experiment JSON files.
+
+id: hdl:21.11165/4cat/2d6m-exeb
+title:
+  - >-
+    CO methanation kinetics dataset: Ni/Al₂O₃ fixed-bed reactor experiments
+description:
+  - >-
+    Steady-state CO methanation kinetics data measured in an isothermal fixed-bed
+    reactor over a 20 wt% Ni/Al₂O₃ catalyst. The dataset contains 19 experimental
+    runs (Exp2–Exp20; Exp1, 6, 10 excluded for confidentiality) with CSV data
+    (superficial velocity, temperature, CO conversion) and JSON metadata stubs.
+    Feed composition: H₂:CO:Ar = 0.6:0.2:0.2 (molar), 100 kPa total pressure.
+    Related publication: DOI 10.1021/acs.iecr.1c00389.
+publisher: NFDI4Cat Central Data Repository
+license: http://creativecommons.org/licenses/by/4.0
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+subject:
+  - Chemistry
+  - Engineering
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/2d6m-exeb
+  - notation: doi:10.1021/acs.iecr.1c00389
+    description: Related publication DOI
+
+# ============================================================
+# DATA-GENERATING ACTIVITIES (was_generated_by)
+# One kinetics measurement activity covering all 19 runs.
+# ============================================================
+
+was_generated_by:
+
+  # --- 1. CO METHANATION KINETICS MEASUREMENTS ---
+  - id: hdl:21.11165/4cat/2d6m-exeb#methanation_kinetics_measurement
+    title:
+      - CO methanation kinetics measurements (19 experimental runs, Exp2–Exp20)
+    description:
+      - >-
+        Steady-state CO conversion measured at varying superficial velocity (u)
+        and temperature (T, 473–723 K) in an isothermal fixed-bed reactor.
+        19 CSV/JSON file pairs; Exp1, 6, 10 excluded (confidential).
+        Source: datasets/hdl.21.11165_4cat_2d6m-exeb/dataset/Exp*/
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Isothermal fixed-bed flow reactor (cylindrical, r = 0.008 m)
+    sample_state: powder
+    realized_plan:
+      id: hdl:21.11165/4cat/2d6m-exeb#methanation_kinetics_protocol
+      atmosphere: H2/CO/Ar
+      feed_composition: H2:CO:Ar = 0.6:0.2:0.2 (molar fractions)
+      total_pressure: 100.0   # kPa
+      operation_mode: isothermal
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/2d6m-exeb#sample_NiAl2O3
+        title: 20 wt% Ni/Al₂O₃
+
+# ============================================================
+# CATALYTIC REACTION THIS DATASET IS ABOUT (is_about_activity)
+# ============================================================
+
+is_about_activity:
+  - id: hdl:21.11165/4cat/2d6m-exeb#co_methanation_reaction
+    title:
+      - CO methanation over Ni/Al₂O₃ (CO + 3H₂ → CH₄ + H₂O)
+    description:
+      - >-
+        Catalytic CO methanation over supported Ni catalyst in a fixed-bed flow
+        reactor. Steady-state kinetics data at temperatures 473–723 K.
+        Feed: H₂:CO:Ar = 0.6:0.2:0.2 molar, 100 kPa. Response variable: CO
+        conversion as a function of superficial velocity and temperature.
+    carried_out_by:
+      - id: hdl:21.11165/4cat/2d6m-exeb#fixed_bed_reactor
+        title: Isothermal fixed-bed reactor (cylindrical, r = 0.008 m)
+    had_input_entity:
+      - id: hdl:21.11165/4cat/2d6m-exeb#reactant_CO
+        title: Carbon monoxide (CO)
+        rdf_type:
+          id: CHEBI:17245
+          title: carbon monoxide
+      - id: hdl:21.11165/4cat/2d6m-exeb#reactant_H2
+        title: Hydrogen (H₂)
+        rdf_type:
+          id: CHEBI:18276
+          title: molecular hydrogen
+
+# ============================================================
+# CATALYST SAMPLE (is_about_entity)
+# ============================================================
+
+is_about_entity:
+  - id: hdl:21.11165/4cat/2d6m-exeb#sample_NiAl2O3
+    title: 20 wt% Ni/Al₂O₃
+    description: >-
+      Supported nickel catalyst: 20 wt% Ni on alumina support. Particle
+      diameter 630 µm. BET specific surface area 14 m²/g. Properties reported
+      in ExpXX_metadata.json files.
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 20.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: Ni loading in wt% (Exp2_metadata.json)
+      - value: 14.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+        unit: https://qudt.org/vocab/unit/M2-PER-GM
+        description: BET specific surface area in m²/g (Exp2_metadata.json)
+      - value: 630.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Length
+        unit: https://qudt.org/vocab/unit/MicroM
+        description: Catalyst particle diameter in µm (Exp2_metadata.json)

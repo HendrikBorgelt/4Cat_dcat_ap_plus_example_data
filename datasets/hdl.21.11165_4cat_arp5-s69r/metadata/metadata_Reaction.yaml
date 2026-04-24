@@ -1,0 +1,330 @@
+---
+# CoreMeta4Cat metadata — Catalytic Reaction sub-dataset
+# Dataset: hdl:21.11165/4cat/arp5-s69r (NFDI4Cat Central Data Repository)
+# Schema: https://w3id.org/nfdi4cat/coremeta4cat (v1.0.0)
+#
+# Source files: Cat test json_outputs/ folder (31 JSON files)
+#   A1–A6   (6):  Carbonylation, ARNE01, 100°C, time-course (3h → 0.083h), EtOH, NaOAc base
+#   B1–B4   (4):  Carbonylation, ARNE01, 100°C, 2h, varying base/substrate conditions
+#   C1–C3   (3):  Carbonylation, ARNE02 (Pd/SiO2), 100°C, varying duration
+#   k1–k9   (9):  Carbonylation, ARNE01, 60/70/80°C, varying duration, TEA base
+#   S1–S5   (5):  Carbonylation, ARNE01, 100°C, 2h, substrate/solvent scope
+#   S6      (1):  Phenoxycarbonylation, ARNE01, 100°C, 7h
+#   S7–S9   (3):  Aminocarbonylation, ARNE01, 100/120/140°C, 5h
+# Overview: Cat test json_outputs/Overview Reaction Description-2.txt
+# Analysis method: GC-MS with n-decane internal standard (2.2 vol%)
+
+id: hdl:21.11165/4cat/arp5-s69r#reaction_dataset
+title:
+  - Catalytic carbonylation testing data – Pd3P/SiO2 and Pd/SiO2 (31 experiments)
+description:
+  - >-
+    Catalytic performance data for Pd-catalysed carbonylation reactions
+    (carbonylation, phenoxycarbonylation, aminocarbonylation) using Pd3P/SiO2
+    (ARNE01, 5 wt% Pd) and Pd/SiO2 (ARNE02, 5 wt% Pd) catalysts. 31 batch
+    experiments in a Parr 5500 compact reactor (25 mL SS, overhead stirrer
+    1000 rpm). Primary substrate: iodobenzene (1 mmol, 204 mg). CO atmosphere
+    (6 bar, or 10 bar for some aminocarbonylation). Catalyst mass: 10 mg.
+    Response variables: reactant conversion and product yield (GC-MS, n-decane
+    internal standard 2.2 vol%). Five experimental series:
+    A (kinetics, 100°C), B (conditions scope, 100°C), C (Pd reference, 100°C),
+    k (temperature series, 60–80°C), S (substrate scope + reaction type scope).
+    Source: Cat test json_outputs/*.json and Overview Reaction Description-2.txt.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/arp5-s69r
+theme:
+  - preferred_label:
+      - Chemistry
+      - Engineering
+
+# ---------- DATA-GENERATING ACTIVITIES ----------
+
+was_generated_by:
+
+  # --- A-SERIES: Time-course kinetics, ARNE01, 100°C ---
+  - id: hdl:21.11165/4cat/arp5-s69r#A_series_testing
+    title:
+      - "A-series: Carbonylation time-course study (A1-A6, ARNE01, 100 degC, EtOH)"
+    description:
+      - >-
+        Six experiments varying reaction duration (A1: 3h, A2: 2h, A3: 1h,
+        A4: 0.5h, A5: 0.17h, A6: 0.083h) at 100°C. Pd3P/SiO2 (ARNE01, 10 mg).
+        Iodobenzene (1 mmol, 204 mg) + sodium acetate (3 mmol) + CO (6 bar)
+        in ethanol (4 mL). Product: ethyl benzoate. Yields range from
+        A6 (40%, 0.083h) to A1 (highest conversion at 3h).
+        Source: A1-2.json – A6-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS, cylindrical, ID 25.4 mm)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#A_series_protocol
+      atmosphere: CO
+      co_pressure: 6.0          # bar
+      temperature: 100.0        # °C
+      stirrer_speed: 1000       # rpm
+      catalyst_mass: 0.01       # g
+      catalyst_loading_wt%: 5.0
+      metal_loading_mol%: 0.5
+      solvent: Ethanol
+      solvent_volume: 4.0       # mL
+      base: sodium acetate
+      heating_type: Electric
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+  # --- B-SERIES: Conditions scope, ARNE01, 100°C, 2h ---
+  - id: hdl:21.11165/4cat/arp5-s69r#B_series_testing
+    title:
+      - "B-series: Carbonylation conditions scope (B1-B4, ARNE01, 100 degC, 2h)"
+    description:
+      - >-
+        Four experiments at fixed duration (2h) and temperature (100°C) exploring
+        varying base and substrate conditions with Pd3P/SiO2 (ARNE01).
+        Iodobenzene (1 mmol) + CO (6 bar) in ethanol (4 mL). Base varies
+        (sodium acetate in B1; see individual JSON files for B2–B4).
+        Source: B1-2.json – B4-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS, cylindrical, ID 25.4 mm)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#B_series_protocol
+      atmosphere: CO
+      co_pressure: 6.0    # bar
+      temperature: 100.0  # °C
+      experiment_duration: PT2H
+      stirrer_speed: 1000 # rpm
+      catalyst_mass: 0.01 # g
+      solvent: Ethanol
+      solvent_volume: 4.0 # mL
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+  # --- C-SERIES: Reference Pd/SiO2, 100°C, varying duration ---
+  - id: hdl:21.11165/4cat/arp5-s69r#C_series_testing
+    title:
+      - "C-series: Carbonylation reference comparison (C1-C3, ARNE02, 100 degC)"
+    description:
+      - >-
+        Three experiments with Pd/SiO2 (ARNE02, reference catalyst) at 100°C
+        with varying duration (C1: 0.17h, C2: 0.5h, C3: 1h). Enables direct
+        activity comparison between ARNE01 (Pd3P/SiO2) and ARNE02 (Pd/SiO2).
+        Iodobenzene (1 mmol) + NaOAc (3 mmol) + CO (6 bar) in EtOH (4 mL).
+        Source: C1-2.json – C3-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#C_series_protocol
+      atmosphere: CO
+      co_pressure: 6.0    # bar
+      temperature: 100.0  # °C
+      catalyst_mass: 0.01 # g
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE02
+        title: Pd/SiO2 (ARNE02, 5 wt% Pd)
+
+  # --- k-SERIES: Temperature effect, ARNE01, 60–80°C ---
+  - id: hdl:21.11165/4cat/arp5-s69r#k_series_testing
+    title:
+      - "k-series: Temperature effect study (k1-k9, ARNE01, 60/70/80 degC, TEA base)"
+    description:
+      - >-
+        Nine experiments in a 3×3 factorial (3 temperatures × 3 durations) with
+        Pd3P/SiO2 (ARNE01): k1–k3 at 60°C (0.5/0.75/1h), k4–k6 at 70°C
+        (0.5/0.75/1h), k7–k9 at 80°C (0.5/0.75/1h). Iodobenzene (1 mmol,
+        204 mg) + triethylamine (3 mmol, 303 mg) as base + CO (6 bar) in
+        ethanol (4 mL). Lower temperature range enables kinetic constant
+        determination. Source: k1-2.json – k9-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#k_series_protocol
+      atmosphere: CO
+      co_pressure: 6.0    # bar
+      temperature_range: 60–80°C
+      catalyst_mass: 0.01 # g
+      solvent: Ethanol
+      solvent_volume: 4.0 # mL
+      base: triethylamine
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+  # --- S-SERIES: Substrate and reaction type scope ---
+  - id: hdl:21.11165/4cat/arp5-s69r#S_carbonylation_testing
+    title:
+      - "S-series carbonylation: substrate scope (S1-S5, ARNE01, 100 degC, 2h)"
+    description:
+      - >-
+        Five carbonylation experiments varying the nucleophile/substrate at
+        100°C, 2h, with ARNE01. Includes different alcohols, aryl iodides, and
+        amines as nucleophiles/co-substrates. Product yields determined by
+        GC-MS. Source: S1-2.json – S5-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#S_carbonylation_protocol
+      atmosphere: CO
+      co_pressure: 6.0    # bar
+      temperature: 100.0  # °C
+      experiment_duration: PT2H
+      catalyst_mass: 0.01 # g
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+  - id: hdl:21.11165/4cat/arp5-s69r#S_phenoxycarbonylation_testing
+    title:
+      - S-series phenoxycarbonylation (S6, ARNE01, 100°C, 7h)
+    description:
+      - >-
+        Phenoxycarbonylation of iodobenzene with phenol as nucleophile.
+        ARNE01, 100°C, 7h, CO (6 bar), ethanol or toluene solvent.
+        Product: phenyl benzoate. Source: S6-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#S6_protocol
+      atmosphere: CO
+      co_pressure: 6.0    # bar
+      temperature: 100.0  # °C
+      experiment_duration: PT7H
+      catalyst_mass: 0.01 # g
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+  - id: hdl:21.11165/4cat/arp5-s69r#S_aminocarbonylation_testing
+    title:
+      - S-series aminocarbonylation (S7–S9, ARNE01, 100–140°C, 5h)
+    description:
+      - >-
+        Three aminocarbonylation experiments with ARNE01 using amine nucleophiles
+        at elevated temperatures. S7: 100°C, 5h; S8: aniline (4 mmol) +
+        triethylamine (3 mmol) + CO (10 bar) in toluene (4 mL) at 120°C, 5h →
+        benzanilide (56% yield, 56% conversion); S9: 140°C, 5h.
+        Source: S7-2.json, S8-2.json, S9-2.json.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    equipment:
+      - Parr 5500 series compact reactor (25 mL SS)
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#S_aminocarbonylation_protocol
+      atmosphere: CO
+      temperature_range: 100–140°C
+      experiment_duration: PT5H
+      catalyst_mass: 0.01   # g
+      solvent: Toluene
+      solvent_volume: 4.0   # mL
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+# ---------- CATALYTIC REACTIONS BEING STUDIED ----------
+
+is_about_activity:
+  - id: hdl:21.11165/4cat/arp5-s69r#carbonylation_reaction
+    title:
+      - Pd-catalysed carbonylation of aryl iodides with CO insertion
+    description:
+      - >-
+        Palladium-catalysed carbonylation reactions (CO insertion) of aryl iodides
+        (primarily iodobenzene) with various nucleophiles (alcohols, phenols, amines)
+        under CO atmosphere. Three reaction types: (1) alkoxycarbonylation
+        (iodobenzene + alcohol + CO → ester), (2) phenoxycarbonylation
+        (iodobenzene + phenol + CO → aryl ester), (3) aminocarbonylation
+        (iodobenzene + amine + CO → amide). Catalyst: Pd3P/SiO2 (ARNE01) vs
+        Pd/SiO2 (ARNE02). Parr 5500 batch reactor, 6–10 bar CO, 60–140°C.
+    rdf_type:
+      id: VOC4CAT:0007001
+      title: heterogeneous catalysis
+    carried_out_by:
+      - id: hdl:21.11165/4cat/arp5-s69r#parr5500_reactor
+        title: Parr 5500 series compact reactor
+        description: >-
+          25 mL stainless steel cylindrical reactor (ID 25.4 mm, length 50.8 mm).
+          Overhead stirrer (1000 rpm), electric heating. Parr Instrument Company.
+    had_input_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#reactant_iodobenzene
+        title: Iodobenzene
+        rdf_type:
+          id: CHEBI:35640
+          title: iodobenzene
+      - id: hdl:21.11165/4cat/arp5-s69r#reactant_CO
+        title: Carbon monoxide (CO, carbonylating agent)
+        rdf_type:
+          id: CHEBI:17245
+          title: carbon monoxide
+    product_identification_method:
+      - title: GC-MS with n-decane internal standard
+        description: >-
+          Liquid-phase product analysis by gas chromatography-mass spectrometry
+          (GC-MS). Internal standard: n-decane (2.2 vol%). Conversion and yield
+          as dimensionless fractions (0–1) reported in individual JSON files.
+
+# ---------- CATALYST ENTITIES ----------
+
+is_about_entity:
+  - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+    title: Pd3P/SiO2 (ARNE01)
+    description: >-
+      Palladium phosphide (Pd3P) supported on silica. 5 wt% Pd, 0.5 mol% metal
+      loading. Catalyst mass per experiment: 10 mg. Phase: Pd3P (ICSD 85525).
+      Used in A, B, k, and S-series experiments (28 of 31 runs).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 5.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: Pd loading in wt% (all JSON files, Catalyst.Catalyst_loading_wt%)
+      - value: 0.5
+        has_quantity_type: http://qudt.org/vocab/quantitykind/AmountOfSubstanceFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: Metal loading in mol% (all JSON files, Catalyst.Metal_loading_mol%)
+      - value: 0.01
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+        unit: https://qudt.org/vocab/unit/GM
+        description: Catalyst mass per experiment (all JSON files, Catalyst.Catalyst_mass_g)
+
+  - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE02
+    title: Pd/SiO2 (ARNE02)
+    description: >-
+      Palladium on silica, 5 wt% Pd. Reference catalyst without phosphorus.
+      Phase: Pd fcc (ICSD 52251). Used in C-series experiments (C1–C3, 3 runs).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 5.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: Pd loading in wt% (C1-2.json, Catalyst.Catalyst_loading_wt%)
+      - value: 0.01
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+        unit: https://qudt.org/vocab/unit/GM
+        description: Catalyst mass per experiment (C-series JSON files)

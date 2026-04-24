@@ -1,0 +1,105 @@
+---
+# CoreMeta4Cat metadata — CO Chemisorption sub-dataset
+# Dataset: hdl:21.11165/4cat/arp5-s69r (NFDI4Cat Central Data Repository)
+# Schema: https://w3id.org/nfdi4cat/coremeta4cat (v1.0.0)
+#
+# Source files (time-series ASCII: Zeit / CO ppm / CO2 ppm / Temperature [°C] / areas):
+#   Raw data/CO chemisorption/Chemisorption_Pd_raw1-2.txt     — ARNE02 (Pd/SiO2), run 1
+#   Raw data/CO chemisorption/Chemisorption_Pd-raw2-2.txt     — ARNE02 (Pd/SiO2), run 2
+#   Raw data/CO chemisorption/Chemisorption_Pd3P-raw1-2.txt   — ARNE01 (Pd3P/SiO2), run 1
+#   Raw data/CO chemisorption/Chemisorption_Pd3P-raw2-2.txt   — ARNE01 (Pd3P/SiO2), run 2
+# Key result from Pd3P-raw1: Summe Fläche CO [ppms] = 916.5; Summe Fläche CO2 = 5550
+
+id: hdl:21.11165/4cat/arp5-s69r#chem_dataset
+title:
+  - CO chemisorption data – Pd/SiO2 and Pd3P/SiO2 (2 runs each)
+description:
+  - >-
+    CO chemisorption on Pd/SiO2 (ARNE02) and Pd3P/SiO2 (ARNE01); two independent
+    measurements per catalyst (run 1 and run 2). Pulse chemisorption or
+    temperature-programmed desorption with CO probe molecule; time-resolved
+    data recording CO and CO2 concentrations (ppm) and temperature (°C).
+    Results report CO uptake area (Summe Fläche CO [ppms]) as a measure of
+    accessible Pd surface sites. Pd3P-raw1: CO area = 916.5 ppms.
+    Measurement at 25°C initial temperature.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/arp5-s69r
+theme:
+  - preferred_label:
+      - Chemistry
+      - Engineering
+
+# ---------- DATA-GENERATING ACTIVITY ----------
+
+was_generated_by:
+  - id: hdl:21.11165/4cat/arp5-s69r#chem_characterization
+    title:
+      - CO chemisorption of Pd/SiO2 and Pd3P/SiO2 (4 measurements, 2 catalysts × 2 runs)
+    description:
+      - >-
+        CO chemisorption measurements to quantify accessible Pd surface sites.
+        Time-resolved data: CO ppm, CO2 ppm, temperature (°C) vs time.
+        CO uptake area (Summe Fläche CO [ppms]) reported as key result.
+        Files:
+          Chemisorption_Pd_raw1-2.txt     — ARNE02, run 1
+          Chemisorption_Pd-raw2-2.txt     — ARNE02, run 2
+          Chemisorption_Pd3P-raw1-2.txt   — ARNE01, run 1 (CO area = 916.5 ppms)
+          Chemisorption_Pd3P-raw2-2.txt   — ARNE01, run 2
+    rdf_type:
+      id: CHMO:0000990
+      title: CO chemisorption
+    equipment:
+      - Chemisorption analyser (specific model not stated in dataset files)
+    sample_state: powder
+    realized_plan:
+      id: hdl:21.11165/4cat/arp5-s69r#chem_protocol
+      probe_molecule: CO
+      measurement_temperature: 25.0   # °C initial temperature (from raw data files)
+    evaluated_entity:
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE02
+        title: Pd/SiO2 (ARNE02, 5 wt% Pd)
+      - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+        title: Pd3P/SiO2 (ARNE01, 5 wt% Pd)
+
+# ---------- ENTITIES THIS DATASET IS ABOUT ----------
+
+is_about_entity:
+  - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE02
+    title: Pd/SiO2 (ARNE02)
+    description: >-
+      Pd/SiO2 (5 wt% Pd) reference catalyst. CO chemisorption files:
+      Chemisorption_Pd_raw1-2.txt (run 1) and Chemisorption_Pd-raw2-2.txt (run 2).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 5.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: Pd loading in wt%
+
+  - id: hdl:21.11165/4cat/arp5-s69r#sample_ARNE01
+    title: Pd3P/SiO2 (ARNE01)
+    description: >-
+      Pd3P/SiO2 (5 wt% Pd) active catalyst. CO chemisorption files:
+      Chemisorption_Pd3P-raw1-2.txt (run 1, CO area = 916.5 ppms) and
+      Chemisorption_Pd3P-raw2-2.txt (run 2).
+    rdf_type:
+      id: OBI:0000747
+      title: material sample
+    has_physical_state: powder
+    has_quantitative_attribute:
+      - value: 5.0
+        has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+        unit: https://qudt.org/vocab/unit/PERCENT
+        description: Pd loading in wt%
+      - value: 916.5
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Amount
+        unit: https://qudt.org/vocab/unit/PicoMOL-PER-GM
+        description: >-
+          CO uptake area (Summe Fläche CO [ppms], run 1) from
+          Chemisorption_Pd3P-raw1-2.txt as reported; value in ppms units as stored

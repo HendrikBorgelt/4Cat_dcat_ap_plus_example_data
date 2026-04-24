@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m linkml.validators.jsonschema --version)",
+      "Bash(linkml-validate --version)",
+      "Bash(pip show *)",
+      "Bash(pip install *)",
+      "Bash(conda --version)",
+      "Bash(python3 -c \"import linkml; print\\(linkml.__version__\\)\")",
+      "Bash(python3 -m pip install linkml)",
+      "Read(//c/Users/hendr/AppData/Local/Programs/Python//**)",
+      "Bash(ls /c/Python*)",
+      "Read(//c/Users/hendr/Anaconda3/**)",
+      "Read(//c/ProgramData/Anaconda3/**)",
+      "Read(//c/Users/hendr/**)",
+      "Bash(/c/Users/hendr/Anaconda3/python.exe -c \"import linkml; print\\('linkml', linkml.__version__\\)\")",
+      "Bash(/c/Users/hendr/Anaconda3/python.exe -m pip install linkml)",
+      "Bash(/c/Users/hendr/AppData/Local/Programs/Python/Python311/python.exe -c \"import linkml; print\\('linkml', linkml.__version__\\)\")",
+      "Bash(/c/Users/hendr/AppData/Local/Programs/Python/Python311/python.exe -m pip install linkml)",
+      "Bash(/c/Users/hendr/AppData/Local/Programs/Python/Python311/Scripts/linkml-validate --version)",
+      "Bash(C:\\\\Users\\\\hendr\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Scripts\\\\gen-json-schema.exe schema_files/coremeta4cat/schema/coremeta4cat.yaml --top-class CatalysisDataset)",
+      "Bash(\"C:\\\\Users\\\\hendr\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Scripts\\\\gen-json-schema.exe\" schema_files/coremeta4cat/schema/coremeta4cat.yaml --top-class CatalysisDataset)",
+      "Bash(py -3.11 -c ' *)",
+      "Bash(\"C:\\\\Users\\\\hendr\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Scripts\\\\linkml-validate.exe\" -s schema_files/coremeta4cat/schema/coremeta4cat.yaml -C CatalysisDataset datasets/hdl.21.11165_4cat_2d6m-exeb/metadata/coremeta4cat_metadata_combined.yaml)",
+      "Bash(\"C:\\\\Users\\\\hendr\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Scripts\\\\linkml-validate.exe\" -s schema_files/coremeta4cat/schema/coremeta4cat.yaml -C CatalysisDataset datasets/hdl.21.11165_4cat_arp5-s69r/metadata/metadata_DRIFT.yaml)",
+      "Bash(\"C:\\\\Users\\\\hendr\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Scripts\\\\linkml-validate.exe\" -s schema_files/coremeta4cat/schema/coremeta4cat.yaml -C CatalysisDataset datasets/hdl.21.11165_4cat_arp5-s69r/metadata/metadata_Reaction.yaml)",
+      "Bash(\"C:\\\\Users\\\\hendr\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Scripts\\\\linkml-validate.exe\" -s schema_files/coremeta4cat/schema/coremeta4cat.yaml -C CatalysisDataset datasets/hdl.21.11165_4cat_32x1-99x6/metadata/coremeta4cat_metadata_combined.yaml)",
+      "Bash(find \"/c/Users/hendr/Documents/GitHub/4Cat_dcat_ap_plus_example_data/schema_files/coremeta4cat/schema\" -name \"*.yaml\" -exec grep -l \"union_of\\\\|any_of\" {} \\\\;)",
+      "Bash(awk '/^  CatalysisDataset:/,/^  [A-Z]/ {print NR\": \"$0}' \"/c/Users/hendr/Documents/GitHub/4Cat_dcat_ap_plus_example_data/schema_files/coremeta4cat/schema/coremeta4cat.yaml\")"
+    ]
+  }
+}
