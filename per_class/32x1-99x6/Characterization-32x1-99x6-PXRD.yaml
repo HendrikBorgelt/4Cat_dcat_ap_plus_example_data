@@ -1,0 +1,56 @@
+---
+id: coremeta4cat:CHAR_32x1-99x6_PXRD
+title:
+- Powder XRD phase analysis (10 catalysts)
+description:
+- Powder X-ray diffraction for phase identification of all 10 Pd/P-Al2O3 and Pd/P-SiO2 catalysts, plus
+  a P/SiO2 support-only reference sample without Pd (file PXRD_1PSiO2.xy). Two-theta range ~2-92 degrees,
+  step size 0.015 degrees (most files); two files (nominal 5 wt% P samples) cover a shorter range ~2-63.5
+  degrees.
+rdf_type:
+  id: CHMO:0000158
+  title: powder X-ray diffraction
+carried_out_by:
+- id: coremeta4cat:DEV_32x1-99x6_PXRD
+  title: X-ray diffractometer
+  description: Instrument model not specified in the source dataset files.
+evaluated_entity:
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_0P
+  title: Pd/Al2O3
+  description: Pd on Al2O3, P-free reference
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_1P
+  title: Pd/1P/Al2O3
+  description: Pd on Al2O3, nominal 1 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_2P
+  title: Pd/2P/Al2O3
+  description: Pd on Al2O3, nominal 2 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_3P
+  title: Pd/3P/Al2O3
+  description: Pd on Al2O3, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_4P
+  title: Pd/4P/Al2O3
+  description: Pd on Al2O3, nominal 4 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_5P
+  title: Pd/5P/Al2O3
+  description: Pd on Al2O3, nominal 5 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_0P
+  title: Pd/SiO2
+  description: Pd on SiO2, P-free reference
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_1P
+  title: Pd/1P/SiO2
+  description: Pd on SiO2, nominal 1 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_3P
+  title: Pd/3P/SiO2
+  description: Pd on SiO2, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_5P
+  title: Pd/5P/SiO2
+  description: Pd on SiO2, nominal 5 wt% P
+realized_plan:
+  id: coremeta4cat:CHAR_32x1-99x6_PXRD_method
+  title: Powder XRD measurement method
+  description: Two-theta scan, ~2-92 degrees, step size 0.015 degrees. One file (PXRD_1PSiO2.xy) is a
+    Pd-free P/SiO2 support reference; one file (PXRD_Pd5Al2O3.xy) is missing the 'P' in its name but is
+    interpreted as the nominal 5 wt% P/Al2O3 sample based on the file series context (matches ICP sample
+    FR507).
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6

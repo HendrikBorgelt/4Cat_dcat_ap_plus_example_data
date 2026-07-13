@@ -1,0 +1,46 @@
+---
+id: coremeta4cat:CHAR_32x1-99x6_ICPAES
+title:
+- ICP-AES elemental composition analysis (8 catalysts)
+description:
+- Inductively coupled plasma atomic emission spectroscopy for bulk Pd and P content of the 8 P-modified
+  catalysts (measured Pd 1.8-2.0 wt%, P 0.8-4.8 wt%, deviating somewhat from nominal loadings; icp_results.txt).
+  P-free reference catalysts (Pd/Al2O3, Pd/SiO2) were not analysed by ICP-AES.
+rdf_type:
+  id: CHMO:0000267
+  title: inductively coupled plasma atomic emission spectroscopy
+carried_out_by:
+- id: coremeta4cat:DEV_32x1-99x6_ICPAES
+  title: ICP-AES spectrometer
+  description: Instrument model not specified in the source dataset files.
+evaluated_entity:
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_1P
+  title: Pd/1P/Al2O3
+  description: Pd on Al2O3, nominal 1 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_2P
+  title: Pd/2P/Al2O3
+  description: Pd on Al2O3, nominal 2 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_3P
+  title: Pd/3P/Al2O3
+  description: Pd on Al2O3, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_4P
+  title: Pd/4P/Al2O3
+  description: Pd on Al2O3, nominal 4 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_5P
+  title: Pd/5P/Al2O3
+  description: Pd on Al2O3, nominal 5 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_1P
+  title: Pd/1P/SiO2
+  description: Pd on SiO2, nominal 1 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_3P
+  title: Pd/3P/SiO2
+  description: Pd on SiO2, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_5P
+  title: Pd/5P/SiO2
+  description: Pd on SiO2, nominal 5 wt% P
+realized_plan:
+  id: coremeta4cat:CHAR_32x1-99x6_ICPAES_method
+  title: ICP-AES elemental analysis method
+  description: 'Elements analyzed: Pd, P. Results reported in wt% (icp_results.txt).'
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6

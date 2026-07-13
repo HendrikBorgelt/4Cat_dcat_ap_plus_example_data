@@ -1,0 +1,119 @@
+---
+id: hdl:21.11165/4cat/32x1-99x6
+title:
+- 'Support Engineering with Phosphorus: Tuning the Palladium-Catalyzed Selective Hydrogenation of Cinnamyl
+  Alcohol and Citral'
+description:
+- Catalyst characterization (BET, ICP-AES, PXRD, DRIFT, IR) and catalytic testing data for a series of
+  Pd/P catalysts (nominal 2 wt% Pd, 0-5 wt% P) on Al2O3 and SiO2 supports, investigating how phosphorus
+  modification of the support tunes the Pd-catalyzed selective hydrogenation of cinnamyl alcohol (CAL)
+  and citral. Catalytic performance was screened via Central Composite Design (Al2O3/CAL, 27 runs) and
+  full-factorial designs (SiO2/CAL, Al2O3/citral, SiO2/citral; 9 runs each) varying temperature (30-70
+  C), pressure (1-9 bar), phosphorus loading, and reaction time. TEM is mentioned in the original repository
+  description but no TEM data files are included in the deposited dataset.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+keyword:
+- Chemistry
+- Engineering
+- Catalysis
+- Heterogeneous catalysis
+- Palladium catalyst
+- Phosphorus modification
+- Selective hydrogenation
+- Cinnamyl alcohol
+- Citral
+creator:
+- name:
+  - Rang, Fabian
+- name:
+  - Hanf, Schirin
+- name:
+  - Holtermann, Birger
+- name:
+  - Eggeler, Yolita
+- name:
+  - Barth, Simon
+- name:
+  - Grunwaldt, Jan-Dierk
+publisher:
+  name:
+  - NFDI4Cat Central Data Repository
+release_date: '2026-03-11'
+dataset_distribution:
+- access_URL:
+  - id: https://hdl.handle.net/21.11165/4cat/32x1-99x6
+  description:
+  - Repository landing page providing access to the characterization and catalytic testing data files.
+  licence:
+    id: https://creativecommons.org/licenses/by/4.0/
+    title: CC BY 4.0
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6
+- notation: doi:10.1021/ac0702802
+  description: Methodology reference cited for the DRIFT pseudo-absorbance conversion (not this dataset's
+    own publication)
+was_generated_by:
+- id: coremeta4cat:CHAR_32x1-99x6_BET
+  title:
+  - BET surface area analysis (10 catalysts)
+  description:
+  - Surface area 72-126 m2/g across all 10 catalysts. See per_class/32x1-99x6/Characterization-32x1-99x6-BET.yaml
+    for full detail.
+- id: coremeta4cat:CHAR_32x1-99x6_ICPAES
+  title:
+  - ICP-AES elemental composition analysis (8 catalysts)
+  description:
+  - Measured Pd/P loadings for the 8 P-modified catalysts. See per_class/32x1-99x6/Characterization-32x1-99x6-ICPAES.yaml
+    for full detail.
+- id: coremeta4cat:CHAR_32x1-99x6_PXRD
+  title:
+  - Powder XRD phase analysis (10 catalysts)
+  description:
+  - Phase identification for all 10 catalysts plus a P/SiO2 support-only reference. See per_class/32x1-99x6/Characterization-32x1-99x6-PXRD.yaml
+    for full detail.
+- id: coremeta4cat:CHAR_32x1-99x6_DRIFT
+  title:
+  - DRIFT CO-adsorption spectroscopy (4 catalysts)
+  description:
+  - CO adsorption at room temperature for the 4 unmodified/3P catalysts. See per_class/32x1-99x6/Characterization-32x1-99x6-DRIFT.yaml
+    for full detail.
+- id: coremeta4cat:CHAR_32x1-99x6_IR
+  title:
+  - Infrared spectroscopy (6 catalysts)
+  description:
+  - IR spectra for the 6 P-modified catalysts (1, 3, 5 wt% P on Al2O3/SiO2). See per_class/32x1-99x6/Characterization-32x1-99x6-IR.yaml
+    for full detail.
+is_about_activity:
+- id: coremeta4cat:REAC_32x1-99x6_CAL_Al2O3
+  title:
+  - Selective hydrogenation of cinnamyl alcohol over Pd-P/Al2O3 catalysts
+  description:
+  - CCD design, 27 runs, 6 catalysts (0-5 wt% P). See per_class/32x1-99x6/CatalyticReaction-32x1-99x6-CAL-Al2O3.yaml
+    for full detail.
+- id: coremeta4cat:REAC_32x1-99x6_CAL_SiO2
+  title:
+  - Selective hydrogenation of cinnamyl alcohol over Pd-P/SiO2 catalysts
+  description:
+  - Full factorial design, 9 runs, 4 catalysts (0-5 wt% P). See per_class/32x1-99x6/CatalyticReaction-32x1-99x6-CAL-SiO2.yaml
+    for full detail.
+- id: coremeta4cat:REAC_32x1-99x6_Citral_Al2O3
+  title:
+  - Selective hydrogenation of citral over Pd-P/Al2O3 catalysts
+  description:
+  - Full factorial design, 9 runs, 3 catalysts (1, 3, 5 wt% P). See per_class/32x1-99x6/CatalyticReaction-32x1-99x6-Citral-Al2O3.yaml
+    for full detail.
+- id: coremeta4cat:REAC_32x1-99x6_Citral_SiO2
+  title:
+  - Selective hydrogenation of citral over Pd-P/SiO2 catalysts
+  description:
+  - Full factorial design, 9 runs, 3 catalysts (1, 3, 5 wt% P). See per_class/32x1-99x6/CatalyticReaction-32x1-99x6-Citral-SiO2.yaml
+    for full detail.
+is_about_entity:
+- id: coremeta4cat:CAT_32x1-99x6_all
+  title: 10 Pd/P catalyst samples (Al2O3 and SiO2 supports)
+  description: Pd catalysts (nominal 2 wt% Pd) with 0-5 wt% nominal phosphorus loading on Al2O3 (6 samples)
+    and SiO2 (4 samples) supports. See used_catalyst in the four CatalyticReaction-32x1-99x6-*.yaml files
+    and evaluated_entity in the five Characterization-32x1-99x6-*.yaml files under per_class/32x1-99x6/
+    for per-sample detail.

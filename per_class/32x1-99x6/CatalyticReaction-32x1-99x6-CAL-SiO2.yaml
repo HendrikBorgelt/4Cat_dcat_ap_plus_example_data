@@ -1,0 +1,120 @@
+---
+id: coremeta4cat:REAC_32x1-99x6_CAL_SiO2
+reaction_name:
+- selective hydrogenation of cinnamyl alcohol
+title:
+- Selective hydrogenation of cinnamyl alcohol over Pd-P/SiO2 catalysts
+description:
+- Selective hydrogenation of cinnamyl alcohol (CAL) over 4 Pd/P/SiO2 catalysts (P loading 0-5 wt%, ~2
+  wt% Pd) in a full factorial design (9 runs) exploring temperature, pressure, phosphorus loading, and
+  time. An initial fixed-condition screening (50C/5bar/30min, hot-filtration leaching test) gave CAL conversion/HCAL
+  yield of 23/22% (Pd/SiO2) and 78/40% (Pd/3P/SiO2). Conversion ranged 12-100%, yield 9-56% across the
+  9-run design (catalytic_data.xlsx, 'Pd-XPSiO2_FF_CAL').
+rdf_type:
+  id: VOC4CAT:0000260
+  title: hydrogenation
+catalyst_type:
+- heterogeneous_catalysis
+catalyst_form:
+- supported
+used_catalyst:
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_0P
+  title: Pd/SiO2
+  description: Pd on SiO2 support, unmodified (P-free) reference catalyst
+  has_physical_state: SOLID
+  has_quantitative_attribute:
+  - value: 126.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+    unit: M2-PER-GM
+    description: BET specific surface area (bet_results.txt)
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_1P
+  title: Pd/1P/SiO2 (nominal 1 wt% P)
+  description: Pd on SiO2 support, nominal 1 wt% P (phosphorus modifier)
+  has_physical_state: SOLID
+  has_quantitative_attribute:
+  - value: 2.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: ICP-AES measured Pd loading (icp_results.txt)
+  - value: 1.1
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: ICP-AES measured P loading (icp_results.txt)
+  - value: 118.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+    unit: M2-PER-GM
+    description: BET specific surface area (bet_results.txt)
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_3P
+  title: Pd/3P/SiO2 (nominal 3 wt% P)
+  description: Pd on SiO2 support, nominal 3 wt% P (phosphorus modifier)
+  has_physical_state: SOLID
+  has_quantitative_attribute:
+  - value: 1.8
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: ICP-AES measured Pd loading (icp_results.txt)
+  - value: 2.6
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: ICP-AES measured P loading (icp_results.txt)
+  - value: 98.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+    unit: M2-PER-GM
+    description: BET specific surface area (bet_results.txt)
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_5P
+  title: Pd/5P/SiO2 (nominal 5 wt% P)
+  description: Pd on SiO2 support, nominal 5 wt% P (phosphorus modifier)
+  has_physical_state: SOLID
+  has_quantitative_attribute:
+  - value: 2.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: ICP-AES measured Pd loading (icp_results.txt)
+  - value: 4.8
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: ICP-AES measured P loading (icp_results.txt)
+  - value: 72.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/SpecificArea
+    unit: M2-PER-GM
+    description: BET specific surface area (bet_results.txt)
+used_reactant:
+- id: coremeta4cat:REAC_32x1-99x6_CAL_SiO2_substrate
+  title: cinnamyl alcohol
+  rdf_type:
+    id: CHEBI:15554
+    title: cinnamyl alcohol
+- id: coremeta4cat:REAC_32x1-99x6_CAL_SiO2_H2
+  title: hydrogen
+  rdf_type:
+    id: CHEBI:18276
+    title: molecular hydrogen
+used_reactor:
+- id: coremeta4cat:REAC_32x1-99x6_CAL_SiO2_reactor
+  title: batch pressurized reactor
+  description: Batch pressurised reactor (autoclave or similar sealed vessel), inferred from the 1-9 bar
+    working pressure range and hot-filtration leaching test noted in catalytic_data.xlsx. Specific reactor
+    model not stated in the source dataset files.
+reactor_temperature_range:
+- min_value: 303.15
+  max_value: 343.15
+  has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+  unit: https://qudt.org/vocab/unit/K
+  description: Temperature range explored in the design of experiments (catalytic_data.xlsx)
+experiment_pressure:
+- value: 1.0
+  has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+  unit: https://qudt.org/vocab/unit/BAR
+  description: Minimum pressure in the design space
+- value: 9.0
+  has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+  unit: https://qudt.org/vocab/unit/BAR
+  description: Maximum pressure in the design space
+product_identification_method:
+- id: coremeta4cat:REAC_32x1-99x6_CAL_SiO2_product_id
+  title: Conversion/yield quantification
+  description: Substrate conversion and product yield (%) reported with standard deviations in catalytic_data.xlsx.
+    Specific analytical instrument not stated in the source dataset files; GC is the standard method for
+    this reaction class.
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6

@@ -1,0 +1,35 @@
+---
+id: coremeta4cat:CHAR_32x1-99x6_DRIFT
+title:
+- DRIFT CO-adsorption spectroscopy (4 catalysts)
+description:
+- Diffuse reflectance infrared Fourier transform spectroscopy of CO adsorbed at room temperature, for
+  4 catalysts (Pd/Al2O3, Pd/3P/Al2O3, Pd/SiO2, Pd/3P/SiO2). Spectra converted to pseudo-absorbance (log(1/reflectance))
+  per Anal. Chem. 2007, 79, 10, 3912-3918 (DOI 10.1021/ac0702802) and baseline-corrected (info_drifts.txt);
+  OriginPro 2023 used for analysis/plotting.
+rdf_type:
+  id: CHMO:0000645
+  title: diffuse reflectance infrared Fourier transform spectroscopy
+carried_out_by:
+- id: coremeta4cat:DEV_32x1-99x6_DRIFT
+  title: FTIR spectrometer with DRIFT accessory
+  description: Instrument model not specified in the source dataset files.
+evaluated_entity:
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_0P
+  title: Pd/Al2O3
+  description: Pd on Al2O3, P-free reference
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_3P
+  title: Pd/3P/Al2O3
+  description: Pd on Al2O3, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_0P
+  title: Pd/SiO2
+  description: Pd on SiO2, P-free reference
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_3P
+  title: Pd/3P/SiO2
+  description: Pd on SiO2, nominal 3 wt% P
+realized_plan:
+  id: coremeta4cat:CHAR_32x1-99x6_DRIFT_method
+  title: CO-adsorption DRIFT method
+  description: CO adsorption at room temperature; pseudo-absorbance = log(1/reflectance).
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6
