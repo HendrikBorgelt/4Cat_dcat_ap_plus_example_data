@@ -1,0 +1,69 @@
+---
+id: hdl:21.11165/4cat/2d6m-exeb
+title:
+- Ni catalyst screening for CO, CO2, and mixed CO/CO2 methanation in fixed-bed reactors
+description:
+- 'Steady-state methanation kinetics screening dataset covering 16 valid experimental runs (Exp2,3,4,7,8,9,11,12,13,14,15,16,17,18,19,20
+  -- Exp1, Exp5, Exp6, Exp10 excluded by the data providers, see ReadMe.txt) over 16 distinct supported
+  Ni catalysts (Al2O3, SiO2, ZrO2, TiO2, MgAl2O4 supports; 5-40.8 wt% Ni) in isothermal cylindrical fixed-bed
+  reactors. Three reaction types were studied depending on feed gas composition: CO methanation (4 runs),
+  CO2 methanation (8 runs), and mixed CO/CO2 co-methanation (4 runs). Conversion was determined from outlet
+  gas composition analysis. Related publication: DOI 10.1021/acs.iecr.1c00389.'
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+keyword:
+- Chemistry
+- Catalysis
+- Heterogeneous catalysis
+- CO methanation
+- CO2 methanation
+- Nickel catalyst
+- Fixed-bed reactor
+publisher:
+  name:
+  - NFDI4Cat Central Data Repository
+dataset_distribution:
+- access_URL:
+  - id: https://hdl.handle.net/21.11165/4cat/2d6m-exeb
+  description:
+  - Repository landing page providing access to the per-experiment CSV/JSON data files.
+  licence:
+    id: https://creativecommons.org/licenses/by/4.0/
+    title: CC BY 4.0
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/2d6m-exeb
+- notation: doi:10.1021/acs.iecr.1c00389
+  description: Related publication DOI
+was_generated_by:
+- id: coremeta4cat:CHAR_2d6m-exeb_outlet_gas_analysis
+  title:
+  - Outlet gas composition analysis (all 16 runs)
+  description:
+  - Steady-state outlet gas composition analysis (GC) used to determine CO/CO2 conversion for all 16 catalyst
+    screening runs. See per_class/2d6m-exeb/Characterization-2d6m-exeb.yaml for full detail.
+is_about_activity:
+- id: coremeta4cat:REAC_2d6m-exeb_CO_methanation
+  title:
+  - CO methanation catalyst screening (4 Ni catalysts)
+  description:
+  - CO methanation over 4 supported Ni catalysts (Al2O3, SiO2, ZrO2; 10-20 wt% Ni), Exp2/3/4/12. See per_class/2d6m-exeb/CatalyticReaction-2d6m-exeb-CO.yaml
+    for full detail.
+- id: coremeta4cat:REAC_2d6m-exeb_CO2_methanation
+  title:
+  - CO2 methanation catalyst screening (8 Ni catalysts)
+  description:
+  - CO2 methanation over 8 supported Ni catalysts (Al2O3, MgAl2O4, ZrO2, SiO2; 10-40.8 wt% Ni), Exp7/8/9/13/14/15/16/17.
+    See per_class/2d6m-exeb/CatalyticReaction-2d6m-exeb-CO2.yaml for full detail.
+- id: coremeta4cat:REAC_2d6m-exeb_mixed_methanation
+  title:
+  - Mixed CO+CO2 methanation catalyst screening (4 Ni catalysts)
+  description:
+  - Mixed CO/CO2 co-methanation over 4 supported Ni catalysts (ZrO2, SiO2, TiO2, Al2O3; 5 wt% Ni), Exp11/18/19/20.
+    See per_class/2d6m-exeb/CatalyticReaction-2d6m-exeb-mixed.yaml for full detail.
+is_about_entity:
+- id: coremeta4cat:CAT_2d6m-exeb_all
+  title: 16 supported Ni catalyst samples (this screening series)
+  description: Supported Ni catalysts on Al2O3, SiO2, ZrO2, TiO2, and MgAl2O4, Ni loading 5-40.8 wt%.
+    See used_catalyst in the three CatalyticReaction-2d6m-exeb-*.yaml files under per_class/2d6m-exeb/
+    for per-sample detail.

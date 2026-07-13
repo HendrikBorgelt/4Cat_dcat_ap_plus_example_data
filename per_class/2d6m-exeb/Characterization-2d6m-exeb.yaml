@@ -1,0 +1,47 @@
+---
+# Characterization -- outlet gas composition analysis (product identification)
+# Source: hdl:21.11165/4cat/2d6m-exeb. Applies across all 16 valid experimental
+# runs (Exp2,3,4,7,8,9,11,12,13,14,15,16,17,18,19,20) -- same measurement
+# technique used throughout the screening series, so combined into one
+# Characterization activity rather than one per run/catalyst.
+
+id: "coremeta4cat:CHAR_2d6m-exeb_outlet_gas_analysis"
+title:
+  - "Outlet gas composition analysis (all 16 runs)"
+description:
+  - >-
+    Steady-state outlet gas composition analysis used to determine CO/CO2
+    conversion for all 16 catalyst screening runs (CO methanation: Exp2, 3,
+    4, 12; CO2 methanation: Exp7, 8, 9, 13, 14, 15, 16, 17; mixed CO/CO2
+    methanation: Exp11, 18, 19, 20). Dataset files do not name a specific
+    instrument model; gas chromatography is the standard analytical method
+    for this reaction class and is assumed here.
+rdf_type:
+  id: VOC4CAT:0000130
+  title: "gas chromatography"
+carried_out_by:
+  - id: "coremeta4cat:DEV_2d6m-exeb_GC"
+    title: "gas chromatograph"
+    description: >-
+      Instrument model not specified in the source dataset files.
+evaluated_entity:
+  - id: "coremeta4cat:CAT_2d6m-exeb_all"
+    title: "16 supported Ni catalyst samples (this screening series)"
+    description: >-
+      Supported Ni catalysts on Al2O3, SiO2, ZrO2, TiO2, and MgAl2O4, Ni
+      loading 5-40.8 wt%, screened for CO methanation, CO2 methanation, and
+      mixed CO/CO2 methanation (see the corresponding CatalyticReaction
+      entries for per-catalyst detail: used_catalyst in
+      coremeta4cat:REAC_2d6m-exeb_CO_methanation,
+      coremeta4cat:REAC_2d6m-exeb_CO2_methanation,
+      coremeta4cat:REAC_2d6m-exeb_mixed_methanation).
+realized_plan:
+  id: "coremeta4cat:CHAR_2d6m-exeb_GC_method"
+  title: "Outlet gas GC method"
+  description: >-
+    Analytical protocol for determining reactant/product mole fractions
+    from the reactor outlet stream. Method parameters not specified in the
+    source dataset files.
+other_identifier:
+  - notation: "doi:10.1021/acs.iecr.1c00389"
+    description: "Related publication DOI"
