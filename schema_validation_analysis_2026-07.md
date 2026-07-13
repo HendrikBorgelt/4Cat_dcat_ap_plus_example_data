@@ -52,19 +52,28 @@ Validated with `linkml-run-examples` (the same mechanism the CoreMeta4Cat repo's
 
 Polymorphism (T1/T4, formerly S5) turned out not to need a schema change at all — see above.
 Combined `CatalysisDataset` files now validate end-to-end via `linkml-run-examples`, same as
-per-class files. Still building in this order, since it makes errors easiest to isolate:
+per-class files. All three datasets (`2d6m-exeb`, `32x1-99x6`, `arp5-s69r`) are done, built in
+this order, since it makes errors easiest to isolate:
 
-1. **Per-class files first** (`Synthesis-NNN.yaml`, `CatalyticReaction-NNN.yaml`,
-   `Characterization-NNN.yaml` per technique, ...) — each independently validated via
-   `linkml-run-examples`, matching the convention already used in
-   `tests/data/valid/` in the CoreMeta4Cat repo itself. Fast to debug, real
-   pass/fail signal per piece.
+1. **Per-class files first** (`CatalyticReaction-NNN-<group>.yaml`,
+   `Characterization-NNN-<technique>.yaml`, ...), grouped by reaction type / technique
+   rather than one file per individual experiment run or catalyst, to keep file count and
+   length manageable while still covering every experiment in the source data (e.g.
+   `per_class/2d6m-exeb/` has 3 `CatalyticReaction` files covering 16 runs + 1
+   `Characterization` file, not 16+16 separate files). Each file independently validated via
+   `linkml-run-examples`, matching the convention already used in `tests/data/valid/` in the
+   CoreMeta4Cat repo itself. Fast to debug, real pass/fail signal per piece.
 2. **One combined `CatalysisDataset-NNN.yaml` per source dataset** as the final
-   deliverable (assembling the now-validated pieces inline under
-   `was_generated_by`/`is_about_activity`/`is_about_entity`) — this is what gets
-   shown to stakeholders as "how to describe a large, multi-pillar dataset," and
-   it should now pass `linkml-run-examples` validation directly, not just be
-   "structurally correct by construction."
+   deliverable, referencing the per-class pieces via minimal `id`+`title`(+short
+   `description`) stubs under `was_generated_by`/`is_about_activity`/`is_about_entity`
+   (see T7) rather than inlining them in full — this is what gets shown to
+   stakeholders as "how to describe a large, multi-pillar dataset," and it passes
+   `linkml-run-examples` validation directly. All 24 files across the three datasets
+   (21 per-class + 3 combined) validate together in a single `linkml-run-examples` run.
+
+Before trusting any pre-existing draft metadata for a dataset, its underlying facts were
+checked against the raw source files (JSON/CSV/txt), not just its schema shape — dataset 1's
+draft turned out to have a wrong factual assumption (see below), not just a stale schema.
 
 ## Recommended schema-side actions (documentation only — not implemented)
 
