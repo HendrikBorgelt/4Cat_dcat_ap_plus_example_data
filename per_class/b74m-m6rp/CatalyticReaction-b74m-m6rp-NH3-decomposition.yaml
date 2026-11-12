@@ -1,0 +1,82 @@
+---
+# CatalyticReaction -- thermocatalytic NH3 decomposition, light-off curves of 6 catalysts
+# Source: hdl:21.11165/4cat/b74m-m6rp, Fig2_*.tab/csv (6 catalysts, 1000 ppm NH3),
+# Fig3_*.tab and Fig7a/c_EXP_*.tab (500 and 3000 ppm NH3 for two of them).
+# Fig6_EXP and Fig8_EXP are byte-identical copies of Fig2/Fig3 files.
+#
+# status: incomplete
+# Missing from the deposit: product_identification_method (mandatory; the NH3 analyser is not
+# stated). Also not deposited: reactor type and dimensions, catalyst mass, balance gas, flow
+# rate, pressure, catalyst synthesis.
+# Schema gaps (schema_gap_analysis_2026-10.md): R2 conversion is the main result of every
+# file and has no slot; R1 no space velocity.
+
+id: "coremeta4cat:REAC_b74m-m6rp_NH3_decomposition"
+reaction_name:
+  - "thermocatalytic ammonia decomposition"
+title:
+  - "NH3 decomposition light-off over Ru/Ni-BCZY and reference catalysts (6 catalysts, 3 inlet concentrations)"
+description:
+  - >-
+    Thermocatalytic decomposition of ammonia (2 NH3 -> N2 + 3 H2) measured as light-off curves:
+    outlet NH3 concentration and NH3 conversion against inlet temperature, 200-600 C, for six
+    catalysts at 1000 ppm NH3 (Fig. 2). For 0.5Ru-1Ba/Ni-BCZY and Ni-BCZY the inlet
+    concentration was also varied (500, 1000, 3000 ppm; Fig. 3 and Fig. 6-8). Conversion reaches
+    99.8-100% at 600 C for the five catalysts whose files are readable. Motivation stated in the
+    title: Ba-promoted Ru/Ni-BCZY
+    as anode-side catalyst for ammonia-fed protonic ceramic cells; the measurements themselves
+    are thermocatalytic. Loadings are encoded in the sample names (e.g. 0.5Ru-1Ba); their unit
+    is not stated.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+catalyst_type:
+  - heterogeneous_catalysis
+catalyst_form:
+  - supported
+used_catalyst:
+  - id: "coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY"
+    title: "0.5Ru-1Ba/Ni-BCZY"
+    description: "Ba-promoted Ru on Ni-BCZY (Ni cermet with yttrium-doped barium cerate-zirconate); 500, 1000, 3000 ppm NH3"
+  - id: "coremeta4cat:CAT_b74m-m6rp_0.5Ru-0.5Ba_Ni-BCZY"
+    title: "0.5Ru-0.5Ba/Ni-BCZY"
+    description: "1000 ppm NH3; the deposited file for this catalyst lost its decimal separators (see source_documentation.yaml)"
+  - id: "coremeta4cat:CAT_b74m-m6rp_1Ru_Ni-BCZY"
+    title: "1Ru/Ni-BCZY"
+    description: "Unpromoted Ru on Ni-BCZY; 1000 ppm NH3"
+  - id: "coremeta4cat:CAT_b74m-m6rp_Ni-BCZY"
+    title: "Ni-BCZY"
+    description: "Ru-free support/cermet reference; 500, 1000, 3000 ppm NH3"
+  - id: "coremeta4cat:CAT_b74m-m6rp_1Ru-1Ba_Ni-YSZ"
+    title: "1Ru-1Ba/Ni-YSZ"
+    description: "Ba-promoted Ru on Ni with yttria-stabilised zirconia; 1000 ppm NH3"
+  - id: "coremeta4cat:CAT_b74m-m6rp_1Ru-1Ba_YSZ"
+    title: "1Ru-1Ba/YSZ"
+    description: "Ba-promoted Ru on Ni-free YSZ; 1000 ppm NH3"
+used_reactant:
+  - id: "coremeta4cat:REAC_b74m-m6rp_NH3"
+    title: "ammonia"
+    rdf_type:
+      id: CHEBI:16134
+      title: ammonia
+used_reactor:
+  - id: "coremeta4cat:REAC_b74m-m6rp_reactor"
+    title: "flow reactor (type not stated)"
+    description: >-
+      Continuous flow follows from the inlet-temperature light-off measurement. Reactor type,
+      dimensions and catalyst mass are not stated; the microkinetic simulations model a 12 mm
+      long catalytic channel.
+reactor_temperature_range:
+  - min_value: 473.15
+    max_value: 874.15
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+    unit: https://qudt.org/vocab/unit/K
+    description: "Inlet temperature 200-601 C (column Tein [C])"
+feed_composition_range:
+  - min_value: 500.0
+    max_value: 3000.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MoleFraction
+    unit: https://qudt.org/vocab/unit/PPM
+    description: "NH3 at the inlet (500, 1000, 3000 ppm); mole or volume basis and balance gas not stated"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp

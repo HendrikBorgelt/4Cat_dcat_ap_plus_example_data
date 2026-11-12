@@ -1,0 +1,45 @@
+---
+# Simulation -- OH and CO binding energies from the OCP machine-learned potential
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Composition_Screenings.tab (columns "OCP model - OH (eV)",
+# "OCP model - CO (eV)"); method identified from the column names and the dataset keywords
+# ("machine learning interatomic potentials (or MLIP)").
+#
+# Schema gaps this record runs into (schema_gap_analysis_2026-10.md):
+#   S1  no SimulationMethod subclass for machine-learned interatomic potentials
+#   S2  no CalculatedProperty for adsorption/binding energies (adsorbate, site, reference state)
+#   S3  software_package cannot say which model checkpoint was used
+#   D2  materials have no normalised identity (11 materials appear twice in the source table
+#       with their elements in a different order, e.g. Ga4Cu9 and Cu9Ga4)
+
+id: "coremeta4cat:SIM_6mxw-xsrd_MLIP_OCP"
+title:
+  - "OCP binding-energy screening of OH and CO (37 compositions)"
+description:
+  - >-
+    Binding energies of OH and CO computed with an Open Catalyst Project (OCP) machine-learned
+    interatomic potential for 37 elemental and intermetallic compositions, used to screen
+    candidate active phases for CO2 hydrogenation. Surface facets, adsorption sites, the
+    model checkpoint and the reference states of the binding energies are not stated in the
+    deposited files.
+software_package:
+  - "OCP model (Open Catalyst Project; checkpoint not stated)"
+evaluated_entity:
+  - id: "coremeta4cat:SLAB_6mxw-xsrd_OCP_compositions"
+    title: "37 elemental and intermetallic surface models"
+    description: >-
+      Al, Al4Cu9, Co, Cu, Cu3Rh, CuNi, Fe, Fe3Cu, FeNi, Ga2Cu, Ga3Co, Ga3Ni5, Ga4Cu9, GaCu3,
+      GaNi3, In, In3Co, In3Cu7, In3Ga, In4Ag9, InRh, InSb, Ir, Mn, Mn3Co, Mn3In, MnCu3, MnGa,
+      Ni, Pd, Rh, Sn, Zn, Zn2Pd, Zn3Sn, ZnGa3, ZnIn3. Facets and slab models not stated.
+realized_plan:
+  id: "coremeta4cat:SIM_6mxw-xsrd_MLIP_OCP_method"
+  title: "machine-learned interatomic potential (OCP model)"
+  description: >-
+    Single-point or relaxation protocol, adsorbate placement and reference energies not stated
+    in the deposited files.
+calculated_property:
+  - value: "-5.35 to 0.79 eV (37 compositions)"
+    description: "OH binding energy; range over all compositions (InSb lowest, Pd highest)"
+  - value: "-5.12 to -0.13 eV (37 compositions)"
+    description: "CO binding energy; range over all compositions (InSb lowest, Al highest)"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

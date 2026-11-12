@@ -1,0 +1,148 @@
+---
+# CatalysisDataset -- hdl:21.11165/4cat/8ppb-aeky, transaminase MD (biocatalysis, simulation only)
+# Combined record: the full per-class records from per_class/8ppb-aeky/ inlined under
+# was_generated_by. There is no CatalyticReaction: the deposit holds only the simulations.
+#
+# status: incomplete
+# All four Simulation records fail on the mandatory calculated_property. For protein
+# preparation, docking and MD this is a schema gap (their outputs are structures and
+# trajectories, not properties, S5); for MM/GBSA the values are inside the archives and were
+# not extracted. Only "biocatalysis" is a repository keyword; the others are taken from the
+# file descriptions. See source_documentation.yaml.
+id: hdl:21.11165/4cat/8ppb-aeky
+title:
+- 'Datasets for Publication: Navigating the Sequence-Function Landscape: AI-Driven Discovery of Unseen
+  and SynergisticMutations in an Amine Transaminase - Molecular Dynamic Simulations'
+description:
+- 'Computational part of a study on AI-guided engineering of an amine transaminase: protein preparation
+  of the variant 3FCR-4M, induced-fit docking of the ligand-cofactor complex, Desmond molecular dynamics
+  (setup, minimisation, equilibration, production) of the complex in 3FCR-4M and the mutants S19V/P423F
+  and G151A/P423F, and Prime MM/GBSA binding free energies. All results are in 17 software archives (about
+  33 GB); a README gives the authors and abstract of the publication.'
+rdf_type:
+  id: VOC4CAT:0000204
+  title: biocatalysis
+keyword:
+- biocatalysis
+- amine transaminase
+- molecular dynamics
+- MM/GBSA
+- docking
+creator:
+- name:
+  - Doerr, Mark
+- name:
+  - Weigmann, Konstantin
+- name:
+  - Schulig, Lukas
+publisher:
+  name:
+  - NFDI4Cat Central Data Repository
+dataset_distribution:
+- access_URL:
+  - id: https://hdl.handle.net/21.11165/4cat/8ppb-aeky
+    title: Repository landing page
+  licence:
+    id: https://creativecommons.org/licenses/by/4.0/
+    title: CC BY 4.0
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky
+was_generated_by:
+- id: coremeta4cat:SIM_8ppb-aeky_protein_preparation
+  activity_designator: Simulation
+  title:
+  - Protein preparation of the 3FCR-4M amine transaminase variant
+  description:
+  - Preparation of the initial structure of the transaminase variant 3FCR-4M for docking and molecular
+    dynamics, using the Protein Preparation Wizard. The file names say 3FCR, the file descriptions 3CFR;
+    3FCR is taken as the structure identifier. Protonation, missing-residue handling and the source of
+    the 4M mutations are inside the archive and were not read.
+  software_package:
+  - Protein Preparation Wizard (version not stated)
+  evaluated_entity:
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M
+    title: amine transaminase variant 3FCR-4M
+    description: Variant of the structure 3FCR carrying four mutations (named 4M; the mutations are not
+      listed in the deposit).
+  realized_plan:
+    id: coremeta4cat:SIM_8ppb-aeky_protein_preparation_method
+    title: protein structure preparation
+    description: Protein Preparation Wizard workflow; settings not read from the archive.
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky
+- id: coremeta4cat:SIM_8ppb-aeky_induced_fit_docking
+  activity_designator: Simulation
+  title:
+  - Induced-fit docking of the ligand-cofactor complex into 3FCR-4M
+  description:
+  - Induced-fit docking with Glide to predict the initial binding mode of the ligand-cofactor complex
+    in the 3FCR-4M variant, which then served as the starting structure for molecular dynamics. The ligand
+    is abbreviated CPEA in the file name; the deposit does not resolve the abbreviation. The cofactor
+    is not named (amine transaminases use pyridoxal 5'-phosphate).
+  software_package:
+  - Glide, Induced Fit docking protocol (version not stated)
+  evaluated_entity:
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M
+    title: amine transaminase variant 3FCR-4M
+  - id: coremeta4cat:LIG_8ppb-aeky_CPEA
+    title: ligand CPEA bound to the cofactor
+    description: Abbreviation from the file name; structure not given in the deposit.
+  realized_plan:
+    id: coremeta4cat:SIM_8ppb-aeky_induced_fit_docking_method
+    title: induced-fit ligand docking
+    description: Glide Induced Fit; receptor flexibility, grid and scoring settings not read from the
+      archive.
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky
+- id: coremeta4cat:SIM_8ppb-aeky_MD
+  activity_designator: Simulation
+  title:
+  - Molecular dynamics of the transaminase ligand-cofactor complex in 3FCR-4M and two mutants
+  description:
+  - 'Desmond molecular dynamics of the docked ligand-cofactor complex in three variants: 3FCR-4M, 3FCR-4M-S19V/P423F
+    (M1) and 3FCR-4M-G151A/P423F (M2). Each variant has a system setup, a minimisation, an equilibration
+    and a production run (12 archives, about 32 GB in total). The mutants M1 and M2 were among the variants
+    studied in the publication on AI-guided transaminase engineering (README.md).'
+  software_package:
+  - Desmond (version not stated)
+  evaluated_entity:
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M_complex
+    title: 3FCR-4M with docked ligand-cofactor complex
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M1_complex
+    title: 3FCR-4M-S19V/P423F (M1) with ligand-cofactor complex
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M2_complex
+    title: 3FCR-4M-G151A/P423F (M2) with ligand-cofactor complex
+  realized_plan:
+    id: coremeta4cat:SIM_8ppb-aeky_MD_method
+    title: 'molecular dynamics: setup, minimisation, equilibration, production'
+    description: Force field, water model, ensemble, temperature, timestep and simulation length are in
+      the Desmond configuration files inside the archives and were not read.
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky
+- id: coremeta4cat:SIM_8ppb-aeky_MMGBSA
+  activity_designator: Simulation
+  title:
+  - MM/GBSA binding free energy of the ligand-cofactor complex in 3FCR-4M, M1 and M2
+  description:
+  - Prime MM/GBSA end-point calculations of the binding free energy of the ligand-cofactor complex in
+    3FCR-4M and the mutants S19V/P423F and G151A/P423F. The deposit does not say whether single structures
+    or frames of the molecular dynamics runs were used.
+  software_package:
+  - Prime, MM/GBSA (version not stated)
+  evaluated_entity:
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M_complex
+    title: 3FCR-4M with docked ligand-cofactor complex
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M1_complex
+    title: 3FCR-4M-S19V/P423F (M1) with ligand-cofactor complex
+  - id: coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M2_complex
+    title: 3FCR-4M-G151A/P423F (M2) with ligand-cofactor complex
+  realized_plan:
+    id: coremeta4cat:SIM_8ppb-aeky_MMGBSA_method
+    title: MM/GBSA end-point free energy
+    description: Solvation model, force field and frame selection not read from the archives.
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky
+is_about_entity:
+- id: coremeta4cat:ENZ_8ppb-aeky_all
+  title: Amine transaminase 3FCR-4M and two mutants with a docked ligand-cofactor complex
+  description: 3FCR-4M, 3FCR-4M-S19V/P423F, 3FCR-4M-G151A/P423F. See was_generated_by for detail.

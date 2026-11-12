@@ -1,0 +1,45 @@
+---
+# Simulation -- microkinetic reactor profiles, turnover frequencies and parameter studies
+# Source: hdl:21.11165/4cat/b74m-m6rp, Fig9_*.tab (axial profiles, 618-818 K), Fig10_*.csv
+# (full profiles incl. surface coverages, 615 and 818 K), Fig11_*.tab (TOF on Ni, Ru, Ni+Ru),
+# Fig12*.csv/tab (variation of inlet NH3, GHSV, pressure), Fig13.csv (pure NH3 feed)
+#
+# status: incomplete
+# Missing from the deposit: software_package (mandatory), and which mechanism version
+# (original or optimized) was used for these figures.
+# Schema gaps (schema_gap_analysis_2026-10.md): S6 surface coverage and activation energy sit
+# on the Microkinetics method as if they were inputs, while TOF, rates and coverage profiles
+# are outputs with no CalculatedProperty; R1 GHSV is a varied model input with no slot;
+# S7 the dependency on SIM_b74m-m6rp_MKM_validation cannot be expressed by id
+# (had_input_activity is inlined-only).
+
+id: "coremeta4cat:SIM_b74m-m6rp_MKM_parametric"
+title:
+  - "Microkinetic NH3 decomposition: reactor profiles, TOF and parameter variation"
+description:
+  - >-
+    Simulations with the microkinetic 1D reactor model: axial NH3 and conversion profiles over
+    the 12 mm channel at 618-818 K (Fig. 9); full gas-phase and surface-coverage profiles at
+    615 and 818 K (Fig. 10); NH3 surface rate and turnover frequency for Ni-only, Ru-only and
+    combined Ni+Ru sites at 498-848 K (Fig. 11); and variation of inlet NH3 (100 ppm to 100%),
+    GHSV (100 to 100,000 h-1) and pressure (0.5 to 10 bar) at 473-873 K or at 615 K
+    (Fig. 12), plus pure NH3 feed at 650-1000 K (Fig. 13). Argon is the balance gas in the
+    simulated feeds.
+evaluated_entity:
+  - id: "coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY"
+    title: "0.5Ru-1Ba/Ni-BCZY (modelled as Ru and Ni surface sites)"
+realized_plan:
+  id: "coremeta4cat:SIM_b74m-m6rp_MKM_parametric_method"
+  title: "microkinetic 1D reactor model, parameter variation"
+  description: >-
+    Same model family as the validation runs; which mechanism version was used is not stated.
+    Varied inputs: inlet NH3 mole fraction, GHSV, pressure, temperature.
+calculated_property:
+  - value: "TOF 3.2e-4 to 0.37 s-1 (Ni+Ru sites, 498-848 K)"
+    description: "Turnover frequency of NH3 decomposition, Fig11_Ni+Ru.tab; Ni-only and Ru-only in Fig11_Ni.tab and Fig11_Ru.tab"
+  - value: "surface coverages of 12 surface species along the channel at 615 and 818 K"
+    description: "Fig10_615K.csv, Fig10_818K.csv"
+  - value: "NH3 conversion vs. temperature for inlet NH3 100 ppm-100%, GHSV 100-100,000 h-1, pressure 0.5-10 bar"
+    description: "Fig12b, Fig12d, Fig12f; TOF at 615 K vs. the same parameters in Fig12_a, Fig12c, Fig12e"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp

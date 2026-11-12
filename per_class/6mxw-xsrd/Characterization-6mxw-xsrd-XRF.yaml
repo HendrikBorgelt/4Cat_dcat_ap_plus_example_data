@@ -1,0 +1,39 @@
+---
+# Characterization -- XRF elemental composition of the Cu-Ga-Al mixed metal oxide library
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Synthesis_and_Characterization_of_CuGaAlMMOS.tab
+# (76 rows: nominal "ideal" Cu/Al/Ga fractions next to XRF-measured fractions)
+#
+# Technique term taken from the authors' own vocabulary_map.csv (XRF -> VOC4CAT:0000067).
+# CoreMeta4Cat has no XRF CharacterizationTechnique subclass, so the method parameters
+# below can only be given as free text (see schema_gap_analysis_2026-10.md, C1).
+
+id: "coremeta4cat:CHAR_6mxw-xsrd_XRF"
+title:
+  - "XRF elemental analysis (76 Cu-Ga-Al mixed metal oxides)"
+description:
+  - >-
+    X-ray fluorescence analysis of 76 Cu-Ga-Al mixed metal oxide samples spanning the
+    Cu/Al/Ga ternary (Cu 0-1, Al 0-1, Ga 0-1, metal fractions normalised to 1), including
+    the three single-metal oxides. Measured Cu, Al and Ga fractions are reported next to
+    the nominal fractions.
+rdf_type:
+  id: VOC4CAT:0000067
+  title: X-ray fluorescence
+carried_out_by:
+  - id: "coremeta4cat:DEV_6mxw-xsrd_XRF"
+    title: "X-ray fluorescence spectrometer"
+    description: "Instrument model not stated in the deposited files."
+evaluated_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_MMO_library"
+    title: "Cu-Ga-Al mixed metal oxide library (76 compositions)"
+    description: >-
+      Nominal compositions from Cu1 to Ga1 across the Cu/Al/Ga ternary; individual samples
+      are identified only by their composition, not by a sample ID.
+realized_plan:
+  id: "coremeta4cat:CHAR_6mxw-xsrd_XRF_method"
+  title: "XRF determination of Cu, Al and Ga metal fractions"
+  description: >-
+    Metal fractions of Cu, Al and Ga normalised to their sum. Excitation source, sample
+    preparation, calibration and quantification method are not stated in the deposited files.
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

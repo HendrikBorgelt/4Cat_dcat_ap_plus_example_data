@@ -1,0 +1,207 @@
+---
+# CatalysisDataset -- hdl:21.11165/4cat/b74m-m6rp, NH3 decomposition over Ru/Ni-BCZY, experiment + microkinetics
+# Combined record: the full per-class records from per_class/b74m-m6rp/ inlined under
+# was_generated_by and is_about_activity.
+#
+# status: incomplete
+# Three mandatory pieces are missing from the deposit, one validation error each: the simulation
+# software (both Simulation records) and the NH3 analyser (CatalyticReaction.product_identification_method).
+# Keywords are not in the repository metadata; they are taken from the title.
+# See source_documentation.yaml for where every value comes from.
+id: hdl:21.11165/4cat/b74m-m6rp
+title:
+- 'Dataset for Publication: Experimental and Microkinetic Investigation of Thermo-Catalytic Ammonia Decomposition
+  over a Ba-promoted Ru/Ni-BCZY Catalyst for Use in Ammonia-fed Protonic Ceramic Cells'
+description:
+- 'Thermocatalytic NH3 decomposition over Ru/Ni-BCZY and reference catalysts (light-off curves of six
+  catalysts at 500-3000 ppm NH3, 200-600 C), one temperature-programmed TCD measurement, and microkinetic
+  1D reactor simulations: comparison with the experiments for an original and an optimized mechanism,
+  axial and surface-coverage profiles, turnover frequencies, and variation of inlet NH3, GHSV and pressure.
+  The deposit is organised by figure of the publication; the publication itself is not identified in the
+  repository metadata.'
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+keyword:
+- ammonia decomposition
+- microkinetic modelling
+- ruthenium
+- protonic ceramic cells
+creator:
+- name:
+  - Davari, Sadaf
+- name:
+  - Chacko, Rinu
+- name:
+  - Bastek, Tim
+- name:
+  - Lott, Patrick
+- name:
+  - Dailly, Julian
+- name:
+  - Angeli, Sofia
+- name:
+  - Deutschmann, Olaf
+publisher:
+  name:
+  - NFDI4Cat Central Data Repository
+dataset_distribution:
+- access_URL:
+  - id: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
+    title: Repository landing page
+  licence:
+    id: https://creativecommons.org/licenses/by/4.0/
+    title: CC BY 4.0
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
+was_generated_by:
+- id: coremeta4cat:CHAR_b74m-m6rp_TCD
+  activity_designator: Characterization
+  title:
+  - Temperature-programmed analysis with thermal conductivity detection (Fig. 1)
+  description:
+  - TCD signal recorded from 38 to 951 C (954 points). Technique (reduction, desorption or oxidation),
+    probe gas, heating rate and sample are not stated in the deposited files.
+  carried_out_by:
+  - id: coremeta4cat:DEV_b74m-m6rp_TCD
+    title: temperature-programmed analyser with thermal conductivity detector
+    description: Instrument model not stated in the deposited files.
+  evaluated_entity:
+  - id: coremeta4cat:CAT_b74m-m6rp_unspecified
+    title: catalyst sample (not stated)
+    description: The deposit does not say which of the six catalysts Fig. 1 refers to.
+  realized_plan:
+    id: coremeta4cat:CHAR_b74m-m6rp_TCD_method
+    title: temperature-programmed analysis (type not stated)
+    description: 38-951 C; gas, flow, heating rate and sample mass not stated.
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
+- id: coremeta4cat:SIM_b74m-m6rp_MKM_validation
+  activity_designator: Simulation
+  title:
+  - Microkinetic simulation of NH3 decomposition light-off on Ni-BCZY and 0.5Ru-1Ba/Ni-BCZY
+  description:
+  - 'One-dimensional reactor simulation with a microkinetic surface mechanism on Ru and Ni sites, compared
+    with the measured light-off curves at 500, 1000 and 3000 ppm NH3 (Fig. 6-8). For Ni-BCZY both the
+    original and an optimized mechanism were run; for 0.5Ru-1Ba/Ni-BCZY the original (Fig. 6) and the
+    optimized mechanism (Fig. 8). Simulated surface temperature 498-848 K. Surface species of the mechanism,
+    from the profile files: Ru, H-Ru, N-Ru, NH-Ru, NH2-Ru, NH3-Ru, Ni, H-Ni, N-Ni, NH-Ni, NH2-Ni, NH3-Ni.'
+  evaluated_entity:
+  - id: coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY
+    title: 0.5Ru-1Ba/Ni-BCZY (modelled as Ru and Ni surface sites)
+  - id: coremeta4cat:CAT_b74m-m6rp_Ni-BCZY
+    title: Ni-BCZY (modelled as Ni surface sites)
+  realized_plan:
+    id: coremeta4cat:SIM_b74m-m6rp_MKM_method
+    title: microkinetic 1D reactor model, original and optimized mechanism
+    description: Mean-field surface mechanism coupled to a one-dimensional flow model of a 12 mm catalytic
+      channel. Elementary steps, rate parameters, site density, the optimization procedure and the solver
+      are not stated in the deposited files.
+  calculated_property:
+  - value: NH3 conversion vs. surface temperature, 498-848 K, 9 simulated curves
+    description: Fig6a-c (0.5Ru-1Ba/Ni-BCZY, original), Fig7a-c (Ni-BCZY, original and optimized), Fig8a-c
+      (0.5Ru-1Ba/Ni-BCZY, optimized)
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
+- id: coremeta4cat:SIM_b74m-m6rp_MKM_parametric
+  activity_designator: Simulation
+  title:
+  - 'Microkinetic NH3 decomposition: reactor profiles, TOF and parameter variation'
+  description:
+  - 'Simulations with the microkinetic 1D reactor model: axial NH3 and conversion profiles over the 12
+    mm channel at 618-818 K (Fig. 9); full gas-phase and surface-coverage profiles at 615 and 818 K (Fig.
+    10); NH3 surface rate and turnover frequency for Ni-only, Ru-only and combined Ni+Ru sites at 498-848
+    K (Fig. 11); and variation of inlet NH3 (100 ppm to 100%), GHSV (100 to 100,000 h-1) and pressure
+    (0.5 to 10 bar) at 473-873 K or at 615 K (Fig. 12), plus pure NH3 feed at 650-1000 K (Fig. 13). Argon
+    is the balance gas in the simulated feeds.'
+  evaluated_entity:
+  - id: coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY
+    title: 0.5Ru-1Ba/Ni-BCZY (modelled as Ru and Ni surface sites)
+  realized_plan:
+    id: coremeta4cat:SIM_b74m-m6rp_MKM_parametric_method
+    title: microkinetic 1D reactor model, parameter variation
+    description: 'Same model family as the validation runs; which mechanism version was used is not stated.
+      Varied inputs: inlet NH3 mole fraction, GHSV, pressure, temperature.'
+  calculated_property:
+  - value: TOF 3.2e-4 to 0.37 s-1 (Ni+Ru sites, 498-848 K)
+    description: Turnover frequency of NH3 decomposition, Fig11_Ni+Ru.tab; Ni-only and Ru-only in Fig11_Ni.tab
+      and Fig11_Ru.tab
+  - value: surface coverages of 12 surface species along the channel at 615 and 818 K
+    description: Fig10_615K.csv, Fig10_818K.csv
+  - value: NH3 conversion vs. temperature for inlet NH3 100 ppm-100%, GHSV 100-100,000 h-1, pressure 0.5-10
+      bar
+    description: Fig12b, Fig12d, Fig12f; TOF at 615 K vs. the same parameters in Fig12_a, Fig12c, Fig12e
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
+is_about_activity:
+- id: coremeta4cat:REAC_b74m-m6rp_NH3_decomposition
+  reaction_name:
+  - thermocatalytic ammonia decomposition
+  title:
+  - NH3 decomposition light-off over Ru/Ni-BCZY and reference catalysts (6 catalysts, 3 inlet concentrations)
+  description:
+  - 'Thermocatalytic decomposition of ammonia (2 NH3 -> N2 + 3 H2) measured as light-off curves: outlet
+    NH3 concentration and NH3 conversion against inlet temperature, 200-600 C, for six catalysts at 1000
+    ppm NH3 (Fig. 2). For 0.5Ru-1Ba/Ni-BCZY and Ni-BCZY the inlet concentration was also varied (500,
+    1000, 3000 ppm; Fig. 3 and Fig. 6-8). Conversion reaches 99.8-100% at 600 C for the five catalysts
+    whose files are readable. Motivation stated in the title: Ba-promoted Ru/Ni-BCZY as anode-side catalyst
+    for ammonia-fed protonic ceramic cells; the measurements themselves are thermocatalytic. Loadings
+    are encoded in the sample names (e.g. 0.5Ru-1Ba); their unit is not stated.'
+  rdf_type:
+    id: VOC4CAT:0007001
+    title: heterogeneous catalysis
+  catalyst_type:
+  - heterogeneous_catalysis
+  catalyst_form:
+  - supported
+  used_catalyst:
+  - id: coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY
+    title: 0.5Ru-1Ba/Ni-BCZY
+    description: Ba-promoted Ru on Ni-BCZY (Ni cermet with yttrium-doped barium cerate-zirconate); 500,
+      1000, 3000 ppm NH3
+  - id: coremeta4cat:CAT_b74m-m6rp_0.5Ru-0.5Ba_Ni-BCZY
+    title: 0.5Ru-0.5Ba/Ni-BCZY
+    description: 1000 ppm NH3; the deposited file for this catalyst lost its decimal separators (see source_documentation.yaml)
+  - id: coremeta4cat:CAT_b74m-m6rp_1Ru_Ni-BCZY
+    title: 1Ru/Ni-BCZY
+    description: Unpromoted Ru on Ni-BCZY; 1000 ppm NH3
+  - id: coremeta4cat:CAT_b74m-m6rp_Ni-BCZY
+    title: Ni-BCZY
+    description: Ru-free support/cermet reference; 500, 1000, 3000 ppm NH3
+  - id: coremeta4cat:CAT_b74m-m6rp_1Ru-1Ba_Ni-YSZ
+    title: 1Ru-1Ba/Ni-YSZ
+    description: Ba-promoted Ru on Ni with yttria-stabilised zirconia; 1000 ppm NH3
+  - id: coremeta4cat:CAT_b74m-m6rp_1Ru-1Ba_YSZ
+    title: 1Ru-1Ba/YSZ
+    description: Ba-promoted Ru on Ni-free YSZ; 1000 ppm NH3
+  used_reactant:
+  - id: coremeta4cat:REAC_b74m-m6rp_NH3
+    title: ammonia
+    rdf_type:
+      id: CHEBI:16134
+      title: ammonia
+  used_reactor:
+  - id: coremeta4cat:REAC_b74m-m6rp_reactor
+    title: flow reactor (type not stated)
+    description: Continuous flow follows from the inlet-temperature light-off measurement. Reactor type,
+      dimensions and catalyst mass are not stated; the microkinetic simulations model a 12 mm long catalytic
+      channel.
+  reactor_temperature_range:
+  - min_value: 473.15
+    max_value: 874.15
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+    unit: https://qudt.org/vocab/unit/K
+    description: Inlet temperature 200-601 C (column Tein [C])
+  feed_composition_range:
+  - min_value: 500.0
+    max_value: 3000.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MoleFraction
+    unit: https://qudt.org/vocab/unit/PPM
+    description: NH3 at the inlet (500, 1000, 3000 ppm); mole or volume basis and balance gas not stated
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
+is_about_entity:
+- id: coremeta4cat:CAT_b74m-m6rp_all
+  title: Ru/Ni-BCZY and reference catalysts
+  description: 'Six catalysts: 0.5Ru-1Ba/Ni-BCZY, 0.5Ru-0.5Ba/Ni-BCZY, 1Ru/Ni-BCZY, Ni-BCZY, 1Ru-1Ba/Ni-YSZ,
+    1Ru-1Ba/YSZ. See is_about_activity for per-catalyst detail.'

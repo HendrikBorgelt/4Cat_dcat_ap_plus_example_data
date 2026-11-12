@@ -1,0 +1,193 @@
+# ============================================================
+# SOURCE DOCUMENTATION
+# CoreMeta4Cat metadata provenance for hdl:21.11165/4cat/6mxw-xsrd
+# ============================================================
+#
+# FORMAT
+#   Each entry is:
+#     field_or_value:
+#       value:   <what was used in the metadata files>
+#       source:  <filename> [column | row] or Dataverse API path
+#       note:    <optional clarification>
+#
+# SOURCES
+#   API   = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/6mxw-xsrd
+#           (version 1.0, released 2025-11-05), citation block
+#   Files = the eight deposited files, read via /api/access/datafile/<id>?format=original:
+#           Active_Sites_Screening.tab (2369), Composition_Screenings.tab (2370),
+#           vocabulary_map.csv (2371), Sample_Compositions.tab (2372),
+#           Performance_Test_Composition_and_CalcTemp_secondgen.csv (2373),
+#           Testing_Protocol_for_Catalystst.tab (2374),
+#           Performance_Test_Composition_and_CalcTemp_firstgen.tab (2375),
+#           Synthesis_and_Characterization_of_CuGaAlMMOS.tab (2376)
+#   The raw files are not mirrored into ../dataset/ yet.
+#
+# NOT AVAILABLE
+#   The article (doi:10.1021/acscatal.5c03876) was not consulted; nothing below is taken from it.
+# ============================================================
+
+
+# ============================================================
+# 1. DATASET-LEVEL FIELDS
+# ============================================================
+
+dataset_id:
+  value: hdl:21.11165/4cat/6mxw-xsrd
+  source: API [persistentUrl]
+
+title:
+  value: "Copper Gallium Aluminum Mixed Metal Oxides as Alternative Catalyst Candidates for Efficient Conversion of Carbon Dioxide to Methanol and Dimethyl Ether"
+  source: API [citation.title]
+
+creator:
+  value: "Weber, Sebastian (hte GmbH)"
+  source: API [citation.author]
+  note: >-
+    The only dataset author. The article has 17 authors, including four CoreMeta4Cat
+    authors (Khatamirad, Geske, Rosowski, Schunk). Dataset contact: Sandip De (BASF SE).
+    Affiliation is omitted from the record (Agent has no affiliation slot, see
+    schema_validation_analysis_2026-07.md S1).
+
+keyword:
+  value: "CO2 hydrogenation; mixed-metal-oxide catalyst; machine learning; machine learning interatomic potentials; density functional theory; reaction mechanism"
+  source: API [citation.keyword]
+  note: '"(or ML)" and "(or MLIP)" suffixes dropped.'
+
+is_referenced_by:
+  value: https://doi.org/10.1021/acscatal.5c03876
+  source: API [citation.publication.publicationIDNumber]
+
+licence:
+  value: CC BY 4.0
+  source: API [license.uri → http://creativecommons.org/licenses/by/4.0]
+
+research_field:
+  value: VOC4CAT:0007001 heterogeneous catalysis
+  source: inferred
+  note: Not stated in the deposit; mixed metal oxides tested in a gas-phase flow reactor.
+
+
+# ============================================================
+# 2. CHARACTERIZATION (XRF)
+# ============================================================
+
+xrf_technique_term:
+  value: VOC4CAT:0000067 X-ray fluorescence
+  source: vocabulary_map.csv [rows "Cu XRF / [1]", "Al XRF / [1]", "Ga XRF / [1]"]
+
+xrf_samples:
+  value: 76 compositions, nominal vs. measured Cu/Al/Ga fractions
+  source: Synthesis_and_Characterization_of_CuGaAlMMOS.tab [all 76 rows]
+  note: Samples have no IDs; only the composition identifies them.
+
+xrf_instrument:
+  value: "X-ray fluorescence spectrometer (model not stated)"
+  source: none
+  note: Generic device entry, same convention as the BET analyser in 32x1-99x6.
+
+
+# ============================================================
+# 3. SIMULATIONS
+# ============================================================
+
+dft_method:
+  value: VOC4CAT:0000215 density functional theory
+  source: vocabulary_map.csv [rows "active_site", "OH", "CO" → density functional theory]
+
+dft_sites:
+  value: 17 sites, CuGa2O4 (pristine + Al, Co, Cu, Ge, In, Ni, Sn) and Ga2O3 (pristine + Al, Pd, Pt, Rh, Ru, Sn, Zn, Zr)
+  source: Active_Sites_Screening.tab [column active_site]
+
+dft_ranges:
+  value: "OH -1.87 to 1.41 eV; CO -2.20 to 0.51 eV"
+  source: Active_Sites_Screening.tab [columns OH, CO]
+
+dft_software:
+  value: missing
+  source: none
+  note: Mandatory (Simulation.software_package); the only validation error of this record.
+
+mlip_models:
+  value: "OCP model; MACE-MPA-0"
+  source: Composition_Screenings.tab [column headers]; API [citation.keyword "machine learning interatomic potentials"]
+  note: >-
+    vocabulary_map.csv lists both as needing a new Voc4Cat concept "binding energy".
+    Neither model version nor checkpoint is stated.
+
+mlip_compositions:
+  value: "48 rows = 37 distinct materials; OCP 37, MACE 31 (all 31 also in OCP)"
+  source: Composition_Screenings.tab [column Composition]
+  note: >-
+    11 materials appear twice with the elements in a different order (Fe3Cu/CuFe3, Ga2Cu/CuGa2,
+    Ga3Co/CoGa3, Ga4Cu9/Cu9Ga4, GaCu3/Cu3Ga, In3Co/CoIn3, In3Cu7/Cu7In3, In4Ag9/Ag9In4,
+    Mn3Co/CoMn3, MnCu3/Cu3Mn, MnGa/GaMn), one row per model. Matched by normalised formula.
+
+mlip_ranges:
+  value: "OCP: OH -5.35 to 0.79 eV, CO -5.12 to -0.13 eV; MACE: OH -1.50 to 2.91 eV, CO -2.51 to 1.14 eV"
+  source: Composition_Screenings.tab [four energy columns, "-" = not computed]
+  note: OH sign differs between the models for 13 of the 31 shared materials, CO for 7.
+
+
+# ============================================================
+# 4. SYNTHESIS
+# ============================================================
+
+gen1_samples:
+  value: "Cu0.465Ga0.07Al0.465 calcined at 500, 600, 700 °C"
+  source: Performance_Test_Composition_and_CalcTemp_firstgen.tab [Sample, Tcalc / °C]
+
+gen2_samples:
+  value: "Cu0.85Al0.1 oxide calcined at 450 or 550 °C, 1 wt% Ga, calcined at 250 or 350 °C"
+  source: Performance_Test_Composition_and_CalcTemp_secondgen.csv [Sample, Tcalc,1 / °C, Tcalc,2 / °C]
+  note: >-
+    Inconsistent in the source: sample names say Al0.1 while "Al ideal / [1]" is 0.15, and
+    "Ga ideal / [1]" is 1 (the wt% loading, not a fraction; Cu + Al + Ga would sum to 2).
+    The record follows the sample names.
+
+precursors_and_method:
+  value: missing
+  source: none
+  note: Mandatory (Synthesis.had_input_entity with precursor_quantity); one validation error per Synthesis record.
+
+calcination_term_in_authors_map:
+  value: "Tcalc columns mapped to 'reaction temperature' (VOC4CAT:0007013)"
+  source: vocabulary_map.csv
+  note: Mapping not reused; CoreMeta4Cat has has_calcination_temperature_range.
+
+
+# ============================================================
+# 5. CATALYTIC REACTION
+# ============================================================
+
+conditions:
+  value: "17 conditions; 225-300 °C; 80 bar; GHSV 3000 / 6000 h-1; CO2 13-27.1, CO 0-15.8, H2 36.7-76, Ar 5 vol%; H2/COx 1.2-4"
+  source: Testing_Protocol_for_Catalystst.tab [all columns]
+  note: GHSV has no CoreMeta4Cat slot and is only in the description.
+
+reactants:
+  value: CHEBI:16526 carbon dioxide, CHEBI:17245 carbon monoxide, CHEBI:18276 dihydrogen, CHEBI:49475 argon atom
+  source: Testing_Protocol_for_Catalystst.tab [column headers]
+
+tested_catalysts:
+  value: 3 first-generation + 4 second-generation samples
+  source: the two Performance_Test files
+  note: Which sample ran under which condition is not stated.
+
+reactor:
+  value: "continuous-flow reactor (type not stated)"
+  source: inferred from GHSV in Testing_Protocol_for_Catalystst.tab
+
+product_identification:
+  value: missing
+  source: none
+  note: Mandatory (CatalyticReaction.product_identification_method); the only validation error of this record.
+
+performance_results:
+  value: not deposited
+  source: none
+  note: The Performance_Test files list samples and calcination temperatures only.
+
+unused_file:
+  value: Sample_Compositions.tab (13 nominal compositions)
+  source: Sample_Compositions.tab
+  note: Purpose not stated; not described in the record.

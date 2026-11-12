@@ -1,0 +1,42 @@
+---
+# Simulation -- microkinetic simulation of the light-off experiments, original vs. optimized mechanism
+# Source: hdl:21.11165/4cat/b74m-m6rp, Fig6a-c_SIM_*.tab, Fig7a-c_SIM_*.tab (original and
+# "usingOptimizedMech"), Fig8a-c_SIM_usingOptimizedMech_*.tab; each paired with an _EXP_ file
+#
+# status: incomplete
+# Missing from the deposit: software_package (mandatory). The mechanism itself (elementary
+# steps, rate parameters, site densities) and the reactor model are not deposited.
+# Schema gaps (schema_gap_analysis_2026-10.md): S6 two versions of the mechanism (original and
+# optimized) cannot be two plans of one Simulation, and model outputs such as conversion curves
+# have no CalculatedProperty. S7 the link to the reproduced experiment
+# (REAC_b74m-m6rp_NH3_decomposition) cannot be made: evaluated_activity is inlined-only, so
+# a reference by id fails and the whole CatalyticReaction would have to be copied in here.
+
+id: "coremeta4cat:SIM_b74m-m6rp_MKM_validation"
+title:
+  - "Microkinetic simulation of NH3 decomposition light-off on Ni-BCZY and 0.5Ru-1Ba/Ni-BCZY"
+description:
+  - >-
+    One-dimensional reactor simulation with a microkinetic surface mechanism on Ru and Ni sites,
+    compared with the measured light-off curves at 500, 1000 and 3000 ppm NH3 (Fig. 6-8). For
+    Ni-BCZY both the original and an optimized mechanism were run; for 0.5Ru-1Ba/Ni-BCZY the
+    original (Fig. 6) and the optimized mechanism (Fig. 8). Simulated surface temperature
+    498-848 K. Surface species of the mechanism, from the profile files: Ru, H-Ru, N-Ru, NH-Ru,
+    NH2-Ru, NH3-Ru, Ni, H-Ni, N-Ni, NH-Ni, NH2-Ni, NH3-Ni.
+evaluated_entity:
+  - id: "coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY"
+    title: "0.5Ru-1Ba/Ni-BCZY (modelled as Ru and Ni surface sites)"
+  - id: "coremeta4cat:CAT_b74m-m6rp_Ni-BCZY"
+    title: "Ni-BCZY (modelled as Ni surface sites)"
+realized_plan:
+  id: "coremeta4cat:SIM_b74m-m6rp_MKM_method"
+  title: "microkinetic 1D reactor model, original and optimized mechanism"
+  description: >-
+    Mean-field surface mechanism coupled to a one-dimensional flow model of a 12 mm catalytic
+    channel. Elementary steps, rate parameters, site density, the optimization procedure and
+    the solver are not stated in the deposited files.
+calculated_property:
+  - value: "NH3 conversion vs. surface temperature, 498-848 K, 9 simulated curves"
+    description: "Fig6a-c (0.5Ru-1Ba/Ni-BCZY, original), Fig7a-c (Ni-BCZY, original and optimized), Fig8a-c (0.5Ru-1Ba/Ni-BCZY, optimized)"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp

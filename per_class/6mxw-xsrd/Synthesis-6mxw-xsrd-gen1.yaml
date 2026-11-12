@@ -1,0 +1,39 @@
+---
+# Synthesis -- first-generation Cu0.465Ga0.07Al0.465 mixed metal oxide, calcined at 500/600/700 C
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_firstgen.tab
+#
+# status: incomplete
+# Missing from the deposit: had_input_entity with precursor_quantity (mandatory) and the
+# preparation method. The deposit only gives nominal composition and calcination temperature.
+# Without the method, realized_plan cannot be a specific PreparationMethod subclass; the
+# calcination temperatures below validate only because some subclasses carry CalcinationMixin
+# (schema_gap_analysis_2026-10.md, T1).
+
+id: "coremeta4cat:SYN_6mxw-xsrd_gen1"
+title:
+  - "Cu0.465Ga0.07Al0.465 mixed metal oxide, three calcination temperatures"
+nominal_composition:
+  - "Cu0.465Ga0.07Al0.465 (metal fractions Cu 0.465, Al 0.465, Ga 0.07)"
+catalyst_measured_properties:
+  - "No measured properties of these three samples are deposited."
+had_output_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_500"
+    title: "Cu0.465Ga0.07Al0.465(500)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_600"
+    title: "Cu0.465Ga0.07Al0.465(600)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_700"
+    title: "Cu0.465Ga0.07Al0.465(700)"
+realized_plan:
+  id: "coremeta4cat:SYN_6mxw-xsrd_gen1_method"
+  title: "preparation of a Cu-Ga-Al mixed metal oxide (method not stated)"
+  description: >-
+    One batch per calcination temperature. Precursors, preparation route, calcination
+    atmosphere, heating rate and dwell time are not stated in the deposited files.
+  has_calcination_temperature_range:
+    - min_value: 773.15
+      max_value: 973.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "500, 600 and 700 C, one sample each"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

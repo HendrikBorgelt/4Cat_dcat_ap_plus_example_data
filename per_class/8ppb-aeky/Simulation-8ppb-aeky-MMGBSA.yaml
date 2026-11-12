@@ -1,0 +1,35 @@
+---
+# Simulation -- MM/GBSA binding free energies of the ligand-cofactor complex in three variants
+# Source: hdl:21.11165/4cat/8ppb-aeky, prime_mmgbsa_3FCR4M_complex.tar.gz,
+# prime_mmgbsa_3FCR4M_M1_complex.tar.gz, prime_mmgbsa_3FCR4M_M2_complex.tar.gz (156 MB each).
+# Archive contents were not read.
+#
+# status: incomplete
+# Missing here: the binding free energies (calculated_property, mandatory). They exist inside
+# the archives; they were not extracted because that means downloading 470 MB. Even then, a
+# binding free energy has no CalculatedProperty class (S2), the same gap as the adsorption
+# energies in 6mxw-xsrd.
+
+id: "coremeta4cat:SIM_8ppb-aeky_MMGBSA"
+title:
+  - "MM/GBSA binding free energy of the ligand-cofactor complex in 3FCR-4M, M1 and M2"
+description:
+  - >-
+    Prime MM/GBSA end-point calculations of the binding free energy of the ligand-cofactor
+    complex in 3FCR-4M and the mutants S19V/P423F and G151A/P423F. The deposit does not say
+    whether single structures or frames of the molecular dynamics runs were used.
+software_package:
+  - "Prime, MM/GBSA (version not stated)"
+evaluated_entity:
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M_complex"
+    title: "3FCR-4M with docked ligand-cofactor complex"
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M1_complex"
+    title: "3FCR-4M-S19V/P423F (M1) with ligand-cofactor complex"
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M2_complex"
+    title: "3FCR-4M-G151A/P423F (M2) with ligand-cofactor complex"
+realized_plan:
+  id: "coremeta4cat:SIM_8ppb-aeky_MMGBSA_method"
+  title: "MM/GBSA end-point free energy"
+  description: "Solvation model, force field and frame selection not read from the archives."
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky

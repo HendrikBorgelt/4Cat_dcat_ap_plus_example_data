@@ -1,0 +1,115 @@
+# ============================================================
+# SOURCE DOCUMENTATION
+# CoreMeta4Cat metadata provenance for hdl:21.11165/4cat/b74m-m6rp
+# ============================================================
+#
+# FORMAT
+#   field_or_value: {value, source, note}
+#
+# SOURCES
+#   API   = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/b74m-m6rp
+#           (version 1.0, released 2025-09-19), citation block
+#   Files = the 59 deposited files, read via /api/access/datafile/<id>?format=original.
+#           File names follow the figures of the publication (Fig1 ... Fig13).
+#   The raw files are not mirrored into ../dataset/ yet.
+#
+# NOT AVAILABLE
+#   The publication is not identified in the repository metadata (no DOI, no citation);
+#   nothing below is taken from it.
+# ============================================================
+
+
+# 1. DATASET-LEVEL FIELDS
+
+title:
+  value: "Dataset for Publication: Experimental and Microkinetic Investigation of Thermo-Catalytic Ammonia Decomposition over a Ba-promoted Ru/Ni-BCZY Catalyst for Use in Ammonia-fed Protonic Ceramic Cells"
+  source: API [citation.title]
+
+creator:
+  value: "Davari, Chacko, Bastek, Lott, Dailly, Angeli, Deutschmann"
+  source: API [citation.author]
+  note: Six of the seven authors have ORCIDs and affiliations (KIT, EIFER) in the API; Agent cannot hold them (schema_validation_analysis_2026-07.md S1).
+
+keyword:
+  value: "ammonia decomposition; microkinetic modelling; ruthenium; protonic ceramic cells"
+  source: inferred from the title
+  note: The API has no keywords, only subjects Chemistry and Engineering.
+
+research_field:
+  value: VOC4CAT:0007001 heterogeneous catalysis
+  source: inferred (supported Ru and Ni catalysts, gas-phase light-off)
+
+
+# 2. CATALYTIC REACTION
+
+catalysts:
+  value: "0.5Ru-1Ba/Ni-BCZY, 0.5Ru-0.5Ba/Ni-BCZY, 1Ru/Ni-BCZY, Ni-BCZY, 1Ru-1Ba/Ni-YSZ, 1Ru-1Ba/YSZ"
+  source: file names Fig2_*, Fig3_*, Fig7*_EXP_*
+  note: Loading units not stated. BCZY and YSZ expanded with their usual meaning (yttrium-doped barium cerate-zirconate, yttria-stabilised zirconia); the deposit does not spell them out.
+
+temperature:
+  value: "200-601 C inlet temperature"
+  source: Fig2_*.tab, Fig3_*.tab [column Tein [C], min/max over readable files]
+
+inlet_NH3:
+  value: "500, 1000, 3000 ppm"
+  source: file names; Fig3_*.tab [column NH3 [ppm]]
+
+conversion:
+  value: "99.8-100% at 600 C"
+  source: Fig2_*.tab [column Conversion [%], max]; five readable catalysts
+  note: Not representable as a result (no slot); in the description only.
+
+data_issue_decimal_separators:
+  value: "Fig2_0.5Ru_0.5Ba_Ni_BCZY_1000ppm.csv is not machine-readable as deposited"
+  source: Fig2_0.5Ru_0.5Ba_Ni_BCZY_1000ppm.csv [89,828 rows]
+  note: Decimal separators are missing or are commas (e.g. "433381317;0,922512", "433649017;1022442"), so temperatures read as 1e8-6e8 and NH3 as up to 1.6e10 ppm.
+
+data_issue_swapped_columns:
+  value: "Fig3_0.5Ru_1Ba_Ni_BCZY_3000ppm.tab has temperature and NH3 columns swapped relative to the header"
+  source: Fig3_0.5Ru_1Ba_Ni_BCZY_3000ppm.tab; identical in Fig6c_EXP_* and Fig8c_EXP_*
+  note: Column "Tein [C]" holds 3.2-3139 (NH3 ppm), column "NH3 [ppm]" holds 200-601 (temperature).
+
+duplicates:
+  value: "Fig6*_EXP and Fig8*_EXP are copies of Fig3 files; Fig7b_EXP is a copy of Fig2_Ni_BCZY"
+  source: identical file sizes and first rows
+
+product_identification:
+  value: missing
+  note: Mandatory; the only validation error of the CatalyticReaction record.
+
+
+# 3. CHARACTERIZATION
+
+tcd_measurement:
+  value: "TCD signal, 38-951 C, 954 points"
+  source: Fig1.tab
+  note: Technique (TPR/TPD/TPO), gas and sample not stated. Header degree sign is broken in the export ("Temperature (?C)").
+
+
+# 4. SIMULATIONS
+
+model:
+  value: "microkinetic mechanism on Ru and Ni sites in a 1D model of a 12 mm channel"
+  source: Fig10_*.csv [Reactor length 0-0.012 m; surface species columns Ru ... NH-NI]; Fig12*.csv [z = 0.012]
+
+mechanism_versions:
+  value: "original and optimized"
+  source: file names Fig7*_SIM_* vs Fig7*_SIM_usingOptimizedMech_*, Fig8*_SIM_usingOptimizedMech_*
+
+simulated_temperature:
+  value: "498-848 K (validation), 473-873 K and 615 K (parameter studies), 650-1000 K (pure NH3)"
+  source: Fig6-8 SIM [T_surface [K]], Fig12*, Fig13 [T_surface]
+
+tof:
+  value: "3.2e-4 to 0.37 s-1 on Ni+Ru sites, 498-848 K"
+  source: Fig11_Ni+Ru.tab [Tof s-1]
+
+parameter_ranges:
+  value: "inlet NH3 100 ppm-100%; GHSV 100-100,000 h-1; pressure 0.5-10 bar"
+  source: Fig12_a.tab [in_NH3_ppm], Fig12b file names; Fig12c_.csv [in_GHSV], Fig12d file names; Fig12e_.csv [in_pressure], Fig12f file names
+  note: Balance gas in all simulated feeds is Ar (column XAR).
+
+software:
+  value: missing
+  note: Mandatory (software_package); one validation error per Simulation record. Mechanism and rate parameters are not deposited.

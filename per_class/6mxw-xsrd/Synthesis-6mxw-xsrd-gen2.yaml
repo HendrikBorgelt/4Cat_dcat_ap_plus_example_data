@@ -1,0 +1,50 @@
+---
+# Synthesis -- second-generation Cu-Al oxide with 1 wt% Ga, two calcination steps
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_secondgen.csv
+#
+# status: incomplete
+# Missing from the deposit: had_input_entity with precursor_quantity (mandatory), the
+# preparation method of the Cu-Al oxide and how Ga was added.
+# Schema gap (schema_gap_analysis_2026-10.md, P1): the order of the two calcination steps
+# (Cu-Al oxide first, then again after adding Ga) cannot be expressed; both temperatures end up
+# as an unordered list.
+# Data inconsistency in the source file: the sample names say Cu0.85Al0.1, the "Al ideal / [1]"
+# column says 0.15, and the "Ga ideal / [1]" column holds 1, which is the Ga loading in wt%
+# rather than a metal fraction (D1). Values below follow the sample names.
+
+id: "coremeta4cat:SYN_6mxw-xsrd_gen2"
+title:
+  - "Cu0.85Al0.1 oxide with 1 wt% Ga, 2 x 2 calcination temperatures"
+nominal_composition:
+  - "Cu0.85Al0.1 mixed oxide (as named; Al fraction given as 0.15 in the composition column) with 1 wt% Ga"
+catalyst_measured_properties:
+  - "No measured properties of these four samples are deposited."
+had_output_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_250"
+    title: "Cu0.85Al0.1(450)-1wt.%Ga(250)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_350"
+    title: "Cu0.85Al0.1(450)-1wt.%Ga(350)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_250"
+    title: "Cu0.85Al0.1(550)-1wt.%Ga(250)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_350"
+    title: "Cu0.85Al0.1(550)-1wt.%Ga(350)"
+realized_plan:
+  id: "coremeta4cat:SYN_6mxw-xsrd_gen2_method"
+  title: "Cu-Al oxide calcination, Ga addition, second calcination (methods not stated)"
+  description: >-
+    Step 1: Cu-Al oxide calcined at 450 or 550 C. Step 2: 1 wt% Ga added (route not stated),
+    calcined again at 250 or 350 C. Precursors, atmospheres, heating rates and dwell times are
+    not stated in the deposited files.
+  has_calcination_temperature_range:
+    - min_value: 723.15
+      max_value: 823.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "Step 1 (Cu-Al oxide): 450 or 550 C"
+    - min_value: 523.15
+      max_value: 623.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "Step 2 (after Ga addition): 250 or 350 C"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

@@ -1,0 +1,99 @@
+# ============================================================
+# SOURCE DOCUMENTATION
+# CoreMeta4Cat metadata provenance for hdl:21.11165/4cat/8ppb-aeky
+# ============================================================
+#
+# FORMAT
+#   field_or_value: {value, source, note}
+#
+# SOURCES
+#   API    = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/8ppb-aeky
+#            (version 1.0, released 2026-07-24): citation block and per-file descriptions
+#   README = README.md (file 1559): authors, affiliations, keywords and abstract of the publication
+#
+# NOT READ
+#   The 17 software archives (about 33 GB in total; smallest 2.2 MB, largest 9.5 GB). All
+#   simulation parameters and results are inside them. Nothing below is taken from them.
+#   The publication (ACS Catalysis, per the dataset description) is not identified by DOI.
+# ============================================================
+
+
+# 1. DATASET-LEVEL FIELDS
+
+title:
+  value: "Datasets for Publication: Navigating the Sequence-Function Landscape: AI-Driven Discovery of Unseen and SynergisticMutations in an Amine Transaminase - Molecular Dynamic Simulations"
+  source: API [citation.title]
+  note: Kept verbatim, including the missing space in "SynergisticMutations".
+
+creator:
+  value: "Doerr, Mark; Weigmann, Konstantin; Schulig, Lukas"
+  source: API [citation.author]
+  note: The publication has nine authors (README); the dataset lists three.
+
+research_field:
+  value: VOC4CAT:0000204 biocatalysis
+  source: API [citation.keyword "biocatalysis"]
+
+keyword:
+  value: "biocatalysis; amine transaminase; molecular dynamics; MM/GBSA; docking"
+  source: API [citation.keyword] for "biocatalysis"; the rest from the file descriptions
+
+
+# 2. ENTITIES
+
+structure:
+  value: 3FCR-4M
+  source: file names (3FCR4M); file descriptions say "3CFR-4M"
+  note: >-
+    The two spellings disagree. 3FCR is used because it appears in all file names. "4M" is read
+    as four mutations; which ones is not stated. A structure identifier slot (PDB) would make
+    this checkable (B1).
+
+mutants:
+  value: "M1 = 3FCR-4M-S19V/P423F, M2 = 3FCR-4M-G151A/P423F"
+  source: API file descriptions of the *_M1* and *_M2* archives
+
+ligand:
+  value: CPEA
+  source: file name InducedFit_3FCR4M_CPEA.tar.gz
+  note: >-
+    Not resolved in the deposit. The abstract names (S)-1-(2-chlorophenyl)ethanamine as a
+    product, which may be what CPEA stands for; not confirmed.
+
+cofactor:
+  value: not named
+  source: file descriptions ("ligand-cofactor complex")
+  note: Amine transaminases use pyridoxal 5'-phosphate; the deposit does not say so.
+
+
+# 3. SIMULATIONS (all from the per-file descriptions)
+
+protein_preparation:
+  value: "Protein Preparation Wizard"
+  source: API file description of proteinprep_3FCR_4M.tar.gz
+
+docking:
+  value: "Induced Fit docking with Glide"
+  source: API file description of InducedFit_3FCR4M_CPEA.tar.gz
+
+md:
+  value: "Desmond: setup, minimisation, equilibration, production for 3 complexes"
+  source: file names desmond_setup_*, desmond_min_job_*, desmond_md_job_*, desmond_md_job_*_prod and their descriptions
+
+mmgbsa:
+  value: "Prime MM/GBSA for 3 complexes"
+  source: API file descriptions of prime_mmgbsa_*.tar.gz
+
+versions_and_parameters:
+  value: not read
+  note: Inside the archives (.cfg, .msj, log files). Extracting them needs the archives downloaded.
+
+calculated_property:
+  value: missing
+  note: >-
+    Mandatory. For preparation, docking and MD there is no property to report (output is a
+    structure or trajectory, S5). For MM/GBSA the binding free energies are in the archives.
+
+catalytic_reaction:
+  value: not in this deposit
+  note: The abstract reports conversion and ee for the enzymatic synthesis; those data are not part of this dataset.

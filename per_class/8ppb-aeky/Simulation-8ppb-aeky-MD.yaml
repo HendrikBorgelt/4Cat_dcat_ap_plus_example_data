@@ -1,0 +1,40 @@
+---
+# Simulation -- molecular dynamics of three ligand-cofactor complexes (wild-type 4M and two mutants)
+# Source: hdl:21.11165/4cat/8ppb-aeky, per complex: desmond_setup_* (32 MB),
+# desmond_min_job_* (55 MB), desmond_md_job_* (1.1 GB, equilibration),
+# desmond_md_job_*_prod (9.5 GB, production). Archive contents were not read.
+#
+# status: incomplete
+# Not representable (schema): the result is a trajectory, not a property, but
+# calculated_property is mandatory (S5). MolecularDynamics has force_field, ensemble_type,
+# simulation_timestep, simulation_time and number_of_atoms, which fit this case; their values
+# are inside the archives (.cfg/.msj) and were not read. Setup, minimisation, equilibration and
+# production cannot be expressed as ordered stages of one simulation (P1/S6).
+
+id: "coremeta4cat:SIM_8ppb-aeky_MD"
+title:
+  - "Molecular dynamics of the transaminase ligand-cofactor complex in 3FCR-4M and two mutants"
+description:
+  - >-
+    Desmond molecular dynamics of the docked ligand-cofactor complex in three variants:
+    3FCR-4M, 3FCR-4M-S19V/P423F (M1) and 3FCR-4M-G151A/P423F (M2). Each variant has a system
+    setup, a minimisation, an equilibration and a production run (12 archives, about 32 GB
+    in total). The mutants M1 and M2 were among the variants studied in the publication on
+    AI-guided transaminase engineering (README.md).
+software_package:
+  - "Desmond (version not stated)"
+evaluated_entity:
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M_complex"
+    title: "3FCR-4M with docked ligand-cofactor complex"
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M1_complex"
+    title: "3FCR-4M-S19V/P423F (M1) with ligand-cofactor complex"
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M2_complex"
+    title: "3FCR-4M-G151A/P423F (M2) with ligand-cofactor complex"
+realized_plan:
+  id: "coremeta4cat:SIM_8ppb-aeky_MD_method"
+  title: "molecular dynamics: setup, minimisation, equilibration, production"
+  description: >-
+    Force field, water model, ensemble, temperature, timestep and simulation length are in the
+    Desmond configuration files inside the archives and were not read.
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky

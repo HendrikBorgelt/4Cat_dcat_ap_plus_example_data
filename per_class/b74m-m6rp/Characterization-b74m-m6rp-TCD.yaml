@@ -1,0 +1,30 @@
+---
+# Characterization -- temperature-programmed measurement with TCD detection
+# Source: hdl:21.11165/4cat/b74m-m6rp, Fig1.tab (954 points, 38-951 C, TCD signal in a.u.)
+#
+# The deposit does not say whether this is a TPR, TPD or TPO experiment, which gas was used,
+# or which catalyst was measured. CoreMeta4Cat has TPR and TPO technique classes, but without
+# knowing the technique a generic plan is the only honest choice. The header of the source file
+# also has a broken degree sign ("Temperature (?C)"), an encoding problem of the export.
+
+id: "coremeta4cat:CHAR_b74m-m6rp_TCD"
+title:
+  - "Temperature-programmed analysis with thermal conductivity detection (Fig. 1)"
+description:
+  - >-
+    TCD signal recorded from 38 to 951 C (954 points). Technique (reduction, desorption or
+    oxidation), probe gas, heating rate and sample are not stated in the deposited files.
+carried_out_by:
+  - id: "coremeta4cat:DEV_b74m-m6rp_TCD"
+    title: "temperature-programmed analyser with thermal conductivity detector"
+    description: "Instrument model not stated in the deposited files."
+evaluated_entity:
+  - id: "coremeta4cat:CAT_b74m-m6rp_unspecified"
+    title: "catalyst sample (not stated)"
+    description: "The deposit does not say which of the six catalysts Fig. 1 refers to."
+realized_plan:
+  id: "coremeta4cat:CHAR_b74m-m6rp_TCD_method"
+  title: "temperature-programmed analysis (type not stated)"
+  description: "38-951 C; gas, flow, heating rate and sample mass not stated."
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp

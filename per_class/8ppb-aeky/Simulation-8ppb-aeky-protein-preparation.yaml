@@ -1,0 +1,34 @@
+---
+# Simulation -- preparation of the 3FCR-4M transaminase structure
+# Source: hdl:21.11165/4cat/8ppb-aeky, proteinprep_3FCR_4M.tar.gz (2.2 MB; file description
+# "Protein preparation of the initial 3CFR-4M structure with the Protein Preparation Wizard")
+# Archive contents were not read; everything below is from the Dataverse file description and
+# README.md.
+#
+# status: incomplete
+# Not representable (schema): calculated_property is mandatory, but structure preparation
+# produces a structure, not a property (schema_gap_analysis_2026-10.md, S5). There is also no
+# method class for structure preparation (S1) and no place for a PDB identifier or mutations
+# on the evaluated protein (B1).
+
+id: "coremeta4cat:SIM_8ppb-aeky_protein_preparation"
+title:
+  - "Protein preparation of the 3FCR-4M amine transaminase variant"
+description:
+  - >-
+    Preparation of the initial structure of the transaminase variant 3FCR-4M for docking and
+    molecular dynamics, using the Protein Preparation Wizard. The file names say 3FCR, the file
+    descriptions 3CFR; 3FCR is taken as the structure identifier. Protonation, missing-residue
+    handling and the source of the 4M mutations are inside the archive and were not read.
+software_package:
+  - "Protein Preparation Wizard (version not stated)"
+evaluated_entity:
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M"
+    title: "amine transaminase variant 3FCR-4M"
+    description: "Variant of the structure 3FCR carrying four mutations (named 4M; the mutations are not listed in the deposit)."
+realized_plan:
+  id: "coremeta4cat:SIM_8ppb-aeky_protein_preparation_method"
+  title: "protein structure preparation"
+  description: "Protein Preparation Wizard workflow; settings not read from the archive."
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky

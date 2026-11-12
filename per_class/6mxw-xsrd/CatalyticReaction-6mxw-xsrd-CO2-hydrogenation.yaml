@@ -1,0 +1,112 @@
+---
+# CatalyticReaction -- CO2/CO hydrogenation to methanol and dimethyl ether, 17 test conditions
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Testing_Protocol_for_Catalystst.tab (conditions),
+# Performance_Test_Composition_and_CalcTemp_firstgen.tab and ..._secondgen.csv (tested samples)
+#
+# status: incomplete
+# Missing from the deposit: product_identification_method (mandatory). Also not deposited:
+# reactor type and dimensions, catalyst mass, which sample was run under which condition, and
+# any performance results (conversion, selectivity, productivity).
+# Schema gaps (schema_gap_analysis_2026-10.md): R1 no space-velocity slot (GHSV is given),
+# R2 no slots for performance results, R3 no reaction-type term for CO2 hydrogenation.
+
+id: "coremeta4cat:REAC_6mxw-xsrd_CO2_hydrogenation"
+reaction_name:
+  - "hydrogenation of CO2/CO to methanol and dimethyl ether"
+title:
+  - "CO2/CO hydrogenation over Cu-Ga-Al mixed metal oxides (17 conditions, 7 catalysts)"
+description:
+  - >-
+    Catalytic testing of Cu-Ga-Al mixed metal oxides for the conversion of CO2 to methanol and
+    dimethyl ether at 80 bar and 225-300 C. The test protocol varies the feed (CO2 13-27.1 vol%,
+    CO 0-15.8 vol%, H2 36.7-76 vol%, 5 vol% Ar in every feed; H2/COx 1.2-4), the temperature
+    (225, 250, 275, 300 C) and the gas hourly space velocity (3000 and 6000 h-1) over 17
+    numbered conditions. Seven catalysts are listed as tested: three first-generation
+    Cu0.465Ga0.07Al0.465 oxides calcined at 500, 600 and 700 C, and four second-generation
+    Cu-Al oxides with 1 wt% Ga (two calcination temperatures for each of the two steps).
+catalyst_type:
+  - heterogeneous_catalysis
+used_catalyst:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_500"
+    title: "Cu0.465Ga0.07Al0.465(500)"
+    description: "First generation, calcined at 500 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_600"
+    title: "Cu0.465Ga0.07Al0.465(600)"
+    description: "First generation, calcined at 600 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_700"
+    title: "Cu0.465Ga0.07Al0.465(700)"
+    description: "First generation, calcined at 700 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_250"
+    title: "Cu0.85Al0.1(450)-1wt.%Ga(250)"
+    description: "Second generation, Cu-Al oxide calcined at 450 C, 1 wt% Ga, second calcination at 250 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_350"
+    title: "Cu0.85Al0.1(450)-1wt.%Ga(350)"
+    description: "Second generation, Cu-Al oxide calcined at 450 C, 1 wt% Ga, second calcination at 350 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_250"
+    title: "Cu0.85Al0.1(550)-1wt.%Ga(250)"
+    description: "Second generation, Cu-Al oxide calcined at 550 C, 1 wt% Ga, second calcination at 250 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_350"
+    title: "Cu0.85Al0.1(550)-1wt.%Ga(350)"
+    description: "Second generation, Cu-Al oxide calcined at 550 C, 1 wt% Ga, second calcination at 350 C"
+used_reactant:
+  - id: "coremeta4cat:REAC_6mxw-xsrd_CO2"
+    title: "carbon dioxide"
+    rdf_type:
+      id: CHEBI:16526
+      title: carbon dioxide
+  - id: "coremeta4cat:REAC_6mxw-xsrd_CO"
+    title: "carbon monoxide"
+    rdf_type:
+      id: CHEBI:17245
+      title: carbon monoxide
+  - id: "coremeta4cat:REAC_6mxw-xsrd_H2"
+    title: "dihydrogen"
+    rdf_type:
+      id: CHEBI:18276
+      title: dihydrogen
+  - id: "coremeta4cat:REAC_6mxw-xsrd_Ar"
+    title: "argon"
+    description: "5 vol% in every feed; its role (diluent or internal standard) is not stated."
+    rdf_type:
+      id: CHEBI:49475
+      title: argon atom
+used_reactor:
+  - id: "coremeta4cat:REAC_6mxw-xsrd_reactor"
+    title: "continuous-flow reactor"
+    description: >-
+      Continuous operation follows from the gas hourly space velocities in the protocol.
+      Reactor type, dimensions and catalyst mass are not stated in the deposited files.
+reactor_temperature_range:
+  - min_value: 498.15
+    max_value: 573.15
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+    unit: https://qudt.org/vocab/unit/K
+    description: "225-300 C (Testing_Protocol_for_Catalystst.tab, column T(°C))"
+experiment_pressure:
+  - value: 80.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+    unit: https://qudt.org/vocab/unit/BAR
+    description: "Constant across all 17 conditions"
+feed_composition_range:
+  - min_value: 13.0
+    max_value: 27.1
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "CO2 in the feed"
+  - min_value: 0.0
+    max_value: 15.8
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "CO in the feed"
+  - min_value: 36.7
+    max_value: 76.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "H2 in the feed"
+  - min_value: 5.0
+    max_value: 5.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "Ar in the feed"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

@@ -1,0 +1,42 @@
+---
+# Simulation -- DFT binding energies of OH and CO at doped CuGa2O4 and Ga2O3 sites
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Active_Sites_Screening.tab (17 sites x OH, CO);
+# method from the authors' vocabulary_map.csv (active_site, OH, CO -> density functional theory)
+#
+# status: incomplete
+# Missing from the deposit: software_package (mandatory). The DFT code, functional, cut-off,
+# k-points, slab models and reference states are not stated in the deposited files and have to
+# come from the authors or the article (doi:10.1021/acscatal.5c03876).
+
+id: "coremeta4cat:SIM_6mxw-xsrd_DFT_active_sites"
+title:
+  - "DFT binding energies of OH and CO at 17 oxide surface sites"
+description:
+  - >-
+    Density functional theory binding energies of OH and CO at 17 sites: pristine CuGa2O4 and
+    CuGa2O4 doped with Al, Co, Cu, Ge, In, Ni or Sn, and pristine Ga2O3 and Ga2O3 doped with Al,
+    Pd, Pt, Rh, Ru, Sn, Zn or Zr. Site notation in the source file is <host>-<dopant>, e.g.
+    CuGa2O4-Co.
+rdf_type:
+  id: VOC4CAT:0000215
+  title: density functional theory
+evaluated_entity:
+  - id: "coremeta4cat:SLAB_6mxw-xsrd_CuGa2O4_sites"
+    title: "CuGa2O4 surface models, pristine and with 7 dopants"
+    description: "Dopants Al, Co, Cu, Ge, In, Ni, Sn. Facet and slab model not stated."
+  - id: "coremeta4cat:SLAB_6mxw-xsrd_Ga2O3_sites"
+    title: "Ga2O3 surface models, pristine and with 8 dopants"
+    description: "Dopants Al, Pd, Pt, Rh, Ru, Sn, Zn, Zr. Facet, polymorph and slab model not stated."
+realized_plan:
+  id: "coremeta4cat:SIM_6mxw-xsrd_DFT_method"
+  title: "density functional theory"
+  description: >-
+    Exchange-correlation functional, basis set or cut-off, k-point mesh, dispersion correction
+    and adsorption reference states not stated in the deposited files.
+calculated_property:
+  - value: "-1.87 to 1.41 eV (17 sites)"
+    description: "OH binding energy; range over all sites (Ga2O3-Zn lowest, CuGa2O4-Cu highest)"
+  - value: "-2.20 to 0.51 eV (17 sites)"
+    description: "CO binding energy; range over all sites (Ga2O3-Ru lowest, pristine Ga2O3 highest)"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

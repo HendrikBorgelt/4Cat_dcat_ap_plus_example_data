@@ -1,0 +1,342 @@
+---
+# CatalysisDataset -- hdl:21.11165/4cat/6mxw-xsrd, Cu-Ga-Al mixed metal oxides for CO2 to methanol/DME
+# Combined record: the full per-class records from per_class/6mxw-xsrd/ inlined under
+# was_generated_by and is_about_activity (rebuild with the same content if those change).
+#
+# status: incomplete
+# The deposit lacks four mandatory pieces of information, each reported as one validation error:
+# precursors of both catalyst generations (Synthesis.had_input_entity), the DFT software
+# (Simulation.software_package) and the product analysis (CatalyticReaction.product_identification_method).
+# See source_documentation.yaml for where every value comes from.
+id: hdl:21.11165/4cat/6mxw-xsrd
+title:
+- Copper Gallium Aluminum Mixed Metal Oxides as Alternative Catalyst Candidates for Efficient Conversion
+  of Carbon Dioxide to Methanol and Dimethyl Ether
+description:
+- 'Data from the publication of the same title (ACS Catal., doi:10.1021/acscatal.5c03876): DFT and machine-learned-potential
+  (OCP, MACE-MPA-0) binding energies of OH and CO used to screen active phases, nominal and XRF compositions
+  of 76 Cu-Ga-Al mixed metal oxides, calcination temperatures of the seven catalysts selected for testing,
+  and the 17-condition test protocol for CO2/CO hydrogenation to methanol and dimethyl ether at 80 bar.
+  No catalytic performance results are included in the deposit. A further list of 13 nominal compositions
+  (Sample_Compositions.tab) has no stated purpose and is not described here.'
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+keyword:
+- CO2 hydrogenation
+- mixed-metal-oxide catalyst
+- machine learning
+- machine learning interatomic potentials
+- density functional theory
+- reaction mechanism
+creator:
+- name:
+  - Weber, Sebastian
+publisher:
+  name:
+  - NFDI4Cat Central Data Repository
+is_referenced_by:
+- id: https://doi.org/10.1021/acscatal.5c03876
+  title: Weber et al., ACS Catalysis, doi:10.1021/acscatal.5c03876
+dataset_distribution:
+- access_URL:
+  - id: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+    title: Repository landing page
+  description:
+  - Repository landing page providing access to the eight tabular data files.
+  licence:
+    id: https://creativecommons.org/licenses/by/4.0/
+    title: CC BY 4.0
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+was_generated_by:
+- id: coremeta4cat:SYN_6mxw-xsrd_gen1
+  activity_designator: Synthesis
+  title:
+  - Cu0.465Ga0.07Al0.465 mixed metal oxide, three calcination temperatures
+  nominal_composition:
+  - Cu0.465Ga0.07Al0.465 (metal fractions Cu 0.465, Al 0.465, Ga 0.07)
+  catalyst_measured_properties:
+  - No measured properties of these three samples are deposited.
+  had_output_entity:
+  - id: coremeta4cat:CAT_6mxw-xsrd_G1_500
+    title: Cu0.465Ga0.07Al0.465(500)
+  - id: coremeta4cat:CAT_6mxw-xsrd_G1_600
+    title: Cu0.465Ga0.07Al0.465(600)
+  - id: coremeta4cat:CAT_6mxw-xsrd_G1_700
+    title: Cu0.465Ga0.07Al0.465(700)
+  realized_plan:
+    id: coremeta4cat:SYN_6mxw-xsrd_gen1_method
+    title: preparation of a Cu-Ga-Al mixed metal oxide (method not stated)
+    description: One batch per calcination temperature. Precursors, preparation route, calcination atmosphere,
+      heating rate and dwell time are not stated in the deposited files.
+    has_calcination_temperature_range:
+    - min_value: 773.15
+      max_value: 973.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: 500, 600 and 700 C, one sample each
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+- id: coremeta4cat:SYN_6mxw-xsrd_gen2
+  activity_designator: Synthesis
+  title:
+  - Cu0.85Al0.1 oxide with 1 wt% Ga, 2 x 2 calcination temperatures
+  nominal_composition:
+  - Cu0.85Al0.1 mixed oxide (as named; Al fraction given as 0.15 in the composition column) with 1 wt%
+    Ga
+  catalyst_measured_properties:
+  - No measured properties of these four samples are deposited.
+  had_output_entity:
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_450_250
+    title: Cu0.85Al0.1(450)-1wt.%Ga(250)
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_450_350
+    title: Cu0.85Al0.1(450)-1wt.%Ga(350)
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_550_250
+    title: Cu0.85Al0.1(550)-1wt.%Ga(250)
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_550_350
+    title: Cu0.85Al0.1(550)-1wt.%Ga(350)
+  realized_plan:
+    id: coremeta4cat:SYN_6mxw-xsrd_gen2_method
+    title: Cu-Al oxide calcination, Ga addition, second calcination (methods not stated)
+    description: 'Step 1: Cu-Al oxide calcined at 450 or 550 C. Step 2: 1 wt% Ga added (route not stated),
+      calcined again at 250 or 350 C. Precursors, atmospheres, heating rates and dwell times are not stated
+      in the deposited files.'
+    has_calcination_temperature_range:
+    - min_value: 723.15
+      max_value: 823.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: 'Step 1 (Cu-Al oxide): 450 or 550 C'
+    - min_value: 523.15
+      max_value: 623.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: 'Step 2 (after Ga addition): 250 or 350 C'
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+- id: coremeta4cat:CHAR_6mxw-xsrd_XRF
+  activity_designator: Characterization
+  title:
+  - XRF elemental analysis (76 Cu-Ga-Al mixed metal oxides)
+  description:
+  - X-ray fluorescence analysis of 76 Cu-Ga-Al mixed metal oxide samples spanning the Cu/Al/Ga ternary
+    (Cu 0-1, Al 0-1, Ga 0-1, metal fractions normalised to 1), including the three single-metal oxides.
+    Measured Cu, Al and Ga fractions are reported next to the nominal fractions.
+  rdf_type:
+    id: VOC4CAT:0000067
+    title: X-ray fluorescence
+  carried_out_by:
+  - id: coremeta4cat:DEV_6mxw-xsrd_XRF
+    title: X-ray fluorescence spectrometer
+    description: Instrument model not stated in the deposited files.
+  evaluated_entity:
+  - id: coremeta4cat:CAT_6mxw-xsrd_MMO_library
+    title: Cu-Ga-Al mixed metal oxide library (76 compositions)
+    description: Nominal compositions from Cu1 to Ga1 across the Cu/Al/Ga ternary; individual samples
+      are identified only by their composition, not by a sample ID.
+  realized_plan:
+    id: coremeta4cat:CHAR_6mxw-xsrd_XRF_method
+    title: XRF determination of Cu, Al and Ga metal fractions
+    description: Metal fractions of Cu, Al and Ga normalised to their sum. Excitation source, sample preparation,
+      calibration and quantification method are not stated in the deposited files.
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+- id: coremeta4cat:SIM_6mxw-xsrd_DFT_active_sites
+  activity_designator: Simulation
+  title:
+  - DFT binding energies of OH and CO at 17 oxide surface sites
+  description:
+  - 'Density functional theory binding energies of OH and CO at 17 sites: pristine CuGa2O4 and CuGa2O4
+    doped with Al, Co, Cu, Ge, In, Ni or Sn, and pristine Ga2O3 and Ga2O3 doped with Al, Pd, Pt, Rh, Ru,
+    Sn, Zn or Zr. Site notation in the source file is <host>-<dopant>, e.g. CuGa2O4-Co.'
+  rdf_type:
+    id: VOC4CAT:0000215
+    title: density functional theory
+  evaluated_entity:
+  - id: coremeta4cat:SLAB_6mxw-xsrd_CuGa2O4_sites
+    title: CuGa2O4 surface models, pristine and with 7 dopants
+    description: Dopants Al, Co, Cu, Ge, In, Ni, Sn. Facet and slab model not stated.
+  - id: coremeta4cat:SLAB_6mxw-xsrd_Ga2O3_sites
+    title: Ga2O3 surface models, pristine and with 8 dopants
+    description: Dopants Al, Pd, Pt, Rh, Ru, Sn, Zn, Zr. Facet, polymorph and slab model not stated.
+  realized_plan:
+    id: coremeta4cat:SIM_6mxw-xsrd_DFT_method
+    title: density functional theory
+    description: Exchange-correlation functional, basis set or cut-off, k-point mesh, dispersion correction
+      and adsorption reference states not stated in the deposited files.
+  calculated_property:
+  - value: -1.87 to 1.41 eV (17 sites)
+    description: OH binding energy; range over all sites (Ga2O3-Zn lowest, CuGa2O4-Cu highest)
+  - value: -2.20 to 0.51 eV (17 sites)
+    description: CO binding energy; range over all sites (Ga2O3-Ru lowest, pristine Ga2O3 highest)
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+- id: coremeta4cat:SIM_6mxw-xsrd_MLIP_OCP
+  activity_designator: Simulation
+  title:
+  - OCP binding-energy screening of OH and CO (37 compositions)
+  description:
+  - Binding energies of OH and CO computed with an Open Catalyst Project (OCP) machine-learned interatomic
+    potential for 37 elemental and intermetallic compositions, used to screen candidate active phases
+    for CO2 hydrogenation. Surface facets, adsorption sites, the model checkpoint and the reference states
+    of the binding energies are not stated in the deposited files.
+  software_package:
+  - OCP model (Open Catalyst Project; checkpoint not stated)
+  evaluated_entity:
+  - id: coremeta4cat:SLAB_6mxw-xsrd_OCP_compositions
+    title: 37 elemental and intermetallic surface models
+    description: Al, Al4Cu9, Co, Cu, Cu3Rh, CuNi, Fe, Fe3Cu, FeNi, Ga2Cu, Ga3Co, Ga3Ni5, Ga4Cu9, GaCu3,
+      GaNi3, In, In3Co, In3Cu7, In3Ga, In4Ag9, InRh, InSb, Ir, Mn, Mn3Co, Mn3In, MnCu3, MnGa, Ni, Pd,
+      Rh, Sn, Zn, Zn2Pd, Zn3Sn, ZnGa3, ZnIn3. Facets and slab models not stated.
+  realized_plan:
+    id: coremeta4cat:SIM_6mxw-xsrd_MLIP_OCP_method
+    title: machine-learned interatomic potential (OCP model)
+    description: Single-point or relaxation protocol, adsorbate placement and reference energies not stated
+      in the deposited files.
+  calculated_property:
+  - value: -5.35 to 0.79 eV (37 compositions)
+    description: OH binding energy; range over all compositions (InSb lowest, Pd highest)
+  - value: -5.12 to -0.13 eV (37 compositions)
+    description: CO binding energy; range over all compositions (InSb lowest, Al highest)
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+- id: coremeta4cat:SIM_6mxw-xsrd_MLIP_MACE
+  activity_designator: Simulation
+  title:
+  - MACE-MPA-0 binding-energy screening of OH and CO (31 compositions)
+  description:
+  - Binding energies of OH and CO computed with the MACE-MPA-0 machine-learned interatomic potential for
+    31 elemental and intermetallic compositions, as a second model next to the OCP screening. Surface
+    facets, adsorption sites and the reference states of the binding energies are not stated in the deposited
+    files.
+  software_package:
+  - MACE-MPA-0 foundation model (version not stated)
+  evaluated_entity:
+  - id: coremeta4cat:SLAB_6mxw-xsrd_MACE_compositions
+    title: 31 elemental and intermetallic surface models
+    description: Ag9In4, Al, Al4Cu9, CuFe3, Co, CoGa3, CoIn3, CoMn3, Cu, Cu3Ga, Cu3Mn, Cu3Rh, Cu7In3,
+      Cu9Ga4, CuGa2, CuNi, Fe, FeNi, Ga3Ni5, GaMn, GaNi3, In, InRh, InSb, Ir, Mn, Ni, Pd, Rh, Sn, Zn.
+      All 31 were also computed with the OCP model, partly under a different spelling of the formula.
+      Facets and slab models not stated.
+  realized_plan:
+    id: coremeta4cat:SIM_6mxw-xsrd_MLIP_MACE_method
+    title: machine-learned interatomic potential (MACE-MPA-0)
+    description: Single-point or relaxation protocol, adsorbate placement and reference energies not stated
+      in the deposited files.
+  calculated_property:
+  - value: -1.50 to 2.91 eV (31 compositions)
+    description: OH binding energy; range over all compositions (Al4Cu9 lowest, Fe and GaNi3 highest)
+  - value: -2.51 to 1.14 eV (31 compositions)
+    description: CO binding energy; range over all compositions (Ir lowest, Fe highest)
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+is_about_activity:
+- id: coremeta4cat:REAC_6mxw-xsrd_CO2_hydrogenation
+  reaction_name:
+  - hydrogenation of CO2/CO to methanol and dimethyl ether
+  title:
+  - CO2/CO hydrogenation over Cu-Ga-Al mixed metal oxides (17 conditions, 7 catalysts)
+  description:
+  - 'Catalytic testing of Cu-Ga-Al mixed metal oxides for the conversion of CO2 to methanol and dimethyl
+    ether at 80 bar and 225-300 C. The test protocol varies the feed (CO2 13-27.1 vol%, CO 0-15.8 vol%,
+    H2 36.7-76 vol%, 5 vol% Ar in every feed; H2/COx 1.2-4), the temperature (225, 250, 275, 300 C) and
+    the gas hourly space velocity (3000 and 6000 h-1) over 17 numbered conditions. Seven catalysts are
+    listed as tested: three first-generation Cu0.465Ga0.07Al0.465 oxides calcined at 500, 600 and 700
+    C, and four second-generation Cu-Al oxides with 1 wt% Ga (two calcination temperatures for each of
+    the two steps).'
+  catalyst_type:
+  - heterogeneous_catalysis
+  used_catalyst:
+  - id: coremeta4cat:CAT_6mxw-xsrd_G1_500
+    title: Cu0.465Ga0.07Al0.465(500)
+    description: First generation, calcined at 500 C
+  - id: coremeta4cat:CAT_6mxw-xsrd_G1_600
+    title: Cu0.465Ga0.07Al0.465(600)
+    description: First generation, calcined at 600 C
+  - id: coremeta4cat:CAT_6mxw-xsrd_G1_700
+    title: Cu0.465Ga0.07Al0.465(700)
+    description: First generation, calcined at 700 C
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_450_250
+    title: Cu0.85Al0.1(450)-1wt.%Ga(250)
+    description: Second generation, Cu-Al oxide calcined at 450 C, 1 wt% Ga, second calcination at 250
+      C
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_450_350
+    title: Cu0.85Al0.1(450)-1wt.%Ga(350)
+    description: Second generation, Cu-Al oxide calcined at 450 C, 1 wt% Ga, second calcination at 350
+      C
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_550_250
+    title: Cu0.85Al0.1(550)-1wt.%Ga(250)
+    description: Second generation, Cu-Al oxide calcined at 550 C, 1 wt% Ga, second calcination at 250
+      C
+  - id: coremeta4cat:CAT_6mxw-xsrd_G2_550_350
+    title: Cu0.85Al0.1(550)-1wt.%Ga(350)
+    description: Second generation, Cu-Al oxide calcined at 550 C, 1 wt% Ga, second calcination at 350
+      C
+  used_reactant:
+  - id: coremeta4cat:REAC_6mxw-xsrd_CO2
+    title: carbon dioxide
+    rdf_type:
+      id: CHEBI:16526
+      title: carbon dioxide
+  - id: coremeta4cat:REAC_6mxw-xsrd_CO
+    title: carbon monoxide
+    rdf_type:
+      id: CHEBI:17245
+      title: carbon monoxide
+  - id: coremeta4cat:REAC_6mxw-xsrd_H2
+    title: dihydrogen
+    rdf_type:
+      id: CHEBI:18276
+      title: dihydrogen
+  - id: coremeta4cat:REAC_6mxw-xsrd_Ar
+    title: argon
+    description: 5 vol% in every feed; its role (diluent or internal standard) is not stated.
+    rdf_type:
+      id: CHEBI:49475
+      title: argon atom
+  used_reactor:
+  - id: coremeta4cat:REAC_6mxw-xsrd_reactor
+    title: continuous-flow reactor
+    description: Continuous operation follows from the gas hourly space velocities in the protocol. Reactor
+      type, dimensions and catalyst mass are not stated in the deposited files.
+  reactor_temperature_range:
+  - min_value: 498.15
+    max_value: 573.15
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+    unit: https://qudt.org/vocab/unit/K
+    description: 225-300 C (Testing_Protocol_for_Catalystst.tab, column T(°C))
+  experiment_pressure:
+  - value: 80.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+    unit: https://qudt.org/vocab/unit/BAR
+    description: Constant across all 17 conditions
+  feed_composition_range:
+  - min_value: 13.0
+    max_value: 27.1
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: CO2 in the feed
+  - min_value: 0.0
+    max_value: 15.8
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: CO in the feed
+  - min_value: 36.7
+    max_value: 76.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: H2 in the feed
+  - min_value: 5.0
+    max_value: 5.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: Ar in the feed
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+is_about_entity:
+- id: coremeta4cat:CAT_6mxw-xsrd_all
+  title: Cu-Ga-Al mixed metal oxides and computational surface models
+  description: 76 mixed metal oxides characterized by XRF, of which seven calcined variants were tested
+    catalytically; 17 doped oxide sites (DFT) and 37 intermetallic and elemental compositions (machine-learned
+    potentials). See was_generated_by and is_about_activity for per-sample detail.
