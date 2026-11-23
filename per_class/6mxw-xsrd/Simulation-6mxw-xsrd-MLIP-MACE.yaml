@@ -15,10 +15,12 @@ description:
   - >-
     Binding energies of OH and CO computed with the MACE-MPA-0 machine-learned interatomic
     potential for 31 elemental and intermetallic compositions, as a second model next to the
-    OCP screening. Surface facets, adsorption sites and the reference states of the binding
-    energies are not stated in the deposited files.
+    OCP screening; both serve as prescreening and sampling for DFT calculations, with DFT
+    verification at the PBE-D3 level (Weber et al., ACS Catal. 2025, Table 2 and section 3.1).
+    Surface facets, adsorption sites and the reference states of the binding energies are in
+    the article's SI, not in the main text.
 software_package:
-  - "MACE-MPA-0 foundation model (version not stated)"
+  - "MACE-MPA-0 foundation model (article, Table 2)"
 evaluated_entity:
   - id: "coremeta4cat:SLAB_6mxw-xsrd_MACE_compositions"
     title: "31 elemental and intermetallic surface models"

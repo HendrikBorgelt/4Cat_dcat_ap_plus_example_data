@@ -1,50 +1,64 @@
 ---
-# Synthesis -- second-generation Cu-Al oxide with 1 wt% Ga, two calcination steps
-# Source: hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_secondgen.csv
+# Synthesis -- second-generation Cu0.85Al0.15 oxide with 1 wt% Ga, two calcination steps
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_secondgen.csv;
+# method from Weber et al., ACS Catal. 2025, 15, 18857, section 2.1.2
 #
 # status: incomplete
-# Missing from the deposit: had_input_entity with precursor_quantity (mandatory), the
-# preparation method of the Cu-Al oxide and how Ga was added.
-# Schema gap (schema_gap_analysis_2026-10.md, P1): the order of the two calcination steps
-# (Cu-Al oxide first, then again after adding Ga) cannot be expressed; both temperatures end up
-# as an unordered list.
-# Data inconsistency in the source file: the sample names say Cu0.85Al0.1, the "Al ideal / [1]"
-# column says 0.15, and the "Ga ideal / [1]" column holds 1, which is the Ga loading in wt%
-# rather than a metal fraction (D1). Values below follow the sample names.
+# Missing: precursor_quantity (mandatory); the article gives the target loading (1 wt% Ga)
+# but no masses (schema_gap_analysis_2026-10.md, P2).
+# Schema gap P1: the route is co-precipitation followed by incipient-wetness impregnation with
+# a second calcination. One Synthesis realizes one plan, so the two steps and their order are
+# only in the description.
+# Composition: the article's method section and sample abbreviation say Cu0.85Al0.15, the
+# deposited sample names and the footnote of the article's Table 1 say Cu0.85Al0.1. This record
+# follows the method section (D1).
 
 id: "coremeta4cat:SYN_6mxw-xsrd_gen2"
 title:
-  - "Cu0.85Al0.1 oxide with 1 wt% Ga, 2 x 2 calcination temperatures"
+  - "Cu0.85Al0.15 oxide with 1 wt% Ga by impregnation, 2 x 2 calcination temperatures"
 nominal_composition:
-  - "Cu0.85Al0.1 mixed oxide (as named; Al fraction given as 0.15 in the composition column) with 1 wt% Ga"
+  - "Cu0.85Al0.15 mixed oxide with 1 wt% Ga (target loading)"
 catalyst_measured_properties:
   - "No measured properties of these four samples are deposited."
+had_input_entity:
+  - id: "coremeta4cat:PREC_6mxw-xsrd_CuNO3"
+    title: "copper(II) nitrate trihydrate, Cu(NO3)2·3H2O (Sigma-Aldrich, 98.8%)"
+  - id: "coremeta4cat:PREC_6mxw-xsrd_AlNO3"
+    title: "aluminium nitrate nonahydrate, Al(NO3)3·9H2O (Sigma-Aldrich, 99.9%)"
+  - id: "coremeta4cat:PREC_6mxw-xsrd_GaNO3"
+    title: "gallium(III) nitrate hydrate, Ga(NO3)3·xH2O (Sigma-Aldrich, 99.9%), aqueous solution for impregnation"
 had_output_entity:
   - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_250"
-    title: "Cu0.85Al0.1(450)-1wt.%Ga(250)"
+    title: "Cu0.85Al0.15(450)-1wt.%Ga(250)"
   - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_350"
-    title: "Cu0.85Al0.1(450)-1wt.%Ga(350)"
+    title: "Cu0.85Al0.15(450)-1wt.%Ga(350)"
   - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_250"
-    title: "Cu0.85Al0.1(550)-1wt.%Ga(250)"
+    title: "Cu0.85Al0.15(550)-1wt.%Ga(250)"
   - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_350"
-    title: "Cu0.85Al0.1(550)-1wt.%Ga(350)"
+    title: "Cu0.85Al0.15(550)-1wt.%Ga(350)"
 realized_plan:
   id: "coremeta4cat:SYN_6mxw-xsrd_gen2_method"
-  title: "Cu-Al oxide calcination, Ga addition, second calcination (methods not stated)"
+  title: "co-precipitation of Cu/Al-HTC, calcination, incipient-wetness impregnation with Ga, second calcination"
   description: >-
-    Step 1: Cu-Al oxide calcined at 450 or 550 C. Step 2: 1 wt% Ga added (route not stated),
-    calcined again at 250 or 350 C. Precursors, atmospheres, heating rates and dwell times are
-    not stated in the deposited files.
+    Step 1: Cu0.85Al0.15 HTC precursor co-precipitated as for the library, calcined 4 h at
+    4 C/min in clean dry air at 450 or 550 C. Step 2: incipient wetness impregnation with
+    aqueous Ga(NO3)3 to a target of 1 wt% Ga, drying at 80 C, calcination 4 h at 4 C/min in
+    clean dry air at 250 or 350 C.
   has_calcination_temperature_range:
-    - min_value: 723.15
+    - min_value: 523.15
       max_value: 823.15
       has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
       unit: https://qudt.org/vocab/unit/K
-      description: "Step 1 (Cu-Al oxide): 450 or 550 C"
-    - min_value: 523.15
-      max_value: 623.15
-      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
-      unit: https://qudt.org/vocab/unit/K
-      description: "Step 2 (after Ga addition): 250 or 350 C"
+      description: "Step 1 at 450 or 550 C, step 2 at 250 or 350 C; the order cannot be expressed"
+  has_calcination_dwelling_time:
+    value: 4
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  has_calcination_heating_rate:
+    - value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+  has_calcination_atmosphere:
+    - value: "clean dry air"
 other_identifier:
   - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

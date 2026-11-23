@@ -2,7 +2,10 @@
 # Simulation -- OH and CO binding energies from the OCP machine-learned potential
 # Source: hdl:21.11165/4cat/6mxw-xsrd, Composition_Screenings.tab (columns "OCP model - OH (eV)",
 # "OCP model - CO (eV)"); method identified from the column names and the dataset keywords
-# ("machine learning interatomic potentials (or MLIP)").
+# ("machine learning interatomic potentials (or MLIP)"). Model checkpoint inferred from
+# Weber et al., ACS Catal. 2025, 15, 18857, Table 2: the row "Prescreening and sampling for
+# DFT calculations" lists exactly MACE-MPA-0 and EquiformerV2-31M-S2EF-OC20-All+MD, the two
+# models in this file. The deposit itself only says "OCP model".
 #
 # Schema gaps this record runs into (schema_gap_analysis_2026-10.md):
 #   S1  no SimulationMethod subclass for machine-learned interatomic potentials
@@ -17,12 +20,11 @@ title:
 description:
   - >-
     Binding energies of OH and CO computed with an Open Catalyst Project (OCP) machine-learned
-    interatomic potential for 37 elemental and intermetallic compositions, used to screen
-    candidate active phases for CO2 hydrogenation. Surface facets, adsorption sites, the
-    model checkpoint and the reference states of the binding energies are not stated in the
-    deposited files.
+    interatomic potential for 37 elemental and intermetallic compositions, as prescreening and
+    sampling for DFT calculations (article, Table 2). Surface facets, adsorption sites and the
+    reference states of the binding energies are in the article's SI, not in the main text.
 software_package:
-  - "OCP model (Open Catalyst Project; checkpoint not stated)"
+  - "EquiformerV2-31M-S2EF-OC20-All+MD (Open Catalyst Project); inferred from article Table 2"
 evaluated_entity:
   - id: "coremeta4cat:SLAB_6mxw-xsrd_OCP_compositions"
     title: "37 elemental and intermetallic surface models"

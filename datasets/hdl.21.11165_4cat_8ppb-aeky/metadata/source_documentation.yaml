@@ -7,14 +7,16 @@
 #   field_or_value: {value, source, note}
 #
 # SOURCES
-#   API    = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/8ppb-aeky
-#            (version 1.0, released 2026-07-24): citation block and per-file descriptions
-#   README = README.md (file 1559): authors, affiliations, keywords and abstract of the publication
+#   API     = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/8ppb-aeky
+#             (version 1.0, released 2026-07-24): citation block and per-file descriptions
+#   README  = README.md (file 1559): authors, affiliations, keywords and abstract
+#   Article = Weigmann et al., "Navigating the Sequence-Function Landscape: AI-Driven Discovery
+#             of Unseen and Synergistic Mutations in an Amine Transaminase", ACS Catal. (2025),
+#             doi:10.1021/acscatal.5c04248 (../dataset/acscatal.5c04248.pdf), main text only
 #
 # NOT READ
-#   The 17 software archives (about 33 GB in total; smallest 2.2 MB, largest 9.5 GB). All
-#   simulation parameters and results are inside them. Nothing below is taken from them.
-#   The publication (ACS Catalysis, per the dataset description) is not identified by DOI.
+#   The 17 software archives (about 33 GB). The article's Supporting Information (system
+#   preparation, MD settings, Figure S5 with absolute MM/GBSA values).
 # ============================================================
 
 
@@ -28,72 +30,57 @@ title:
 creator:
   value: "Doerr, Mark; Weigmann, Konstantin; Schulig, Lukas"
   source: API [citation.author]
-  note: The publication has nine authors (README); the dataset lists three.
+
+is_referenced_by:
+  value: https://doi.org/10.1021/acscatal.5c04248
+  source: Article [file name and DOI line]
+  note: Not in the repository metadata, which only says "Supplemental Information for ACS Catalysis article".
 
 research_field:
   value: VOC4CAT:0000204 biocatalysis
   source: API [citation.keyword "biocatalysis"]
 
-keyword:
-  value: "biocatalysis; amine transaminase; molecular dynamics; MM/GBSA; docking"
-  source: API [citation.keyword] for "biocatalysis"; the rest from the file descriptions
-
 
 # 2. ENTITIES
 
-structure:
-  value: 3FCR-4M
-  source: file names (3FCR4M); file descriptions say "3CFR-4M"
-  note: >-
-    The two spellings disagree. 3FCR is used because it appears in all file names. "4M" is read
-    as four mutations; which ones is not stated. A structure identifier slot (PDB) would make
-    this checkable (B1).
+enzyme:
+  value: "3FCR-4M = amine transaminase from Ruegeria sp. (PDB 3FCR) with Y59W, Y87F, Y152F, T231A"
+  source: Article [Materials and Methods; Results, first paragraph]
+  note: The deposit's file descriptions spell it 3CFR-4M; file names and article use 3FCR.
 
 mutants:
-  value: "M1 = 3FCR-4M-S19V/P423F, M2 = 3FCR-4M-G151A/P423F"
-  source: API file descriptions of the *_M1* and *_M2* archives
+  value: "M1 = 4M-N15 = 3FCR-4M-S19V/P423F; M2 = 4M-N16 = 3FCR-4M-G151A/P423F"
+  source: API file descriptions (M1/M2 and mutations); Article [Results] (N15/N16 and mutations)
 
 ligand:
-  value: CPEA
-  source: file name InducedFit_3FCR4M_CPEA.tar.gz
-  note: >-
-    Not resolved in the deposit. The abstract names (S)-1-(2-chlorophenyl)ethanamine as a
-    product, which may be what CPEA stands for; not confirmed.
-
-cofactor:
-  value: not named
-  source: file descriptions ("ligand-cofactor complex")
-  note: Amine transaminases use pyridoxal 5'-phosphate; the deposit does not say so.
+  value: "substrate 2a, (S)-1-(2-chlorophenyl)ethanamine, bound to pyridoxal 5'-phosphate"
+  source: Article [Results; Figure 4 caption "substrate-cofactor complexes ((S)-2)"]
+  note: '"CPEA" in InducedFit_3FCR4M_CPEA.tar.gz is read as an abbreviation of this amine; the deposit does not resolve it.'
 
 
-# 3. SIMULATIONS (all from the per-file descriptions)
+# 3. SIMULATIONS
 
-protein_preparation:
-  value: "Protein Preparation Wizard"
-  source: API file description of proteinprep_3FCR_4M.tar.gz
+software:
+  value: "Protein Preparation Wizard, Glide Induced Fit, Desmond, Prime MM-GBSA, Simulation Interaction Diagram, Schrodinger Python API"
+  source: API file descriptions; Article ["Relative Binding Free Energy Calculations"]
 
-docking:
-  value: "Induced Fit docking with Glide"
-  source: API file description of InducedFit_3FCR4M_CPEA.tar.gz
+mmgbsa_method:
+  value: "frames after 100 ns, every 200th frame; both binding sites of the dimer; minimization approach; VSGB solvation; OPLS4; residues within 5 A flexible; 50 absolute values per complex"
+  source: Article ["Relative Binding Free Energy Calculations"]
 
-md:
-  value: "Desmond: setup, minimisation, equilibration, production for 3 complexes"
-  source: file names desmond_setup_*, desmond_min_job_*, desmond_md_job_*, desmond_md_job_*_prod and their descriptions
+mmgbsa_results:
+  value: "ddG = -1.86 kcal/mol (4M-N15), -1.11 kcal/mol (4M-N16) vs. 3FCR-4M"
+  source: Article [Results]
+  note: Absolute values in Figure S5 (SI) and in the prime_mmgbsa archives; not read.
 
-mmgbsa:
-  value: "Prime MM/GBSA for 3 complexes"
-  source: API file descriptions of prime_mmgbsa_*.tar.gz
-
-versions_and_parameters:
+md_parameters:
   value: not read
-  note: Inside the archives (.cfg, .msj, log files). Extracting them needs the archives downloaded.
+  note: Force field, ensemble, timestep and length are in the article's SI and in the archives. The main text only implies production runs longer than 100 ns.
 
 calculated_property:
-  value: missing
-  note: >-
-    Mandatory. For preparation, docking and MD there is no property to report (output is a
-    structure or trajectory, S5). For MM/GBSA the binding free energies are in the archives.
+  value: missing for protein preparation, docking and MD
+  note: Their outputs are structures and trajectories, not properties (schema gap S5).
 
 catalytic_reaction:
   value: not in this deposit
-  note: The abstract reports conversion and ee for the enzymatic synthesis; those data are not part of this dataset.
+  note: The article's enzyme kinetics and preparative reactions are not part of this dataset.

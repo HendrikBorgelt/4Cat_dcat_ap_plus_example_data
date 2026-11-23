@@ -1,35 +1,45 @@
 ---
-# Simulation -- MM/GBSA binding free energies of the ligand-cofactor complex in three variants
-# Source: hdl:21.11165/4cat/8ppb-aeky, prime_mmgbsa_3FCR4M_complex.tar.gz,
-# prime_mmgbsa_3FCR4M_M1_complex.tar.gz, prime_mmgbsa_3FCR4M_M2_complex.tar.gz (156 MB each).
-# Archive contents were not read.
+# Simulation -- MM/GBSA relative binding free energies of the substrate-cofactor complex in two mutants
+# Source: hdl:21.11165/4cat/8ppb-aeky, prime_mmgbsa_*.tar.gz (3 x 156 MB, not read); method and
+# results from Weigmann et al., ACS Catal. (2025), doi:10.1021/acscatal.5c04248, section
+# "Relative Binding Free Energy Calculations" and Results (Figure S5 for absolute values)
 #
-# status: incomplete
-# Missing here: the binding free energies (calculated_property, mandatory). They exist inside
-# the archives; they were not extracted because that means downloading 470 MB. Even then, a
-# binding free energy has no CalculatedProperty class (S2), the same gap as the adsorption
-# energies in 6mxw-xsrd.
+# The relative values come from the article; the absolute per-frame values are in the archives
+# and in the article's SI Figure S5. A binding free energy has no CalculatedProperty class, so
+# it is a free-text value (schema_gap_analysis_2026-10.md, S2).
+# Naming (D5): the deposit's M1 and M2 are the article's 4M-N15 and 4M-N16.
 
 id: "coremeta4cat:SIM_8ppb-aeky_MMGBSA"
 title:
-  - "MM/GBSA binding free energy of the ligand-cofactor complex in 3FCR-4M, M1 and M2"
+  - "MM/GBSA binding free energy of the substrate-cofactor complex in 3FCR-4M, 4M-N15 and 4M-N16"
 description:
   - >-
-    Prime MM/GBSA end-point calculations of the binding free energy of the ligand-cofactor
-    complex in 3FCR-4M and the mutants S19V/P423F and G151A/P423F. The deposit does not say
-    whether single structures or frames of the molecular dynamics runs were used.
+    Prime MM/GBSA end-point calculations of the binding free energy of the cofactor-bound
+    substrate 2a ((S)-1-(2-chlorophenyl)ethanamine bound to PLP) in 3FCR-4M and the mutants
+    S19V/P423F (4M-N15, deposit M1) and G151A/P423F (4M-N16, deposit M2). Frames taken from
+    the molecular dynamics runs after 100 ns, every 200th frame, both binding sites of the
+    dimer, giving 50 absolute values per complex. Relative values are the mean of each mutant
+    minus the mean of 3FCR-4M. The article reports them as consistent in magnitude and trend
+    with the experimentally determined KM values.
 software_package:
-  - "Prime, MM/GBSA (version not stated)"
+  - "Prime MM-GBSA (Schrodinger suite)"
 evaluated_entity:
   - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M_complex"
-    title: "3FCR-4M with docked ligand-cofactor complex"
+    title: "3FCR-4M with cofactor-bound substrate 2a"
   - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M1_complex"
-    title: "3FCR-4M-S19V/P423F (M1) with ligand-cofactor complex"
+    title: "4M-N15 = 3FCR-4M-S19V/P423F (deposit M1) with cofactor-bound substrate 2a"
   - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M-M2_complex"
-    title: "3FCR-4M-G151A/P423F (M2) with ligand-cofactor complex"
+    title: "4M-N16 = 3FCR-4M-G151A/P423F (deposit M2) with cofactor-bound substrate 2a"
 realized_plan:
   id: "coremeta4cat:SIM_8ppb-aeky_MMGBSA_method"
-  title: "MM/GBSA end-point free energy"
-  description: "Solvation model, force field and frame selection not read from the archives."
+  title: "MM/GBSA end-point free energy on MD frames"
+  description: >-
+    Minimization approach, VSGB solvation model, OPLS4 force field; residues within 5 A of the
+    ligands flexible; frames after 100 ns, every 200th frame; both binding sites of the dimer.
+calculated_property:
+  - value: "-1.86 kcal/mol"
+    description: "Relative binding free energy (ddG) of 4M-N15 (S19V/P423F) vs. 3FCR-4M"
+  - value: "-1.11 kcal/mol"
+    description: "Relative binding free energy (ddG) of 4M-N16 (G151A/P423F) vs. 3FCR-4M"
 other_identifier:
   - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky

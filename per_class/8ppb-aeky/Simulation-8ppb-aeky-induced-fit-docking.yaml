@@ -1,8 +1,9 @@
 ---
-# Simulation -- induced-fit docking of the ligand-cofactor complex into 3FCR-4M
-# Source: hdl:21.11165/4cat/8ppb-aeky, InducedFit_3FCR4M_CPEA.tar.gz (4.0 MB; file description
-# "Induced Fit ligand docking with Glide to predict the initial ligand-cofactor complex binding
-# mode"). Archive contents were not read.
+# Simulation -- induced-fit docking of the substrate-cofactor complex into 3FCR-4M
+# Source: hdl:21.11165/4cat/8ppb-aeky, InducedFit_3FCR4M_CPEA.tar.gz (4.0 MB, not read; file
+# description "Induced Fit ligand docking with Glide to predict the initial ligand-cofactor
+# complex binding mode"); ligand and cofactor from Weigmann et al., ACS Catal. (2025),
+# doi:10.1021/acscatal.5c04248
 #
 # status: incomplete
 # Not representable (schema): the result is a binding pose; docking scores are inside the
@@ -11,24 +12,24 @@
 
 id: "coremeta4cat:SIM_8ppb-aeky_induced_fit_docking"
 title:
-  - "Induced-fit docking of the ligand-cofactor complex into 3FCR-4M"
+  - "Induced-fit docking of the substrate-cofactor complex into 3FCR-4M"
 description:
   - >-
-    Induced-fit docking with Glide to predict the initial binding mode of the ligand-cofactor
-    complex in the 3FCR-4M variant, which then served as the starting structure for molecular
-    dynamics. The ligand is abbreviated CPEA in the file name; the deposit does not resolve the
-    abbreviation. The cofactor is not named (amine transaminases use pyridoxal 5'-phosphate).
+    Induced-fit docking with Glide to predict the initial binding mode of the cofactor-bound
+    substrate in 3FCR-4M, the starting structure for molecular dynamics. The substrate is 2a,
+    (S)-1-(2-chlorophenyl)ethanamine, bound to pyridoxal 5'-phosphate (PLP); the article shows
+    the resulting poses as "substrate-cofactor complexes ((S)-2)" (Figure 4). "CPEA" in the
+    archive name is taken to abbreviate this amine.
 software_package:
-  - "Glide, Induced Fit docking protocol (version not stated)"
+  - "Glide, Induced Fit docking protocol (Schrodinger suite)"
 evaluated_entity:
   - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M"
-    title: "amine transaminase variant 3FCR-4M"
-  - id: "coremeta4cat:LIG_8ppb-aeky_CPEA"
-    title: "ligand CPEA bound to the cofactor"
-    description: "Abbreviation from the file name; structure not given in the deposit."
+    title: "amine transaminase 3FCR-4M (Ruegeria sp., PDB 3FCR, Y59W/Y87F/Y152F/T231A)"
+  - id: "coremeta4cat:LIG_8ppb-aeky_2a_PLP"
+    title: "(S)-1-(2-chlorophenyl)ethanamine bound to pyridoxal 5'-phosphate"
 realized_plan:
   id: "coremeta4cat:SIM_8ppb-aeky_induced_fit_docking_method"
   title: "induced-fit ligand docking"
-  description: "Glide Induced Fit; receptor flexibility, grid and scoring settings not read from the archive."
+  description: "Glide Induced Fit; settings in the article's SI, not read from the archive."
 other_identifier:
   - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky

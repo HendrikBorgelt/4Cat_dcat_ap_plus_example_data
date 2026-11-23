@@ -7,23 +7,19 @@
 #   Each entry is:
 #     field_or_value:
 #       value:   <what was used in the metadata files>
-#       source:  <filename> [column | row] or Dataverse API path
+#       source:  <filename> [column | row], Dataverse API path, or Article [section]
 #       note:    <optional clarification>
 #
 # SOURCES
-#   API   = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/6mxw-xsrd
-#           (version 1.0, released 2025-11-05), citation block
-#   Files = the eight deposited files, read via /api/access/datafile/<id>?format=original:
-#           Active_Sites_Screening.tab (2369), Composition_Screenings.tab (2370),
-#           vocabulary_map.csv (2371), Sample_Compositions.tab (2372),
-#           Performance_Test_Composition_and_CalcTemp_secondgen.csv (2373),
-#           Testing_Protocol_for_Catalystst.tab (2374),
-#           Performance_Test_Composition_and_CalcTemp_firstgen.tab (2375),
-#           Synthesis_and_Characterization_of_CuGaAlMMOS.tab (2376)
-#   The raw files are not mirrored into ../dataset/ yet.
+#   API     = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/6mxw-xsrd
+#             (version 1.0, released 2025-11-05), citation block
+#   Files   = the eight deposited files, mirrored in ../dataset/ (as .csv)
+#   Article = Weber et al., ACS Catal. 2025, 15, 18857-18876, doi:10.1021/acscatal.5c03876
+#             (../dataset/cs5c03876.pdf), main text only
 #
 # NOT AVAILABLE
-#   The article (doi:10.1021/acscatal.5c03876) was not consulted; nothing below is taken from it.
+#   The article's Supporting Information (DFT settings, OH reference state, Table S4/S5,
+#   presumably the product analysis). Everything marked "SI" below is therefore still open.
 # ============================================================
 
 
@@ -45,13 +41,10 @@ creator:
   note: >-
     The only dataset author. The article has 17 authors, including four CoreMeta4Cat
     authors (Khatamirad, Geske, Rosowski, Schunk). Dataset contact: Sandip De (BASF SE).
-    Affiliation is omitted from the record (Agent has no affiliation slot, see
-    schema_validation_analysis_2026-07.md S1).
 
 keyword:
   value: "CO2 hydrogenation; mixed-metal-oxide catalyst; machine learning; machine learning interatomic potentials; density functional theory; reaction mechanism"
-  source: API [citation.keyword]
-  note: '"(or ML)" and "(or MLIP)" suffixes dropped.'
+  source: API [citation.keyword]; identical to the article's keywords
 
 is_referenced_by:
   value: https://doi.org/10.1021/acscatal.5c03876
@@ -59,16 +52,53 @@ is_referenced_by:
 
 licence:
   value: CC BY 4.0
-  source: API [license.uri → http://creativecommons.org/licenses/by/4.0]
+  source: API [license.uri]
 
 research_field:
   value: VOC4CAT:0007001 heterogeneous catalysis
-  source: inferred
-  note: Not stated in the deposit; mixed metal oxides tested in a gas-phase flow reactor.
+  source: inferred (gas-phase reaction over solid mixed oxides)
 
 
 # ============================================================
-# 2. CHARACTERIZATION (XRF)
+# 2. SYNTHESIS
+# ============================================================
+
+coprecipitation_route:
+  value: "automated co-precipitation at pH 9 +- 0.1 with 1.6 M NaOH / 0.2 M Na2CO3, 1.6 mL/min feed into 200 mL water, 500 rpm, ageing 2 h at 65 C, washing to pH 7, freeze-drying (-10 C, 3 mbar, 12 h), calcination 4 h at 4 C/min in clean dry air"
+  source: Article [2.1.1]
+
+precursors:
+  value: "Cu(NO3)2·3H2O (Sigma-Aldrich 98.8%), Al(NO3)3·9H2O (99.9%), Ga(NO3)3·xH2O (99.9%)"
+  source: Article [2.1.1]
+
+precursor_masses:
+  value: "5.25 g Cu nitrate, 8.37 g Al nitrate, 8.92 g Ga nitrate in 150 mL water"
+  source: Article [2.1.1]
+  note: >-
+    Given only for the worked example CuAlGaO4, hence one complete Synthesis record
+    (Synthesis-6mxw-xsrd-library-example.yaml). Masses for the first- and second-generation
+    catalysts are not stated; both records stay incomplete.
+
+library_calcination:
+  value: "400, 500, 600, 700 and 900 C; screening samples at 600 C"
+  source: Article [2.1.1, 3.3]
+
+gen1:
+  value: "Cu0.465Ga0.07Al0.465, same co-precipitation route, calcined at 500/600/700 C"
+  source: Performance_Test_Composition_and_CalcTemp_firstgen [all]; Article [3.4]
+
+gen2:
+  value: "Cu0.85Al0.15 HTC co-precipitated, calcined 450/550 C; incipient wetness impregnation with Ga(NO3)3 to 1 wt% Ga; dried 80 C; calcined 250/350 C; each calcination 4 h at 4 C/min in clean dry air"
+  source: Article [2.1.2]; Performance_Test_Composition_and_CalcTemp_secondgen [all]
+  note: >-
+    Composition inconsistency: Article 2.1.2 and its sample abbreviation say Cu0.85Al0.15, as
+    does the "Al ideal / [1]" column; the deposited sample names and the footnote of Article
+    Table 1 say Cu0.85Al0.1. The records follow the method section. "Ga ideal / [1]" = 1 is
+    the 1 wt% Ga loading, not a metal fraction.
+
+
+# ============================================================
+# 3. CHARACTERIZATION (XRF)
 # ============================================================
 
 xrf_technique_term:
@@ -76,118 +106,93 @@ xrf_technique_term:
   source: vocabulary_map.csv [rows "Cu XRF / [1]", "Al XRF / [1]", "Ga XRF / [1]"]
 
 xrf_samples:
-  value: 76 compositions, nominal vs. measured Cu/Al/Ga fractions
-  source: Synthesis_and_Characterization_of_CuGaAlMMOS.tab [all 76 rows]
-  note: Samples have no IDs; only the composition identifies them.
+  value: 76 compositions, nominal vs. measured Cu/Al/Ga fractions, measured on the HTC precursors
+  source: Synthesis_and_Characterization_of_CuGaAlMMOS [all rows]; Article [3.2] ("elemental composition of the HTC precursors was analyzed by XRF")
 
 xrf_instrument:
-  value: "X-ray fluorescence spectrometer (model not stated)"
-  source: none
-  note: Generic device entry, same convention as the BET analyser in 32x1-99x6.
+  value: "Bruker M4 TORNADO, Rh X-ray tube, ESPRIT software, fundamental parameter method"
+  source: Article [2.1.4]
+
+other_characterization:
+  value: "PXRD (Bruker D8 Advance), N2 sorption (TriStar II), TGA/DSC/TPR (NETZSCH STA 449 F3), N2O-RFC, TEM (Themis Z)"
+  source: Article [2.1.3-2.1.8]
+  note: Methods described in the article, data not deposited; not part of the record.
 
 
 # ============================================================
-# 3. SIMULATIONS
+# 4. SIMULATIONS
 # ============================================================
 
 dft_method:
-  value: VOC4CAT:0000215 density functional theory
-  source: vocabulary_map.csv [rows "active_site", "OH", "CO" → density functional theory]
+  value: "VASP; PBE; PAW; ASE and pymatgen for structure generation"
+  source: vocabulary_map.csv [rows "active_site", "OH", "CO"] for the method; Article [2.3] for code and functional
+  note: >-
+    The article uses PBE-D3 when verifying the machine-learned potentials (3.1); whether D3
+    was applied to Active_Sites_Screening is not stated. Cut-off, k-points and slab models: SI.
 
 dft_sites:
   value: 17 sites, CuGa2O4 (pristine + Al, Co, Cu, Ge, In, Ni, Sn) and Ga2O3 (pristine + Al, Pd, Pt, Rh, Ru, Sn, Zn, Zr)
-  source: Active_Sites_Screening.tab [column active_site]
+  source: Active_Sites_Screening [column active_site]
 
-dft_ranges:
-  value: "OH -1.87 to 1.41 eV; CO -2.20 to 0.51 eV"
-  source: Active_Sites_Screening.tab [columns OH, CO]
-
-dft_software:
-  value: missing
-  source: none
-  note: Mandatory (Simulation.software_package); the only validation error of this record.
+binding_energy_reference:
+  value: "CO: E_CO = E_slab+CO - E_slab - E_CO(g); OH: not defined in the main text"
+  source: Article [Figure 2 caption]
 
 mlip_models:
-  value: "OCP model; MACE-MPA-0"
-  source: Composition_Screenings.tab [column headers]; API [citation.keyword "machine learning interatomic potentials"]
+  value: "EquiformerV2-31M-S2EF-OC20-All+MD (column 'OCP model'); MACE-MPA-0"
+  source: Composition_Screenings [column headers]; Article [Table 2, row "Prescreening and sampling for DFT calculations"]
   note: >-
-    vocabulary_map.csv lists both as needing a new Voc4Cat concept "binding energy".
-    Neither model version nor checkpoint is stated.
+    The OCP checkpoint is inferred: Table 2 lists exactly these two models for prescreening.
+    A second OCP checkpoint (EquiformerV2-lE4-lF100-S2EFS-OC22) is used for surface phase
+    diagrams, which are not in the deposit.
 
 mlip_compositions:
   value: "48 rows = 37 distinct materials; OCP 37, MACE 31 (all 31 also in OCP)"
-  source: Composition_Screenings.tab [column Composition]
-  note: >-
-    11 materials appear twice with the elements in a different order (Fe3Cu/CuFe3, Ga2Cu/CuGa2,
-    Ga3Co/CoGa3, Ga4Cu9/Cu9Ga4, GaCu3/Cu3Ga, In3Co/CoIn3, In3Cu7/Cu7In3, In4Ag9/Ag9In4,
-    Mn3Co/CoMn3, MnCu3/Cu3Mn, MnGa/GaMn), one row per model. Matched by normalised formula.
+  source: Composition_Screenings [column Composition]
+  note: 11 materials appear twice with the elements in a different order (e.g. Ga4Cu9/Cu9Ga4).
 
 mlip_ranges:
   value: "OCP: OH -5.35 to 0.79 eV, CO -5.12 to -0.13 eV; MACE: OH -1.50 to 2.91 eV, CO -2.51 to 1.14 eV"
-  source: Composition_Screenings.tab [four energy columns, "-" = not computed]
+  source: Composition_Screenings [four energy columns, "-" = not computed]
   note: OH sign differs between the models for 13 of the 31 shared materials, CO for 7.
 
 
 # ============================================================
-# 4. SYNTHESIS
-# ============================================================
-
-gen1_samples:
-  value: "Cu0.465Ga0.07Al0.465 calcined at 500, 600, 700 °C"
-  source: Performance_Test_Composition_and_CalcTemp_firstgen.tab [Sample, Tcalc / °C]
-
-gen2_samples:
-  value: "Cu0.85Al0.1 oxide calcined at 450 or 550 °C, 1 wt% Ga, calcined at 250 or 350 °C"
-  source: Performance_Test_Composition_and_CalcTemp_secondgen.csv [Sample, Tcalc,1 / °C, Tcalc,2 / °C]
-  note: >-
-    Inconsistent in the source: sample names say Al0.1 while "Al ideal / [1]" is 0.15, and
-    "Ga ideal / [1]" is 1 (the wt% loading, not a fraction; Cu + Al + Ga would sum to 2).
-    The record follows the sample names.
-
-precursors_and_method:
-  value: missing
-  source: none
-  note: Mandatory (Synthesis.had_input_entity with precursor_quantity); one validation error per Synthesis record.
-
-calcination_term_in_authors_map:
-  value: "Tcalc columns mapped to 'reaction temperature' (VOC4CAT:0007013)"
-  source: vocabulary_map.csv
-  note: Mapping not reused; CoreMeta4Cat has has_calcination_temperature_range.
-
-
-# ============================================================
-# 5. CATALYTIC REACTION
+# 5. CATALYTIC REACTIONS
 # ============================================================
 
 conditions:
-  value: "17 conditions; 225-300 °C; 80 bar; GHSV 3000 / 6000 h-1; CO2 13-27.1, CO 0-15.8, H2 36.7-76, Ar 5 vol%; H2/COx 1.2-4"
-  source: Testing_Protocol_for_Catalystst.tab [all columns]
-  note: GHSV has no CoreMeta4Cat slot and is only in the description.
+  value: "17 conditions; 225-300 C; 80 bar; GHSV 3000 / 6000 h-1; CO2 13-27.1, CO 0-15.8, H2 36.7-76, Ar 5 vol%, N2 balance; H2/COx 1.2-4"
+  source: Testing_Protocol_for_Catalystst [all columns]; Article [Table 1 footnote] for the N2 balance
 
-reactants:
-  value: CHEBI:16526 carbon dioxide, CHEBI:17245 carbon monoxide, CHEBI:18276 dihydrogen, CHEBI:49475 argon atom
-  source: Testing_Protocol_for_Catalystst.tab [column headers]
+sample_condition_assignment:
+  value: "screening samples: conditions 1-8; first- and second-generation catalysts: all 17"
+  source: Article [Table 1 footnote]
 
-tested_catalysts:
-  value: 3 first-generation + 4 second-generation samples
-  source: the two Performance_Test files
-  note: Which sample ran under which condition is not stated.
+screening_samples:
+  value: 13 compositions calcined at 600 C
+  source: Sample_Compositions [all rows]; Article [3.3]
+  note: Without the article the purpose of this file could not be determined.
 
 reactor:
-  value: "continuous-flow reactor (type not stated)"
-  source: inferred from GHSV in Testing_Protocol_for_Catalystst.tab
+  value: "16-fold fixed-bed reactor system (hte GmbH), stainless steel 1.4571, 4.5 mm ID, 290 mm long; 0.5 mL catalyst, 250-315 um, corundum pre/post-bed"
+  source: Article [2.2]
+
+pretreatment:
+  value: "2 h at 300 C and 20 bar, GHSV 6000 h-1, 48 L/h, 10 vol% Ar / 90 vol% N2; then in-situ reduction in the syngas"
+  source: Article [2.2]
+  note: No field on CatalyticReaction; in the description.
+
+products:
+  value: methanol, dimethyl ether, methane (by-product)
+  source: Article [3.3, 3.4]
 
 product_identification:
   value: missing
   source: none
-  note: Mandatory (CatalyticReaction.product_identification_method); the only validation error of this record.
+  note: Mandatory. Not stated in the deposit or the article's main text; presumably in the SI.
 
 performance_results:
   value: not deposited
-  source: none
-  note: The Performance_Test files list samples and calcination temperatures only.
-
-unused_file:
-  value: Sample_Compositions.tab (13 nominal compositions)
-  source: Sample_Compositions.tab
-  note: Purpose not stated; not described in the record.
+  source: Article [Figures 4, 6-9, S13-S17]
+  note: Conversions and yields exist only as figures in the article and its SI.

@@ -1,0 +1,50 @@
+---
+# Synthesis -- Ni-BCZY, Ni-YSZ and YSZ supports by tape casting, sintering and crushing
+# Source: Davari et al., Appl. Catal. A 708 (2025) 120571, section 2.1 and Table 2 (the deposit
+# has no synthesis data)
+#
+# status: incomplete
+# Missing: precursor_quantity (mandatory). The article gives the NiO:BCZY/YSZ weight ratio
+# (60:40) but no masses (schema_gap_analysis_2026-10.md, P2).
+# Schema gap P3: tape casting and sintering have no PreparationMethod; the whole route is in
+# the plan description.
+
+id: "coremeta4cat:SYN_b74m-m6rp_cermet_supports"
+title:
+  - "Ni-BCZY, Ni-YSZ and YSZ supports from sintered tapes"
+nominal_composition:
+  - "Ni-BCZY cermet: NiO and BaCe0.8Zr0.1Y0.1O3-d (BCZY811), 60:40 by weight before reduction"
+  - "Ni-YSZ cermet: NiO and 8-YSZ, 60:40 by weight before reduction"
+  - "YSZ (8-YSZ, Ni-free)"
+catalyst_measured_properties:
+  - "BET surface area: NiO-BCZY (oxidized) 1.1 m2/g, YSZ powder 14.1 m2/g (article Table 2)"
+  - "Ni dispersion of Ni-BCZY 3.17% (H2-TPD)"
+had_input_entity:
+  - id: "coremeta4cat:PREC_b74m-m6rp_BCZY811"
+    title: "BaCe0.8Zr0.1Y0.1O3-d powder (BCZY811, CerPoTech)"
+  - id: "coremeta4cat:PREC_b74m-m6rp_8YSZ"
+    title: "8 mol% yttria-stabilised zirconia powder (8-YSZ, Tosoh)"
+  - id: "coremeta4cat:PREC_b74m-m6rp_NiO"
+    title: "NiO powder (J.T. Baker)"
+  - id: "coremeta4cat:PREC_b74m-m6rp_graphite"
+    title: "graphite pore former (TimCal)"
+  - id: "coremeta4cat:PREC_b74m-m6rp_tape_organics"
+    title: "ethanol and methyl ethyl ketone (solvents, dispersant), polyvinyl butyral (binder), PEG and TEG-EH (plasticizers, Eastman)"
+had_output_entity:
+  - id: "coremeta4cat:SUP_b74m-m6rp_Ni-BCZY"
+    title: "crushed Ni-BCZY cermet powder"
+  - id: "coremeta4cat:SUP_b74m-m6rp_Ni-YSZ"
+    title: "crushed Ni-YSZ cermet powder"
+  - id: "coremeta4cat:SUP_b74m-m6rp_YSZ"
+    title: "crushed YSZ powder"
+realized_plan:
+  id: "coremeta4cat:SYN_b74m-m6rp_tape_casting_method"
+  title: "tape casting, sintering and crushing"
+  description: >-
+    Ceramic powder (and NiO for the cermets) slurried with graphite, ethanol and MEK in a
+    TURBULA 3D shaker for 24 h; PVB, PEG and TEG-EH added, mixed 3 h, rested 24 h, de-aired
+    under vacuum; cast with a ZAA 2300 film applicator onto silicone-coated PET; dried 12 h at
+    room temperature and 10 min at 773 K; sintered 9 h at 1673 K (heating 1 K/min, cooling
+    3 K/min); crushed to a fine powder.
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp
