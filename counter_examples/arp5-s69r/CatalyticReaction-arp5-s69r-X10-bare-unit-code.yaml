@@ -1,0 +1,99 @@
+# Counter-example X10: bare unit code
+# Source: per_class/arp5-s69r/CatalyticReaction-arp5-s69r-Carbonylation.yaml
+# Change: the temperature unit 'https://qudt.org/vocab/unit/K' becomes the bare code 'K'
+# Why it happens: unit symbols typed by hand; 10 of the original 21 per-class records in this repo still do this
+# Consequence: JSON passes, but the RDF output gets an unresolvable unit
+# Catchable once: unit has range uriorcurie with a QUDT pattern
+# expect: gap
+---
+id: coremeta4cat:REAC_arp5-s69r_Carbonylation
+reaction_name:
+- Pd-catalyzed alkoxycarbonylation of aryl iodides
+title:
+- Alkoxycarbonylation of aryl iodides over Pd3P/SiO2 and Pd/SiO2 (27 runs)
+description:
+- Pd-catalyzed alkoxycarbonylation (CO insertion + alcohol trapping) of aryl iodides to form aryl esters,
+  mainly iodobenzene + ethanol -> ethyl benzoate. 24 runs used Pd3P/SiO2 (ARNE01), exploring reaction
+  time (5 min - 3 h, series A), base screening (triethylamine, sodium acetate, potassium hydroxide, potassium
+  carbonate, or no base, series B), temperature-time kinetics grid (60-80 C x 0.5-1 h, series k), and
+  substrate/nucleophile scope (methanol, isopropanol, and aryl iodide substrates bromoiodobenzene/iodotoluene/iodoanisole,
+  series S1-S5). 3 further runs (series C) repeated the time-course on Pd/SiO2 (ARNE02, P-free reference)
+  for comparison. Conversion/yield ranged 7-100% across all 27 runs. Batch reactor, CO 6 bar, ethanol
+  solvent (except S1 methanol, S2 isopropanol).
+rdf_type:
+  id: VOC4CAT:0000247
+  title: carbonylation
+catalyst_type:
+- heterogeneous_catalysis
+catalyst_form:
+- supported
+used_catalyst:
+- id: coremeta4cat:CAT_arp5-s69r_Pd3P_SiO2_5wt
+  title: Pd3P/SiO2 (5 wt% Pd, internal code ARNE01)
+  description: Palladium phosphide (Pd3P) nanoparticles supported on silica, 5 wt% Pd, 0.5 mol% metal
+    loading.
+  has_physical_state: SOLID
+  has_quantitative_attribute:
+  - value: 5.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: Pd loading (Overview Reaction Description-2.txt)
+  - value: 0.01
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+    unit: GM
+    description: Catalyst mass used per batch test
+- id: coremeta4cat:CAT_arp5-s69r_Pd_SiO2_5wt
+  title: Pd/SiO2 (5 wt% Pd, internal code ARNE02)
+  description: Unmodified (phosphorus-free) palladium nanoparticles supported on silica, 5 wt% Pd, 0.5
+    mol% metal loading -- reference catalyst for comparison against the Pd3P phosphide.
+  has_physical_state: SOLID
+  has_quantitative_attribute:
+  - value: 5.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction
+    unit: PERCENT
+    description: Pd loading (Overview Reaction Description-2.txt)
+  - value: 0.01
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+    unit: GM
+    description: Catalyst mass used per batch test
+used_reactant:
+- id: coremeta4cat:REAC_arp5-s69r_CO
+  title: carbon monoxide
+  rdf_type:
+    id: CHEBI:17245
+    title: carbon monoxide
+- id: coremeta4cat:REAC_arp5-s69r_Carbonylation_substrate
+  title: aryl iodide substrate
+  description: Iodobenzene in most runs; bromoiodobenzene (S3), iodotoluene (S4), and iodoanisole (S5)
+    in the substrate-scope runs.
+- id: coremeta4cat:REAC_arp5-s69r_Carbonylation_alcohol
+  title: alcohol nucleophile
+  description: Ethanol in most runs (also the reaction solvent); methanol (S1) and isopropanol (S2) in
+    the nucleophile-scope runs.
+- id: coremeta4cat:REAC_arp5-s69r_Carbonylation_base
+  title: base
+  description: Triethylamine in most runs; sodium acetate, potassium hydroxide, potassium carbonate, or
+    no base in the base-screening runs (series B).
+used_reactor:
+- id: coremeta4cat:REAC_arp5-s69r_reactor
+  title: Parr 5500 series compact reactor
+  description: Batch autoclave, cylindrical stainless steel reaction chamber (25 mL, 25.4 x 50.8 mm ID),
+    overhead stirrer at 1000 rpm, electric heating.
+reactor_temperature_range:
+- min_value: 333.15
+  max_value: 373.15
+  has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+  unit: K
+  description: 60-100 C across the 27 runs
+experiment_pressure:
+- value: 6.0
+  has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+  unit: https://qudt.org/vocab/unit/BAR
+  description: Initial CO pressure, constant across all 27 runs
+product_identification_method:
+- id: coremeta4cat:REAC_arp5-s69r_Carbonylation_product_id
+  title: GC-MS product quantification
+  description: Gas chromatography-mass spectrometry with n-decane internal standard; conversion/yield/selectivity
+    computed from GC-MS peak areas.
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/arp5-s69r

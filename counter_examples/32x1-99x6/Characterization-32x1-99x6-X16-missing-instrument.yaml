@@ -1,0 +1,56 @@
+# Counter-example X16: missing instrument
+# Source: per_class/32x1-99x6/Characterization-32x1-99x6-BET.yaml
+# Change: carried_out_by (the instrument) removed
+# Why it happens: instrument considered irrelevant for a routine measurement
+# expect: caught
+# error-contains: 'carried_out_by' is a required property
+---
+id: coremeta4cat:CHAR_32x1-99x6_BET
+title:
+- BET surface area analysis (10 catalysts)
+description:
+- Brunauer-Emmett-Teller specific surface area determination for all 10 Pd/P-Al2O3 and Pd/P-SiO2 catalysts
+  (0-5 wt% nominal P loading). Surface area ranged 72-126 m2/g, generally decreasing with increasing P
+  loading (bet_results.txt).
+rdf_type:
+  id: ENM:0000064
+  title: BET analysis
+evaluated_entity:
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_0P
+  title: Pd/Al2O3
+  description: Pd on Al2O3, P-free reference
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_1P
+  title: Pd/1P/Al2O3
+  description: Pd on Al2O3, nominal 1 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_2P
+  title: Pd/2P/Al2O3
+  description: Pd on Al2O3, nominal 2 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_3P
+  title: Pd/3P/Al2O3
+  description: Pd on Al2O3, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_4P
+  title: Pd/4P/Al2O3
+  description: Pd on Al2O3, nominal 4 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_Al2O3_5P
+  title: Pd/5P/Al2O3
+  description: Pd on Al2O3, nominal 5 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_0P
+  title: Pd/SiO2
+  description: Pd on SiO2, P-free reference
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_1P
+  title: Pd/1P/SiO2
+  description: Pd on SiO2, nominal 1 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_3P
+  title: Pd/3P/SiO2
+  description: Pd on SiO2, nominal 3 wt% P
+- id: coremeta4cat:CAT_32x1-99x6_SiO2_5P
+  title: Pd/5P/SiO2
+  description: Pd on SiO2, nominal 5 wt% P
+realized_plan:
+  id: coremeta4cat:CHAR_32x1-99x6_BET_method
+  title: N2 physisorption BET method
+  description: Standard N2 physisorption at liquid-nitrogen temperature (-196C), Brunauer-Emmett-Teller
+    analysis. Adsorbate gas and measurement temperature not explicitly stated in bet_results.txt; assumed
+    standard BET convention.
+other_identifier:
+- notation: https://hdl.handle.net/21.11165/4cat/32x1-99x6

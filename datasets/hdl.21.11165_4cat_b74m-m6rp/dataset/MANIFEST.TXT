@@ -1,0 +1,59 @@
+Fig12d_100 h-1.csv (text/csv) 3451 bytes.
+Fig12b_1000ppm.csv (text/csv) 3440 bytes.
+Fig9_708K.csv (text/csv) 18023 bytes.
+Fig12f_10 bar.csv (text/csv) 3090 bytes.
+Fig13.csv (text/csv) 6319 bytes.
+Fig2_Ni_BCZY_1000ppm.csv (text/csv) 191358 bytes.
+Fig2_0.5Ru_0.5Ba_Ni_BCZY_1000ppm.csv (text/csv) 1837598 bytes.
+Fig2_1Ru_1Ba_Ni_YSZ_1000ppm.csv (text/csv) 197263 bytes.
+Fig12_a.csv (text/csv) 4736 bytes.
+Fig6b_SIM_0.5Ru_1Ba_Ni_BCZY_1000ppm.csv (text/csv) 927 bytes.
+Fig2_1Ru_Ni_BCZY_1000ppm.csv (text/csv) 193574 bytes.
+Fig12e_.csv (text/csv) 7492 bytes.
+Fig10_615K.csv (text/csv) 25942 bytes.
+Fig9_718K.csv (text/csv) 25689 bytes.
+Fig12d_100000 h-1.csv (text/csv) 3435 bytes.
+Fig7c_SIM_Ni_BCZY_3000ppm.csv (text/csv) 977 bytes.
+Fig12c_.csv (text/csv) 7803 bytes.
+Fig12b_1000000ppm.csv (text/csv) 3437 bytes.
+Fig12b_10000ppm.csv (text/csv) 3411 bytes.
+Fig12b_100ppm.csv (text/csv) 3451 bytes.
+Fig6a_SIM_0.5Ru_1Ba_Ni_BCZY_500ppm.csv (text/csv) 1111 bytes.
+Fig7b_EXP_Ni_BCZY_1000ppm.csv (text/csv) 191358 bytes.
+Fig7b_SIM_usingOptimizedMech_Ni_BCZY_1000ppm.csv (text/csv) 967 bytes.
+Fig7a_SIM_Ni_BCZY_500ppm.csv (text/csv) 995 bytes.
+Fig12d_10000 h-1.csv (text/csv) 3450 bytes.
+Fig7b_SIM_Ni_BCZY_1000ppm.csv (text/csv) 973 bytes.
+Fig11_Ni+Ru.csv (text/csv) 1241 bytes.
+Fig12d_1000 h-1.csv (text/csv) 3433 bytes.
+Fig12f_1 bar.csv (text/csv) 3440 bytes.
+Fig1.csv (text/comma-separated-values) 24030 bytes.
+Fig7a_SIM_usingOptimizedMech_Ni_BCZY_500ppm.csv (text/csv) 981 bytes.
+Fig9_818K.csv (text/csv) 27730 bytes.
+Fig7c_SIM_usingOptimizedMech_Ni_BCZY_3000ppm.csv (text/csv) 972 bytes.
+Fig9_738K.csv (text/csv) 35398 bytes.
+Fig2_1Ru_1Ba_YSZ_1000ppm.csv (text/csv) 178553 bytes.
+Fig12f_0.5 bar.csv (text/csv) 3427 bytes.
+Fig12b_100000ppm.csv (text/csv) 3385 bytes.
+Fig8a_SIM_usingOptimizedMech_0.5Ru_1Ba_Ni_BCZY_500ppm.csv (text/csv) 970 bytes.
+Fig10_818K.csv (text/csv) 201167 bytes.
+Fig7c_EXP_Ni_BCZY_3000ppm.csv (text/csv) 126491 bytes.
+Fig6c_SIM_0.5Ru_1Ba_Ni_BCZY_3000ppm.csv (text/csv) 998 bytes.
+Fig8a_EXP_0.5Ru_1Ba_Ni_BCZY_500ppm.csv (text/csv) 194612 bytes.
+Fig8b_SIM_usingOptimizedMech_0.5Ru_1Ba_Ni_BCZY_1000ppm.csv (text/csv) 965 bytes.
+Fig9_728K.csv (text/csv) 31231 bytes.
+Fig2_0.5Ru_1Ba_Ni_BCZY_1000ppm.csv (text/csv) 198345 bytes.
+Fig8c_EXP_0.5Ru_1Ba_Ni_BCZY_3000ppm.csv (text/csv) 202468 bytes.
+Fig6b_EXP_0.5Ru_1Ba_Ni_BCZY_1000ppm.csv (text/csv) 198345 bytes.
+Fig7a_EXP_Ni_BCZY_500ppm.csv (text/csv) 124034 bytes.
+Fig3_0.5Ru_1Ba_Ni_BCZY_1000ppm.csv (text/csv) 198345 bytes.
+Fig6a_EXP_0.5Ru_1Ba_Ni_BCZY_500ppm.csv (text/csv) 194612 bytes.
+Fig8b_EXP_0.5Ru_1Ba_Ni_BCZY_1000ppm.csv (text/csv) 198345 bytes.
+Fig6c_EXP_0.5Ru_1Ba_Ni_BCZY_3000ppm.csv (text/csv) 202468 bytes.
+Fig8c_SIM_usingOptimizedMech_0.5Ru_1Ba_Ni_BCZY_3000ppm.csv (text/csv) 992 bytes.
+Fig12f_5 bar.csv (text/csv) 3266 bytes.
+Fig9_618K.csv (text/csv) 1199 bytes.
+Fig3_0.5Ru_1Ba_Ni_BCZY_3000ppm.csv (text/csv) 202468 bytes.
+Fig3_0.5Ru_1Ba_Ni_BCZY_500ppm.csv (text/csv) 194612 bytes.
+Fig11_Ru.csv (text/csv) 1244 bytes.
+Fig11_Ni.csv (text/csv) 1242 bytes.

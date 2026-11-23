@@ -1,0 +1,136 @@
+# ============================================================
+# SOURCE DOCUMENTATION
+# CoreMeta4Cat metadata provenance for hdl:21.11165/4cat/b74m-m6rp
+# ============================================================
+#
+# FORMAT
+#   field_or_value: {value, source, note}
+#
+# SOURCES
+#   API     = Dataverse native API, /api/datasets/:persistentId/?persistentId=hdl:21.11165/4cat/b74m-m6rp
+#             (version 1.0, released 2025-09-19), citation block
+#   Files   = the 59 deposited files, mirrored in ../dataset/ (as .csv). File names follow the
+#             figures of a version of the article (Fig1 ... Fig13).
+#   Article = Davari et al., Appl. Catal. A 708 (2025) 120571, doi:10.1016/j.apcata.2025.120571
+#             (../dataset/1-s2.0-S0926860X25004739-main.pdf); open access via KITopen,
+#             doi:10.5445/IR/1000188792. Not linked from the repository metadata.
+#
+# NOT AVAILABLE
+#   The article's supplementary data.
+# ============================================================
+
+
+# 1. DATASET-LEVEL FIELDS
+
+title:
+  value: "Dataset for Publication: Experimental and Microkinetic Investigation of Thermo-Catalytic Ammonia Decomposition over a Ba-promoted Ru/Ni-BCZY Catalyst for Use in Ammonia-fed Protonic Ceramic Cells"
+  source: API [citation.title]
+
+creator:
+  value: "Davari, Chacko, Bastek, Lott, Dailly, Angeli, Deutschmann"
+  source: API [citation.author]
+
+keyword:
+  value: "Ammonia decomposition; Ru catalyst; Ni-BCZY; Hydrogen production/generation; Protonic Ceramic Cell; Thermo-catalytic experiments; Microkinetic modeling"
+  source: Article [keywords, as listed on KITopen]
+  note: The API has no keywords, only subjects Chemistry and Engineering.
+
+is_referenced_by:
+  value: https://doi.org/10.1016/j.apcata.2025.120571
+  source: KITopen record 1000188792 (found by title search)
+
+
+# 2. FIGURE MAPPING (deposit file name -> article figure)
+
+figure_mapping:
+  value: "Fig1-Fig3 = Figs. 1-3; Fig6 = none; Fig7 = Fig. 6; Fig8 = Fig. 7; Fig9 = Fig. 8; Fig10 = Fig. 9; Fig11 = Fig. 10; Fig12 = Fig. 11; Fig13 = none"
+  source: Files [names, column headers]; Article [figure captions]
+  note: >-
+    Deposit Fig6 (0.5Ru/1Ba/Ni-BCZY with literature parameters) and Fig13 (pure NH3) are not in
+    the article's main text. Deposit Fig12 also extends beyond article Fig. 11 (NH3 up to 100%,
+    pressure up to 10 bar vs. 10,000 ppm and 5 bar).
+
+
+# 3. SYNTHESIS
+
+supports:
+  value: "tape casting of BCZY811 (CerPoTech) or 8-YSZ (Tosoh), with NiO (J.T. Baker) at NiO:ceramic 60:40 by weight for the cermets, graphite, ethanol, MEK, PVB, PEG, TEG-EH; dried 12 h RT + 10 min 773 K; sintered 9 h at 1673 K; crushed"
+  source: Article [2.1]
+
+impregnation:
+  value: "stepwise incipient wetness impregnation (100 uL steps, drying 15 min at 348 K) with Ru(III) nitrosyl nitrate solution and Ba(NO3)2 (Alfa Aesar); calcination 5 h at 873 K in static air; granulated to 120-250 um"
+  source: Article [2.1]
+
+loadings:
+  value: "Ru 0-1.0 wt%, Ba 0-1.0 wt% (nominal)"
+  source: Article [Table 1]
+
+precursor_masses:
+  value: missing
+  note: Mandatory; the article gives a weight ratio and target loadings only. Both Synthesis records stay incomplete.
+
+support_properties:
+  value: "BET: NiO-BCZY 1.1 m2/g, YSZ 14.1 m2/g; Ni dispersion of Ni-BCZY 3.17%"
+  source: Article [Table 2, 4.1]
+
+
+# 4. CHARACTERIZATION
+
+tpr:
+  value: "H2-TPR of Ni-BCZY, about 0.1 g, RT to 1223 K at 10 K/min in 10% H2/Ar (50 mL/min), TCD"
+  source: Fig1 (38-951 C, 954 points); Article [2.2, Fig. 1 caption]
+  note: Without the article the technique and the sample were unknown.
+
+other_characterization:
+  value: "N2 physisorption (BELSORP Mini II), SEM/EDX (Quanta 250 FEG), H2-TPD for Ni dispersion"
+  source: Article [2.2]
+  note: Data not deposited (except as numbers quoted in the article); not separate records.
+
+
+# 5. CATALYTIC REACTION
+
+reactor:
+  value: "quartz glass tubular reactor, 0.8 cm ID, 100 cm long; 300 mg catalyst + 700 mg silica (120-250 um); bed about 1.2 cm; quartz wool; Bronkhorst MFCs; type N thermocouples"
+  source: Article [2.3]
+
+conditions:
+  value: "1 bar; GHSV 50,000 h-1; 500/1000/3000 ppm NH3 in Ar; ramp 473-873 K at 2 K/min; pretreatment 1.5 h at 873 K in 5% H2/Ar, 1 h Ar purge at 473 K"
+  source: Article [2.3]; Files Fig2, Fig3 [Tein 200-601 C]
+
+product_identification:
+  value: "MKS MG2030 FTIR, continuous effluent analysis"
+  source: Article [2.3]
+
+light_off_metrics:
+  value: "T10/T50 for all six catalysts"
+  source: Article [Table 3]
+  note: No field; in the description. Only source for 0.5Ru/0.5Ba/Ni-BCZY, whose deposited curve is unreadable.
+
+data_issue_decimal_separators:
+  value: "Fig2_0.5Ru_0.5Ba_Ni_BCZY_1000ppm not machine-readable as deposited"
+  source: Fig2_0.5Ru_0.5Ba_Ni_BCZY_1000ppm [89,828 rows]
+  note: Decimal separators missing or commas (e.g. "433381317;0,922512").
+
+data_issue_swapped_columns:
+  value: "Fig3_0.5Ru_1Ba_Ni_BCZY_3000ppm has temperature and NH3 columns swapped relative to the header"
+  source: Fig3_0.5Ru_1Ba_Ni_BCZY_3000ppm; identical in Fig6c_EXP_* and Fig8c_EXP_*
+
+
+# 6. SIMULATIONS
+
+software:
+  value: "DETCHEM-PBR (reactor), DETCHEM-SURFPROBE (coverages/TOF without reactor effects), DETCHEM-ADJUST (thermodynamic consistency), CaRMeN"
+  source: Article [3.1-3.3, 4.2]
+
+mechanism:
+  value: "Ni steps from Zhu et al., Int. J. Green Energy 19 (2022) 1568; Ru steps from Zhang et al., ACS Sustain. Chem. Eng. 7 (2019) 18038; optimized set in article Table 4"
+  source: Article [3.3, 4.2]
+  note: Parameters fitted to the 1000 ppm data, validated with 500 and 3000 ppm.
+
+simulated_conditions:
+  value: "498-848 K (validation), base case 615 K / 1 bar / 1000 ppm / GHSV 50,000 h-1, 650-1000 K (pure NH3)"
+  source: Fig6-8 SIM, Fig12, Fig13 [T_surface]; Article [Fig. 11 caption]
+
+tof:
+  value: "3.2e-4 to 0.37 s-1 on Ni+Ru sites, 498-848 K"
+  source: Fig11_Ni+Ru [Tof s-1]

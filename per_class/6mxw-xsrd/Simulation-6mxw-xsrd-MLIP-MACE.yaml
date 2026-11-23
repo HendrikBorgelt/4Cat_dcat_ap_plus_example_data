@@ -1,0 +1,44 @@
+---
+# Simulation -- OH and CO binding energies from the MACE-MPA-0 machine-learned potential
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Composition_Screenings.tab (columns "MACE-MPA0 - OH (eV)",
+# "MACE-MPA0 - CO (eV)")
+#
+# Same schema gaps as Simulation-6mxw-xsrd-MLIP-OCP.yaml (S1, S2, S3, D2). In addition, the two
+# models disagree in the sign of the OH binding energy for 13 of the 31 materials both computed
+# (e.g. Fe: -2.47 eV with OCP, +2.91 eV with MACE). Without stated reference states the two
+# columns cannot be compared, which is what a structured binding-energy property (S2) would fix.
+
+id: "coremeta4cat:SIM_6mxw-xsrd_MLIP_MACE"
+title:
+  - "MACE-MPA-0 binding-energy screening of OH and CO (31 compositions)"
+description:
+  - >-
+    Binding energies of OH and CO computed with the MACE-MPA-0 machine-learned interatomic
+    potential for 31 elemental and intermetallic compositions, as a second model next to the
+    OCP screening; both serve as prescreening and sampling for DFT calculations, with DFT
+    verification at the PBE-D3 level (Weber et al., ACS Catal. 2025, Table 2 and section 3.1).
+    Surface facets, adsorption sites and the reference states of the binding energies are in
+    the article's SI, not in the main text.
+software_package:
+  - "MACE-MPA-0 foundation model (article, Table 2)"
+evaluated_entity:
+  - id: "coremeta4cat:SLAB_6mxw-xsrd_MACE_compositions"
+    title: "31 elemental and intermetallic surface models"
+    description: >-
+      Ag9In4, Al, Al4Cu9, CuFe3, Co, CoGa3, CoIn3, CoMn3, Cu, Cu3Ga, Cu3Mn, Cu3Rh, Cu7In3,
+      Cu9Ga4, CuGa2, CuNi, Fe, FeNi, Ga3Ni5, GaMn, GaNi3, In, InRh, InSb, Ir, Mn, Ni, Pd, Rh,
+      Sn, Zn. All 31 were also computed with the OCP model, partly under a different spelling
+      of the formula. Facets and slab models not stated.
+realized_plan:
+  id: "coremeta4cat:SIM_6mxw-xsrd_MLIP_MACE_method"
+  title: "machine-learned interatomic potential (MACE-MPA-0)"
+  description: >-
+    Single-point or relaxation protocol, adsorbate placement and reference energies not stated
+    in the deposited files.
+calculated_property:
+  - value: "-1.50 to 2.91 eV (31 compositions)"
+    description: "OH binding energy; range over all compositions (Al4Cu9 lowest, Fe and GaNi3 highest)"
+  - value: "-2.51 to 1.14 eV (31 compositions)"
+    description: "CO binding energy; range over all compositions (Ir lowest, Fe highest)"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

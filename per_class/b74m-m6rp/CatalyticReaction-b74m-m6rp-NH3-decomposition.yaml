@@ -1,0 +1,127 @@
+---
+# CatalyticReaction -- thermocatalytic NH3 decomposition, light-off curves of 6 catalysts
+# Source: hdl:21.11165/4cat/b74m-m6rp, Fig2_*.tab/csv (6 catalysts, 1000 ppm NH3),
+# Fig3_*.tab and Fig7a/c_EXP_*.tab (500 and 3000 ppm NH3 for two of them); reactor,
+# analyser, loadings, pretreatment and conditions from Davari et al., Appl. Catal. A 708 (2025)
+# 120571 (sections 2.1, 2.3, Tables 1 and 3).
+# Fig6_EXP and Fig8_EXP are byte-identical copies of Fig3 files.
+#
+# Schema gaps (schema_gap_analysis_2026-10.md): R1 no space velocity (GHSV 50,000 h-1);
+# R2 the conversion curves and the T10/T50 values of the article have no field; R4 the
+# pretreatment and the 2 K/min ramp have no field. FixedBedReactor fields are used on
+# used_reactor; without a type designator the Python round trip rejects them (TypeError) (T1).
+
+id: "coremeta4cat:REAC_b74m-m6rp_NH3_decomposition"
+reaction_name:
+  - "thermocatalytic ammonia decomposition"
+title:
+  - "NH3 decomposition light-off over Ru/Ni-BCZY and reference catalysts (6 catalysts, 3 inlet concentrations)"
+description:
+  - >-
+    Thermocatalytic decomposition of ammonia (2 NH3 -> N2 + 3 H2) measured as light-off curves
+    in a packed bed: NH3 in Ar at 1 bar, GHSV 50,000 h-1, temperature ramped from 473 to 873 K
+    at 2 K/min, after 1.5 h pretreatment at 873 K in 5% H2/Ar and 1 h Ar purge at 473 K. Six
+    catalysts at 1000 ppm NH3 (Fig. 2); 0.5Ru/1Ba/Ni-BCZY and Ni-BCZY also at 500 and 3000 ppm
+    (Fig. 3 and simulation comparisons). Article Table 3 gives T10/T50: Ni-BCZY 656/717 K,
+    1Ru/Ni-BCZY 621/675 K, 0.5Ru/1Ba/Ni-BCZY 615/675 K, 0.5Ru/0.5Ba/Ni-BCZY 621/676 K,
+    1Ru/1Ba/YSZ 536/589 K, 1Ru/1Ba/Ni-YSZ 621/688 K. The deposited curve for
+    0.5Ru/0.5Ba/Ni-BCZY is unreadable (lost decimal separators); its T10/T50 survive only in
+    the article.
+rdf_type:
+  id: VOC4CAT:0007001
+  title: heterogeneous catalysis
+catalyst_type:
+  - heterogeneous_catalysis
+catalyst_form:
+  - supported
+catalyst_quantity:
+  - value: 300
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+    unit: https://qudt.org/vocab/unit/MilliGM
+    description: "Catalyst granulate per test, mixed with 700 mg silica"
+used_catalyst:
+  - id: "coremeta4cat:CAT_b74m-m6rp_0.5Ru-1Ba_Ni-BCZY"
+    title: "0.5Ru/1Ba/Ni-BCZY"
+    description: "0.5 wt% Ru and 1 wt% Ba on crushed Ni-BCZY cermet; 500, 1000, 3000 ppm NH3"
+    has_quantitative_attribute:
+      - {value: 0.5, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ru, nominal"}
+      - {value: 1.0, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ba, nominal"}
+  - id: "coremeta4cat:CAT_b74m-m6rp_0.5Ru-0.5Ba_Ni-BCZY"
+    title: "0.5Ru/0.5Ba/Ni-BCZY"
+    description: "1000 ppm NH3; the deposited file lost its decimal separators"
+    has_quantitative_attribute:
+      - {value: 0.5, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ru, nominal"}
+      - {value: 0.5, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ba, nominal"}
+  - id: "coremeta4cat:CAT_b74m-m6rp_1Ru_Ni-BCZY"
+    title: "1Ru/Ni-BCZY"
+    description: "1000 ppm NH3"
+    has_quantitative_attribute:
+      - {value: 1.0, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ru, nominal"}
+  - id: "coremeta4cat:CAT_b74m-m6rp_Ni-BCZY"
+    title: "Ni-BCZY cermet"
+    description: "Bare cermet (NiO:BCZY811 = 60:40 by weight before reduction); 500, 1000, 3000 ppm NH3"
+  - id: "coremeta4cat:CAT_b74m-m6rp_1Ru-1Ba_Ni-YSZ"
+    title: "1Ru/1Ba/Ni-YSZ"
+    description: "1000 ppm NH3"
+    has_quantitative_attribute:
+      - {value: 1.0, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ru, nominal"}
+      - {value: 1.0, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ba, nominal"}
+  - id: "coremeta4cat:CAT_b74m-m6rp_1Ru-1Ba_YSZ"
+    title: "1Ru/1Ba/YSZ"
+    description: "1000 ppm NH3; Ni-free YSZ support"
+    has_quantitative_attribute:
+      - {value: 1.0, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ru, nominal"}
+      - {value: 1.0, has_quantity_type: http://qudt.org/vocab/quantitykind/MassFraction, unit: https://qudt.org/vocab/unit/PERCENT, description: "Ba, nominal"}
+used_reactant:
+  - id: "coremeta4cat:REAC_b74m-m6rp_NH3"
+    title: "ammonia"
+    rdf_type: {id: CHEBI:16134, title: ammonia}
+  - id: "coremeta4cat:REAC_b74m-m6rp_Ar"
+    title: "argon (balance)"
+    rdf_type: {id: CHEBI:49475, title: argon atom}
+generated_product:
+  - id: "coremeta4cat:PROD_b74m-m6rp_N2"
+    title: "dinitrogen"
+    rdf_type: {id: CHEBI:17997, title: dinitrogen}
+  - id: "coremeta4cat:PROD_b74m-m6rp_H2"
+    title: "dihydrogen"
+    rdf_type: {id: CHEBI:18276, title: dihydrogen}
+used_reactor:
+  - id: "coremeta4cat:REAC_b74m-m6rp_reactor"
+    title: "quartz glass tubular packed-bed reactor"
+    description: >-
+      0.8 cm inner diameter, 100 cm long, in a furnace; bed fixed by quartz wool, about 1.2 cm
+      long; catalyst and silica sieve fraction 120-250 um; Bronkhorst mass flow controllers;
+      two type N thermocouples about 2 mm up- and downstream of the bed.
+    catalyst_bed_diameter:
+      - value: 0.8
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Length
+        unit: https://qudt.org/vocab/unit/CentiM
+    catalyst_bed_height:
+      - value: 1.2
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Length
+        unit: https://qudt.org/vocab/unit/CentiM
+    catalyst_dilution_material:
+      - "silica particles, 700 mg, 120-250 um"
+product_identification_method:
+  - id: "coremeta4cat:REAC_b74m-m6rp_FTIR"
+    title: "online FTIR gas analysis"
+    description: "MKS Instruments MG2030 FTIR spectrometer, continuous analysis of the effluent gas"
+reactor_temperature_range:
+  - min_value: 473.15
+    max_value: 873.15
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+    unit: https://qudt.org/vocab/unit/K
+    description: "Ramp 473-873 K at 2 K/min; deposited inlet temperature 200-601 C"
+experiment_pressure:
+  - value: 1.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+    unit: https://qudt.org/vocab/unit/BAR
+feed_composition_range:
+  - min_value: 500.0
+    max_value: 3000.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/MoleFraction
+    unit: https://qudt.org/vocab/unit/PPM
+    description: "NH3 at the inlet (500, 1000, 3000 ppm), balance Ar"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp

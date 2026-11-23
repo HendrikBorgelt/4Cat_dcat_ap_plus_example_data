@@ -1,0 +1,47 @@
+---
+# Characterization -- H2 temperature-programmed reduction of Ni-BCZY
+# Source: hdl:21.11165/4cat/b74m-m6rp, Fig1.tab (954 points, 38-951 C, TCD signal in a.u.);
+# technique, sample and conditions from Davari et al., Appl. Catal. A 708 (2025) 120571
+# (section 2.2 and Fig. 1)
+#
+# Without the article the deposit did not say what this measurement was, nor on which sample.
+# TPR fields (TemperatureProgramMixin) are used on realized_plan; without a type designator the
+# Python round trip rejects them (TypeError) (schema_gap_analysis_2026-10.md, T1). The source file header has a
+# broken degree sign ("Temperature (?C)").
+
+id: "coremeta4cat:CHAR_b74m-m6rp_TCD"
+title:
+  - "H2-TPR of the Ni-BCZY cermet (article Fig. 1)"
+description:
+  - >-
+    Temperature-programmed reduction of about 0.1 g Ni-BCZY powder in a quartz reactor, from
+    room temperature to 1223 K at 10 K/min in 10% H2/Ar (50 mL/min); H2 consumption followed
+    by a thermal conductivity detector. Deposited signal 38-951 C.
+rdf_type:
+  id: CHMO:0002908
+  title: temperature-programmed reduction
+carried_out_by:
+  - id: "coremeta4cat:DEV_b74m-m6rp_TCD"
+    title: "TPR set-up with quartz reactor and thermal conductivity detector"
+    description: "Instrument model not stated in the article."
+evaluated_entity:
+  - id: "coremeta4cat:CAT_b74m-m6rp_Ni-BCZY"
+    title: "Ni-BCZY cermet powder"
+realized_plan:
+  id: "coremeta4cat:CHAR_b74m-m6rp_TCD_method"
+  title: "H2-TPR, 10 K/min to 1223 K"
+  description: "About 0.1 g sample, 10% H2 in Ar at 50 mL/min, TCD detection."
+  has_temperature_range:
+    - min_value: 298.15
+      max_value: 1223.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "room temperature to 1223 K (the article gives 1223 K as the end point)"
+  has_heating_rate:
+    - value: 10
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+  reducing_gas_composition:
+    - "10% H2 in Ar, 50 mL/min"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/b74m-m6rp

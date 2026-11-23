@@ -1,0 +1,57 @@
+---
+# Synthesis -- first-generation Cu0.465Ga0.07Al0.465 mixed metal oxide, calcined at 500/600/700 C
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_firstgen.tab;
+# method and precursors from Weber et al., ACS Catal. 2025, 15, 18857 (sections 2.1.1 and 3.4:
+# "prepared by the same coprecipitation method as for the initial screening experiments")
+#
+# status: incomplete
+# Missing: precursor_quantity (mandatory). The article names the precursors and gives masses
+# only for its worked example CuAlGaO4 (see Synthesis-6mxw-xsrd-library-example.yaml), not for
+# this composition (schema_gap_analysis_2026-10.md, P2).
+
+id: "coremeta4cat:SYN_6mxw-xsrd_gen1"
+title:
+  - "Cu0.465Ga0.07Al0.465 mixed metal oxide, three calcination temperatures"
+nominal_composition:
+  - "Cu0.465Ga0.07Al0.465 (metal fractions Cu 0.465, Al 0.465, Ga 0.07)"
+catalyst_measured_properties:
+  - "No measured properties of these three samples are deposited; the article reports XRD, N2 sorption, TPR, N2O-RFC and TEM results for the first generation in figures and the SI."
+had_input_entity:
+  - id: "coremeta4cat:PREC_6mxw-xsrd_CuNO3"
+    title: "copper(II) nitrate trihydrate, Cu(NO3)2·3H2O (Sigma-Aldrich, 98.8%)"
+  - id: "coremeta4cat:PREC_6mxw-xsrd_AlNO3"
+    title: "aluminium nitrate nonahydrate, Al(NO3)3·9H2O (Sigma-Aldrich, 99.9%)"
+  - id: "coremeta4cat:PREC_6mxw-xsrd_GaNO3"
+    title: "gallium(III) nitrate hydrate, Ga(NO3)3·xH2O (Sigma-Aldrich, 99.9%)"
+had_output_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_500"
+    title: "Cu0.465Ga0.07Al0.465(500)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_600"
+    title: "Cu0.465Ga0.07Al0.465(600)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_700"
+    title: "Cu0.465Ga0.07Al0.465(700)"
+realized_plan:
+  id: "coremeta4cat:SYN_6mxw-xsrd_gen1_method"
+  title: "automated co-precipitation at pH 9, ageing, freeze-drying, calcination at 500/600/700 C"
+  description: >-
+    Same route as the library (precipitant 1.6 M NaOH / 0.2 M Na2CO3, pH 9, ageing 2 h at
+    65 C, freeze-drying, see the library-example record). One precursor batch, calcined 4 h at
+    4 C/min in clean dry air at 500, 600 or 700 C.
+  has_calcination_temperature_range:
+    - min_value: 773.15
+      max_value: 973.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "500, 600 and 700 C, one sample each"
+  has_calcination_dwelling_time:
+    value: 4
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  has_calcination_heating_rate:
+    - value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+  has_calcination_atmosphere:
+    - value: "clean dry air"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

@@ -1,0 +1,155 @@
+---
+# CatalyticReaction -- CO2/CO hydrogenation to methanol and DME over the optimized catalysts, 17 conditions
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Testing_Protocol_for_Catalystst.tab (conditions),
+# Performance_Test_Composition_and_CalcTemp_firstgen.tab and ..._secondgen.csv (tested samples);
+# reactor, pretreatment, N2 balance and the sample/condition assignment from Weber et al.,
+# ACS Catal. 2025, 15, 18857 (section 2.2 and Table 1)
+#
+# status: incomplete
+# Missing: product_identification_method (mandatory). Neither the deposit nor the main text of
+# the article says how products were analysed; presumably it is in the SI.
+# Schema gaps (schema_gap_analysis_2026-10.md): R1 no space-velocity slot; R2 no slots for the
+# yields and conversions reported in the article; R4 catalyst amount given as a volume (0.5 mL)
+# and the pretreatment/activation have no field; R3 no reaction-type term for CO2
+# hydrogenation. FixedBedReactor fields are used on used_reactor; without a type designator
+# the Python round trip rejects them (TypeError) (T1).
+
+id: "coremeta4cat:REAC_6mxw-xsrd_CO2_hydrogenation"
+reaction_name:
+  - "hydrogenation of CO2/CO to methanol and dimethyl ether"
+title:
+  - "CO2/CO hydrogenation over optimized Cu-Ga-Al mixed metal oxides (17 conditions, 7 catalysts)"
+description:
+  - >-
+    Gas-phase testing of the first-generation (Cu0.465Ga0.07Al0.465, calcined at 500, 600 and
+    700 C) and second-generation (Cu0.85Al0.15 with 1 wt% Ga, two calcination steps) catalysts
+    under all 17 conditions of the test protocol: 80 bar, 225-300 C, GHSV 3000 and 6000 h-1,
+    CO2 13-27.1 vol%, CO 0-15.8 vol%, H2 36.7-76 vol%, 5 vol% Ar, balance N2 (0-26.7 vol%),
+    H2/COx 1.2-4. Pretreatment: 2 h at 300 C and 20 bar under 10 vol% Ar in N2 (GHSV 6000 h-1,
+    48 L/h), then in-situ reduction in the syngas feed. Products are methanol and dimethyl
+    ether, with methane as a minor by-product. Conversions and yields are reported in the
+    article's figures only; they are not deposited.
+catalyst_type:
+  - heterogeneous_catalysis
+catalyst_form:
+  - bulk
+used_catalyst:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_500"
+    title: "Cu0.465Ga0.07Al0.465(500)"
+    description: "First generation, calcined at 500 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_600"
+    title: "Cu0.465Ga0.07Al0.465(600)"
+    description: "First generation, calcined at 600 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G1_700"
+    title: "Cu0.465Ga0.07Al0.465(700)"
+    description: "First generation, calcined at 700 C"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_250"
+    title: "Cu0.85Al0.15(450)-1wt.%Ga(250)"
+    description: "Second generation; Cu0.85Al0.1(...) in the deposited sample names"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_350"
+    title: "Cu0.85Al0.15(450)-1wt.%Ga(350)"
+    description: "Second generation"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_250"
+    title: "Cu0.85Al0.15(550)-1wt.%Ga(250)"
+    description: "Second generation"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_350"
+    title: "Cu0.85Al0.15(550)-1wt.%Ga(350)"
+    description: "Second generation"
+used_reactant:
+  - id: "coremeta4cat:REAC_6mxw-xsrd_CO2"
+    title: "carbon dioxide"
+    rdf_type:
+      id: CHEBI:16526
+      title: carbon dioxide
+  - id: "coremeta4cat:REAC_6mxw-xsrd_CO"
+    title: "carbon monoxide"
+    rdf_type:
+      id: CHEBI:17245
+      title: carbon monoxide
+  - id: "coremeta4cat:REAC_6mxw-xsrd_H2"
+    title: "dihydrogen"
+    rdf_type:
+      id: CHEBI:18276
+      title: dihydrogen
+  - id: "coremeta4cat:REAC_6mxw-xsrd_Ar"
+    title: "argon"
+    description: "5 vol% in every feed"
+    rdf_type:
+      id: CHEBI:49475
+      title: argon atom
+  - id: "coremeta4cat:REAC_6mxw-xsrd_N2"
+    title: "dinitrogen"
+    description: "Balance gas (article, Table 1 footnote)"
+    rdf_type:
+      id: CHEBI:17997
+      title: dinitrogen
+generated_product:
+  - id: "coremeta4cat:PROD_6mxw-xsrd_MeOH"
+    title: "methanol"
+    rdf_type:
+      id: CHEBI:17790
+      title: methanol
+  - id: "coremeta4cat:PROD_6mxw-xsrd_DME"
+    title: "dimethyl ether"
+    rdf_type:
+      id: CHEBI:28887
+      title: methoxymethane
+  - id: "coremeta4cat:PROD_6mxw-xsrd_CH4"
+    title: "methane (by-product)"
+    rdf_type:
+      id: CHEBI:16183
+      title: methane
+used_reactor:
+  - id: "coremeta4cat:REAC_6mxw-xsrd_reactor"
+    title: "16-fold parallel fixed-bed reactor system (hte GmbH)"
+    description: >-
+      Stainless steel 1.4571 tubes, 4.5 mm inner diameter, 290 mm long; 0.5 mL catalyst,
+      sieve fraction 250-315 um (tablets pressed at 9 t, crushed and sieved), pre- and
+      post-bed of corundum.
+    catalyst_bed_diameter:
+      - value: 4.5
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Length
+        unit: https://qudt.org/vocab/unit/MilliM
+    catalyst_bed_volume:
+      - value: 0.5
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Volume
+        unit: https://qudt.org/vocab/unit/MilliL
+reactor_temperature_range:
+  - min_value: 498.15
+    max_value: 573.15
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+    unit: https://qudt.org/vocab/unit/K
+    description: "225-300 C (article Table 1)"
+experiment_pressure:
+  - value: 80.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Pressure
+    unit: https://qudt.org/vocab/unit/BAR
+    description: "Constant across all 17 conditions"
+feed_composition_range:
+  - min_value: 13.0
+    max_value: 27.1
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "CO2 in the feed"
+  - min_value: 0.0
+    max_value: 15.8
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "CO in the feed"
+  - min_value: 36.7
+    max_value: 76.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "H2 in the feed"
+  - min_value: 5.0
+    max_value: 5.0
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "Ar in the feed"
+  - min_value: 0.0
+    max_value: 26.7
+    has_quantity_type: http://qudt.org/vocab/quantitykind/VolumeFraction
+    unit: https://qudt.org/vocab/unit/PERCENT
+    description: "N2 balance, computed as 100 minus the listed components"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

@@ -1,0 +1,32 @@
+---
+# Simulation -- preparation of the 3FCR-4M transaminase structure
+# Source: hdl:21.11165/4cat/8ppb-aeky, proteinprep_3FCR_4M.tar.gz (2.2 MB, not read; file
+# description "Protein preparation of the initial 3CFR-4M structure with the Protein Preparation
+# Wizard"); enzyme identity from Weigmann et al., ACS Catal. (2025), doi:10.1021/acscatal.5c04248
+#
+# status: incomplete
+# Not representable (schema): calculated_property is mandatory, but structure preparation
+# produces a structure, not a property (schema_gap_analysis_2026-10.md, S5). There is also no
+# method class for structure preparation (S1) and no place for a PDB identifier or the
+# mutations on the evaluated protein (B1). Preparation settings are in the article's SI.
+
+id: "coremeta4cat:SIM_8ppb-aeky_protein_preparation"
+title:
+  - "Protein preparation of the amine transaminase variant 3FCR-4M"
+description:
+  - >-
+    Preparation of the initial structure of 3FCR-4M for docking and molecular dynamics with the
+    Protein Preparation Wizard. 3FCR-4M is the amine transaminase from Ruegeria sp. (PDB 3FCR)
+    with the four mutations Y59W, Y87F, Y152F and T231A. The file descriptions of the deposit
+    spell it 3CFR; the file names and the article use 3FCR.
+software_package:
+  - "Protein Preparation Wizard (Schrodinger suite)"
+evaluated_entity:
+  - id: "coremeta4cat:ENZ_8ppb-aeky_3FCR-4M"
+    title: "amine transaminase 3FCR-4M (Ruegeria sp., PDB 3FCR, Y59W/Y87F/Y152F/T231A)"
+realized_plan:
+  id: "coremeta4cat:SIM_8ppb-aeky_protein_preparation_method"
+  title: "protein structure preparation"
+  description: "Protein Preparation Wizard workflow; settings in the article's SI, not read from the archive."
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/8ppb-aeky

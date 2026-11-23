@@ -1,0 +1,53 @@
+---
+# Simulation -- DFT binding energies of OH and CO at doped CuGa2O4 and Ga2O3 sites
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Active_Sites_Screening.tab (17 sites x OH, CO);
+# method from the authors' vocabulary_map.csv (active_site, OH, CO -> density functional theory);
+# software and functional from Weber et al., ACS Catal. 2025, 15, 18857 (section 2.3)
+#
+# The article's main text describes the DFT setup in general terms. The settings for this
+# particular table (cut-off, k-points, slab models, OH reference state) are in its Supporting
+# Information, which is not part of this folder. The main text defines the CO adsorption energy
+# (E_CO = E_slab+CO - E_slab - E_CO(g)) but not the OH reference
+# (schema_gap_analysis_2026-10.md, S2).
+
+id: "coremeta4cat:SIM_6mxw-xsrd_DFT_active_sites"
+title:
+  - "DFT binding energies of OH and CO at 17 oxide surface sites"
+description:
+  - >-
+    Density functional theory binding energies of OH and CO at 17 sites: pristine CuGa2O4 and
+    CuGa2O4 doped with Al, Co, Cu, Ge, In, Ni or Sn, and pristine Ga2O3 and Ga2O3 doped with Al,
+    Pd, Pt, Rh, Ru, Sn, Zn or Zr. Site notation in the source file is <host>-<dopant>, e.g.
+    CuGa2O4-Co. Part of the theory-based prediction that led to the Cu-Ga-Al system (article,
+    section 3.1).
+software_package:
+  - "VASP"
+  - "Atomic Simulation Environment (ASE), structure generation"
+  - "pymatgen, structure generation"
+rdf_type:
+  id: VOC4CAT:0000215
+  title: density functional theory
+evaluated_entity:
+  - id: "coremeta4cat:SLAB_6mxw-xsrd_CuGa2O4_sites"
+    title: "CuGa2O4 surface models, pristine and with 7 dopants"
+    description: "Dopants Al, Co, Cu, Ge, In, Ni, Sn. Facet and slab model are in the article's SI."
+  - id: "coremeta4cat:SLAB_6mxw-xsrd_Ga2O3_sites"
+    title: "Ga2O3 surface models, pristine and with 8 dopants"
+    description: "Dopants Al, Pd, Pt, Rh, Ru, Sn, Zn, Zr. Facet, polymorph and slab model are in the article's SI."
+realized_plan:
+  id: "coremeta4cat:SIM_6mxw-xsrd_DFT_method"
+  title: "periodic DFT, PBE, PAW"
+  description: >-
+    Vienna Ab initio Simulation Package with the PBE functional and projector augmented waves.
+    The article uses PBE-D3 when verifying the machine-learned potentials; whether D3 was
+    applied for this table is not stated in the main text. Cut-off, k-points and convergence
+    criteria are in the SI.
+  exchange_correlation_functional:
+    - "PBE"
+calculated_property:
+  - value: "-1.87 to 1.41 eV (17 sites)"
+    description: "OH binding energy; range over all sites (Ga2O3-Zn lowest, CuGa2O4-Cu highest); reference state not defined in the main text"
+  - value: "-2.20 to 0.51 eV (17 sites)"
+    description: "CO binding energy; range over all sites (Ga2O3-Ru lowest, pristine Ga2O3 highest); referenced to gas-phase CO"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

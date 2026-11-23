@@ -1,0 +1,42 @@
+---
+# Characterization -- XRF elemental composition of the Cu-Ga-Al hydrotalcite-like precursors
+# Source: hdl:21.11165/4cat/6mxw-xsrd, Synthesis_and_Characterization_of_CuGaAlMMOS.tab
+# (76 rows: nominal "ideal" Cu/Al/Ga fractions next to XRF-measured fractions);
+# instrument and sample state from Weber et al., ACS Catal. 2025, 15, 18857 (sections 2.1.4, 3.2)
+#
+# Technique term taken from the authors' own vocabulary_map.csv (XRF -> VOC4CAT:0000067).
+# CoreMeta4Cat has no XRF CharacterizationTechnique subclass, so the method parameters
+# below can only be given as free text (see schema_gap_analysis_2026-10.md, C1).
+
+id: "coremeta4cat:CHAR_6mxw-xsrd_XRF"
+title:
+  - "XRF elemental analysis (76 Cu-Ga-Al hydrotalcite-like precursors)"
+description:
+  - >-
+    X-ray fluorescence analysis of 76 Cu-Ga-Al compositions spanning the Cu/Al/Ga ternary
+    (Cu 0-1, Al 0-1, Ga 0-1, metal fractions normalised to 1), including the three
+    single-metal end members. According to the article (section 3.2), XRF was measured on the
+    freeze-dried hydrotalcite-like (HTC) precursors, i.e. before calcination. Measured Cu, Al
+    and Ga fractions are reported next to the nominal fractions.
+rdf_type:
+  id: VOC4CAT:0000067
+  title: X-ray fluorescence
+carried_out_by:
+  - id: "coremeta4cat:DEV_6mxw-xsrd_XRF"
+    title: "Bruker M4 TORNADO micro-XRF spectrometer"
+    description: "Rh X-ray tube; ESPRIT software (article, section 2.1.4)."
+evaluated_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_HTC_library"
+    title: "Cu-Ga-Al hydrotalcite-like precursor library (76 compositions)"
+    description: >-
+      Co-precipitated, freeze-dried HTC precursors of the Cu-Ga-Al mixed metal oxides;
+      individual samples are identified only by their composition, not by a sample ID.
+realized_plan:
+  id: "coremeta4cat:CHAR_6mxw-xsrd_XRF_method"
+  title: "XRF determination of Cu, Al and Ga metal fractions"
+  description: >-
+    Elemental composition by the fundamental parameter method in ESPRIT; metal fractions of
+    Cu, Al and Ga normalised to their sum. Sample preparation and measurement conditions are
+    not stated in the main text of the article.
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

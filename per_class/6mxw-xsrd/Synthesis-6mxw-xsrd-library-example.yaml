@@ -1,0 +1,121 @@
+---
+# Synthesis -- co-precipitation of Cu0.33Ga0.33Al0.33 (CuAlGaO4), the article's worked example
+# Source: Weber et al., ACS Catal. 2025, 15, 18857, section 2.1.1 (method and masses);
+# hdl:21.11165/4cat/6mxw-xsrd, Synthesis_and_Characterization_of_CuGaAlMMOS.tab (XRF row
+# 0.33/0.33/0.34) and Sample_Compositions.tab (screening sample Cu0.33Ga0.33Al0.33)
+#
+# The article gives precursor masses for this one composition only, as an example of the route
+# used for the whole library. This record is the only Synthesis in the dataset that can be
+# complete; the other compositions share the method but have no stated masses
+# (schema_gap_analysis_2026-10.md, P2).
+# Structured CoPrecipitation fields are used on realized_plan. They validate, but without a
+# type designator the Python round trip rejects them (TypeError) (T1).
+
+id: "coremeta4cat:SYN_6mxw-xsrd_CuAlGaO4"
+title:
+  - "Co-precipitation of the CuAlGaO4 hydrotalcite-like precursor and calcination"
+nominal_composition:
+  - "CuAlGaO4 (metal fractions Cu 0.33, Al 0.33, Ga 0.33)"
+catalyst_measured_properties:
+  - "XRF of the HTC precursor: Cu 0.42, Al 0.22, Ga 0.36 (metal fractions; nominal 0.33/0.33/0.34)"
+solvent:
+  - id: "coremeta4cat:SOLV_6mxw-xsrd_water"
+    title: "deionised water (150 mL for the metal nitrates; reactor prefilled with 200 mL)"
+had_input_entity:
+  - id: "coremeta4cat:PREC_6mxw-xsrd_CuNO3"
+    title: "copper(II) nitrate trihydrate, Cu(NO3)2·3H2O (Sigma-Aldrich, 98.8%)"
+    precursor_quantity:
+      - value: 5.25
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+        unit: https://qudt.org/vocab/unit/GM
+  - id: "coremeta4cat:PREC_6mxw-xsrd_AlNO3"
+    title: "aluminium nitrate nonahydrate, Al(NO3)3·9H2O (Sigma-Aldrich, 99.9%)"
+    precursor_quantity:
+      - value: 8.37
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+        unit: https://qudt.org/vocab/unit/GM
+  - id: "coremeta4cat:PREC_6mxw-xsrd_GaNO3"
+    title: "gallium(III) nitrate hydrate, Ga(NO3)3·xH2O (Sigma-Aldrich, 99.9%)"
+    description: "Water content x not stated."
+    precursor_quantity:
+      - value: 8.92
+        has_quantity_type: http://qudt.org/vocab/quantitykind/Mass
+        unit: https://qudt.org/vocab/unit/GM
+had_output_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_Cu0.33Ga0.33Al0.33"
+    title: "Cu0.33Ga0.33Al0.33 mixed metal oxide"
+    description: "One of the 13 screening samples (calcined at 600 C)."
+realized_plan:
+  id: "coremeta4cat:SYN_6mxw-xsrd_coprecipitation_method"
+  title: "automated co-precipitation at constant pH, ageing, freeze-drying, calcination"
+  description: >-
+    Metal nitrate solution fed at 1.6 mL/min into a glass reactor prefilled with 200 mL water,
+    overhead stirrer at 500 rpm, ambient temperature; precipitant dosed to hold pH 9 +- 0.1.
+    Suspension aged 2 h at 65 C at 500 rpm, cooled, filtered, washed to pH 7 +- 0.3,
+    freeze-dried at -10 C and 3 mbar for 12 h to the HTC precursor. Calcination 4 h at
+    4 C/min in clean dry air; the library was calcined at 400, 500, 600, 700 and 900 C, the
+    screening samples at 600 C. In-house computer-controlled precipitation plant.
+  precipitating_agent:
+    - id: CHEBI:32145
+      title: sodium hydroxide
+    - id: CHEBI:29377
+      title: sodium carbonate
+  precipitating_concentration:
+    - value: 1.6
+      has_quantity_type: http://qudt.org/vocab/quantitykind/AmountOfSubstanceConcentration
+      unit: https://qudt.org/vocab/unit/MOL-PER-L
+      description: "NaOH"
+    - value: 0.2
+      has_quantity_type: http://qudt.org/vocab/quantitykind/AmountOfSubstanceConcentration
+      unit: https://qudt.org/vocab/unit/MOL-PER-L
+      description: "Na2CO3"
+  has_ph_value:
+    - value: 9.0
+      has_quantity_type: http://qudt.org/vocab/quantitykind/PH
+      unit: https://qudt.org/vocab/unit/PH
+  has_mixing_speed:
+    - value: 500
+      has_quantity_type: http://qudt.org/vocab/quantitykind/AngularVelocity
+      unit: https://qudt.org/vocab/unit/REV-PER-MIN
+  order_of_addition:
+    - "metal nitrate solution pumped into prefilled water; precipitant added to keep pH 9"
+  has_aging_temperature:
+    - value: 338.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+  has_aging_duration:
+    value: 2
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  filtration:
+    - "suction filter"
+  purification:
+    - "washed with deionised water until pH 7 +- 0.3"
+  drying_device:
+    - "freeze dryer (-10 C, 3 mbar)"
+  has_drying_temperature:
+    - value: 263.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+  has_drying_duration:
+    value: 12
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  has_calcination_temperature_range:
+    - min_value: 673.15
+      max_value: 1173.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "400-900 C across the library; screening samples at 600 C"
+  has_calcination_dwelling_time:
+    value: 4
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  has_calcination_heating_rate:
+    - value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+  has_calcination_atmosphere:
+    - value: "clean dry air"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
