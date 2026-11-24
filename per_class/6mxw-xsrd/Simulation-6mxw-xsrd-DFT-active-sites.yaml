@@ -36,6 +36,7 @@ evaluated_entity:
     description: "Dopants Al, Pd, Pt, Rh, Ru, Sn, Zn, Zr. Facet, polymorph and slab model are in the article's SI."
 realized_plan:
   id: "coremeta4cat:SIM_6mxw-xsrd_DFT_method"
+  plan_designator: coremeta4cat:DFT
   title: "periodic DFT, PBE, PAW"
   description: >-
     Vienna Ab initio Simulation Package with the PBE functional and projector augmented waves.

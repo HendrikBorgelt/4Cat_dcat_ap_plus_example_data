@@ -3,8 +3,7 @@
 # Source: Davari et al., Appl. Catal. A 708 (2025) 120571, section 2.1 and Table 2 (the deposit
 # has no synthesis data)
 #
-# status: incomplete
-# Missing: precursor_quantity (mandatory). The article gives the NiO:BCZY/YSZ weight ratio
+# Not stated: precursor_quantity (recommended). The article gives the NiO:BCZY/YSZ weight ratio
 # (60:40) but no masses (schema_gap_analysis_2026-10.md, P2).
 # Schema gap P3: tape casting and sintering have no PreparationMethod; the whole route is in
 # the plan description.

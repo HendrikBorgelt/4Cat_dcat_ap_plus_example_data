@@ -1,0 +1,63 @@
+---
+# Synthesis -- second generation, step 2: 1 wt% Ga by incipient wetness impregnation, calcined at 250/350 C
+# Source: Weber et al., ACS Catal. 2025, 15, 18857, section 2.1.2 (method);
+# hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_secondgen.csv (Tcalc,2)
+#
+# Input: the two calcined oxides of Synthesis-6mxw-xsrd-gen2-step1.yaml (P1).
+# Not stated: precursor_quantity (recommended); the article gives the target loading (1 wt% Ga)
+# but no masses (P2).
+
+id: "coremeta4cat:SYN_6mxw-xsrd_gen2_step2"
+title:
+  - "1 wt% Ga on Cu0.85Al0.15 oxide by incipient wetness impregnation, calcined at 250 or 350 C"
+nominal_composition:
+  - "Cu0.85Al0.15 mixed oxide with 1 wt% Ga (target loading)"
+catalyst_measured_properties:
+  - "No measured properties of these four samples are deposited."
+had_input_entity:
+  - id: "coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_450"
+    title: "Cu0.85Al0.15 oxide calcined at 450 C (output of step 1)"
+  - id: "coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_550"
+    title: "Cu0.85Al0.15 oxide calcined at 550 C (output of step 1)"
+  - id: "coremeta4cat:PREC_6mxw-xsrd_GaNO3"
+    title: "gallium(III) nitrate hydrate, Ga(NO3)3·xH2O (Sigma-Aldrich, 99.9%), aqueous solution"
+had_output_entity:
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_250"
+    title: "Cu0.85Al0.15(450)-1wt.%Ga(250)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_450_350"
+    title: "Cu0.85Al0.15(450)-1wt.%Ga(350)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_250"
+    title: "Cu0.85Al0.15(550)-1wt.%Ga(250)"
+  - id: "coremeta4cat:CAT_6mxw-xsrd_G2_550_350"
+    title: "Cu0.85Al0.15(550)-1wt.%Ga(350)"
+realized_plan:
+  id: "coremeta4cat:SYN_6mxw-xsrd_gen2_step2_method"
+  plan_designator: voc4cat:0007028
+  title: "incipient wetness impregnation with Ga(NO3)3, drying, calcination at 250/350 C"
+  description: >-
+    Aqueous Ga(NO3)3 to a target of 1 wt% Ga, drying at 80 C, calcination 4 h at 4 C/min in
+    clean dry air at 250 or 350 C (Tcalc,2).
+  impregnation_type:
+    - incipient_wetness
+  has_drying_temperature:
+    - value: 353.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+  has_calcination_temperature_range:
+    - min_value: 523.15
+      max_value: 623.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "250 or 350 C"
+  has_calcination_dwelling_time:
+    value: 4
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  has_calcination_heating_rate:
+    - value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+  has_calcination_atmosphere:
+    - value: "clean dry air"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

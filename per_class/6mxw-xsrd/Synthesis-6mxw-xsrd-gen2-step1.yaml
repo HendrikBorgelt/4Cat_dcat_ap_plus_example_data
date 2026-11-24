@@ -1,0 +1,56 @@
+---
+# Synthesis -- second generation, step 1: co-precipitated Cu0.85Al0.15 precursor, calcined at 450/550 C
+# Source: Weber et al., ACS Catal. 2025, 15, 18857, section 2.1.2 (method);
+# hdl:21.11165/4cat/6mxw-xsrd, Performance_Test_Composition_and_CalcTemp_secondgen.csv (Tcalc,1)
+#
+# Step 2 (Ga impregnation) is Synthesis-6mxw-xsrd-gen2-step2.yaml; its input is this record's
+# output (schema_gap_analysis_2026-10.md, P1: steps chained through had_output_entity ->
+# had_input_entity instead of one plan with ordered steps).
+# Not stated: precursor_quantity (recommended); the article gives no masses for this
+# composition (P2).
+# Composition: the article's method section and sample abbreviation say Cu0.85Al0.15, the
+# deposited sample names and the footnote of the article's Table 1 say Cu0.85Al0.1 (D1).
+
+id: "coremeta4cat:SYN_6mxw-xsrd_gen2_step1"
+title:
+  - "Co-precipitated Cu0.85Al0.15 precursor, calcined at 450 or 550 C"
+nominal_composition:
+  - "Cu0.85Al0.15 (metal fractions Cu 0.85, Al 0.15)"
+catalyst_measured_properties:
+  - "No measured properties of the intermediate oxides are deposited."
+had_input_entity:
+  - id: "coremeta4cat:PREC_6mxw-xsrd_CuNO3"
+    title: "copper(II) nitrate trihydrate, Cu(NO3)2·3H2O (Sigma-Aldrich, 98.8%)"
+  - id: "coremeta4cat:PREC_6mxw-xsrd_AlNO3"
+    title: "aluminium nitrate nonahydrate, Al(NO3)3·9H2O (Sigma-Aldrich, 99.9%)"
+had_output_entity:
+  - id: "coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_450"
+    title: "Cu0.85Al0.15 oxide calcined at 450 C"
+  - id: "coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_550"
+    title: "Cu0.85Al0.15 oxide calcined at 550 C"
+realized_plan:
+  id: "coremeta4cat:SYN_6mxw-xsrd_gen2_step1_method"
+  plan_designator: voc4cat:0007795
+  title: "automated co-precipitation at pH 9, ageing, freeze-drying, calcination at 450/550 C"
+  description: >-
+    Same route as the library (precipitant 1.6 M NaOH / 0.2 M Na2CO3, pH 9, ageing 2 h at
+    65 C, freeze-drying, see Synthesis-6mxw-xsrd-library-example.yaml). Calcined 4 h at
+    4 C/min in clean dry air at 450 or 550 C (Tcalc,1).
+  has_calcination_temperature_range:
+    - min_value: 723.15
+      max_value: 823.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: "450 or 550 C"
+  has_calcination_dwelling_time:
+    value: 4
+    has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+    unit: https://qudt.org/vocab/unit/HR
+  has_calcination_heating_rate:
+    - value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+  has_calcination_atmosphere:
+    - value: "clean dry air"
+other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd

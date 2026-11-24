@@ -1,10 +1,11 @@
 # Counter-example X01: fixed bed fields on autoclave
 # Source: per_class/arp5-s69r/CatalyticReaction-arp5-s69r-Carbonylation.yaml
-# Change: used_reactor[0] (a batch autoclave) gains catalyst_bed_height, a FixedBedReactor field
+# Change: used_reactor[0], declared as Autoclave (reactor_designator NCIT:C93052), gains catalyst_bed_height, a FixedBedReactor field
 # Why it happens: a fixed-bed template is reused for a batch experiment
 # Paper claim: Conclusion: validation flags a batch reactor reported together with flow parameters
-# Catchable once: the reactor subclass can be declared, so only Autoclave fields are allowed
-# expect: gap
+# Caught since: reactor_designator (2026-11); without the designator it would still pass
+# expect: caught
+# error-contains: is not valid under any of the given schemas
 ---
 id: coremeta4cat:REAC_arp5-s69r_Carbonylation
 reaction_name:
@@ -79,6 +80,7 @@ used_reactor:
   title: Parr 5500 series compact reactor
   description: Batch autoclave, cylindrical stainless steel reaction chamber (25 mL, 25.4 x 50.8 mm ID),
     overhead stirrer at 1000 rpm, electric heating.
+  reactor_designator: NCIT:C93052
   catalyst_bed_height:
   - value: 2.0
     has_quantity_type: http://qudt.org/vocab/quantitykind/Length

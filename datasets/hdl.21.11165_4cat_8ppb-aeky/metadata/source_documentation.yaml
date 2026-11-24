@@ -79,7 +79,7 @@ md_parameters:
 
 calculated_property:
   value: missing for protein preparation, docking and MD
-  note: Their outputs are structures and trajectories, not properties (schema gap S5).
+  note: Their outputs are structures and trajectories, not properties (S5); calculated_property is recommended since 2026-11.
 
 catalytic_reaction:
   value: not in this deposit

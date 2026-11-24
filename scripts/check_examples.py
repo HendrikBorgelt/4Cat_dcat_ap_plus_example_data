@@ -12,6 +12,8 @@ their header comments:
     # expect: gap             -> should fail, but the schema cannot catch it yet
     # expect: beyond-schema   -> needs a rule engine (SHACL, custom check),
                                  not expressible in LinkML/JSON Schema alone
+    # expect: allowed         -> passes on purpose: documents a field that was
+                                 deliberately relaxed (e.g. required -> recommended)
 
 Records with `# status: incomplete` in their header are curated as far as the
 deposited data allows; their validation errors are listed but not counted as
@@ -108,6 +110,11 @@ def main():
                 verdict = "caught"
         elif expect in ("gap", "beyond-schema"):
             verdict = f"open {expect}" if not errs else f"now caught, update header: {short(errs[0])}"
+        elif expect == "allowed":
+            if errs:
+                verdict, problems = f"REJECTED although allowed: {short(errs[0])}", problems + 1
+            else:
+                verdict = "allowed"
         else:
             verdict, problems = "missing '# expect:' header", problems + 1
         tally[verdict.split(":")[0]] = tally.get(verdict.split(":")[0], 0) + 1

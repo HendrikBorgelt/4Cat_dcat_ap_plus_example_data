@@ -4,8 +4,7 @@
 # method and precursors from Weber et al., ACS Catal. 2025, 15, 18857 (sections 2.1.1 and 3.4:
 # "prepared by the same coprecipitation method as for the initial screening experiments")
 #
-# status: incomplete
-# Missing: precursor_quantity (mandatory). The article names the precursors and gives masses
+# Not stated: precursor_quantity (recommended). The article names the precursors and gives masses
 # only for its worked example CuAlGaO4 (see Synthesis-6mxw-xsrd-library-example.yaml), not for
 # this composition (schema_gap_analysis_2026-10.md, P2).
 
@@ -32,6 +31,7 @@ had_output_entity:
     title: "Cu0.465Ga0.07Al0.465(700)"
 realized_plan:
   id: "coremeta4cat:SYN_6mxw-xsrd_gen1_method"
+  plan_designator: voc4cat:0007795
   title: "automated co-precipitation at pH 9, ageing, freeze-drying, calcination at 500/600/700 C"
   description: >-
     Same route as the library (precipitant 1.6 M NaOH / 0.2 M Na2CO3, pH 9, ageing 2 h at

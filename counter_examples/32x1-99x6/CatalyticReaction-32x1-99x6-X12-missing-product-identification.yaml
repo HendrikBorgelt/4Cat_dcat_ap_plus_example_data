@@ -2,8 +2,8 @@
 # Source: per_class/32x1-99x6/CatalyticReaction-32x1-99x6-CAL-Al2O3.yaml
 # Change: product_identification_method removed
 # Why it happens: analytics considered self-evident ("GC as usual")
-# expect: caught
-# error-contains: 'product_identification_method' is a required property
+# Decision: product_identification_method is recommended since 2026-11 (it is missing from the 6mxw-xsrd sources), so this record is accepted on purpose
+# expect: allowed
 ---
 id: coremeta4cat:REAC_32x1-99x6_CAL_Al2O3
 reaction_name:

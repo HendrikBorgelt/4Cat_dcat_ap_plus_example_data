@@ -5,8 +5,7 @@
 # and the restriction to conditions 1-8 from Weber et al., ACS Catal. 2025, 15, 18857
 # (section 3.3 and Table 1 footnote)
 #
-# status: incomplete
-# Missing: product_identification_method (mandatory), as for the optimized catalysts.
+# Not stated: product_identification_method (recommended), as for the optimized catalysts.
 # Without the article the purpose of Sample_Compositions.tab could not be determined.
 
 id: "coremeta4cat:REAC_6mxw-xsrd_screening"
@@ -68,6 +67,7 @@ generated_product:
     rdf_type: {id: CHEBI:16183, title: methane}
 used_reactor:
   - id: "coremeta4cat:REAC_6mxw-xsrd_reactor"
+    reactor_designator: coremeta4cat:FixedBedReactor
     title: "16-fold parallel fixed-bed reactor system (hte GmbH)"
     description: "As for the optimized catalysts: 4.5 mm inner diameter, 0.5 mL catalyst, 250-315 um."
     catalyst_bed_diameter:

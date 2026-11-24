@@ -5,9 +5,8 @@
 # desmond_md_job_*_prod (9.5 GB, production), not read; purpose, analysis and the M1/M2 mapping
 # from Weigmann et al., ACS Catal. (2025), doi:10.1021/acscatal.5c04248
 #
-# status: incomplete
-# Not representable (schema): the result is a trajectory, not a property, but
-# calculated_property is mandatory (S5). MolecularDynamics has force_field, ensemble_type,
+# No calculated_property: the result is a trajectory, not a property (recommended since
+# 2026-11; S5). MolecularDynamics has force_field, ensemble_type,
 # simulation_timestep, simulation_time and number_of_atoms, which fit this case; the article's
 # main text gives none of them (system preparation and MD details are in its SI), and the
 # archives were not read. Setup, minimisation, equilibration and production cannot be expressed
@@ -37,6 +36,7 @@ evaluated_entity:
     title: "4M-N16 = 3FCR-4M-G151A/P423F (deposit M2) with cofactor-bound substrate 2a"
 realized_plan:
   id: "coremeta4cat:SIM_8ppb-aeky_MD_method"
+  plan_designator: NCIT:C18097
   title: "molecular dynamics: setup, minimisation, equilibration, production"
   description: >-
     Force field, water model, ensemble, temperature, timestep and simulation length are in the

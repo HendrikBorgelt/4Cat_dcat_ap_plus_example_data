@@ -33,6 +33,7 @@ evaluated_entity:
     title: "0.5Ru/1Ba/Ni-BCZY (modelled as Ru and Ni surface sites)"
 realized_plan:
   id: "coremeta4cat:SIM_b74m-m6rp_MKM_parametric_method"
+  plan_designator: coremeta4cat:Microkinetics
   title: "optimized microkinetic packed-bed model, parameter variation"
   description: >-
     Mechanism with the optimized Ru and Ni parameters (article Table 4). Varied inputs: inlet

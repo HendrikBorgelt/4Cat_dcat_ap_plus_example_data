@@ -9,7 +9,7 @@
 # Schema gaps (schema_gap_analysis_2026-10.md): R1 no space velocity (GHSV 50,000 h-1);
 # R2 the conversion curves and the T10/T50 values of the article have no field; R4 the
 # pretreatment and the 2 K/min ramp have no field. FixedBedReactor fields are used on
-# used_reactor; without a type designator the Python round trip rejects them (TypeError) (T1).
+# used_reactor, declared with reactor_designator (T1).
 
 id: "coremeta4cat:REAC_b74m-m6rp_NH3_decomposition"
 reaction_name:
@@ -88,6 +88,7 @@ generated_product:
     rdf_type: {id: CHEBI:18276, title: dihydrogen}
 used_reactor:
   - id: "coremeta4cat:REAC_b74m-m6rp_reactor"
+    reactor_designator: coremeta4cat:FixedBedReactor
     title: "quartz glass tubular packed-bed reactor"
     description: >-
       0.8 cm inner diameter, 100 cm long, in a furnace; bed fixed by quartz wool, about 1.2 cm

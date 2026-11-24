@@ -5,14 +5,13 @@
 # reactor, pretreatment, N2 balance and the sample/condition assignment from Weber et al.,
 # ACS Catal. 2025, 15, 18857 (section 2.2 and Table 1)
 #
-# status: incomplete
-# Missing: product_identification_method (mandatory). Neither the deposit nor the main text of
-# the article says how products were analysed; presumably it is in the SI.
+# Not stated: product_identification_method (recommended). Neither the deposit nor the main
+# text of the article says how products were analysed; presumably it is in the SI.
 # Schema gaps (schema_gap_analysis_2026-10.md): R1 no space-velocity slot; R2 no slots for the
 # yields and conversions reported in the article; R4 catalyst amount given as a volume (0.5 mL)
 # and the pretreatment/activation have no field; R3 no reaction-type term for CO2
-# hydrogenation. FixedBedReactor fields are used on used_reactor; without a type designator
-# the Python round trip rejects them (TypeError) (T1).
+# hydrogenation. FixedBedReactor fields are used on used_reactor, declared with
+# reactor_designator (T1).
 
 id: "coremeta4cat:REAC_6mxw-xsrd_CO2_hydrogenation"
 reaction_name:
@@ -101,6 +100,7 @@ generated_product:
       title: methane
 used_reactor:
   - id: "coremeta4cat:REAC_6mxw-xsrd_reactor"
+    reactor_designator: coremeta4cat:FixedBedReactor
     title: "16-fold parallel fixed-bed reactor system (hte GmbH)"
     description: >-
       Stainless steel 1.4571 tubes, 4.5 mm inner diameter, 290 mm long; 0.5 mL catalyst,

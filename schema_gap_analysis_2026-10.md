@@ -15,6 +15,27 @@ through the validator. Each gap below names the record or counter-example that s
 - **New in this repo:** `per_class/` and `datasets/` for 6mxw-xsrd, b74m-m6rp and 8ppb-aeky
   (with the articles in `datasets/*/dataset/`), `counter_examples/`, `scripts/`
 
+> **Update 2026-11-23: schema changes on CoreMeta4Cat branch `new_testdata_and_example_data`.**
+> Everything below this box describes the schema before these changes.
+> - **T1 resolved.** `plan_designator` on `CatalysisPlan` and `reactor_designator` on
+>   `ChemicalReactor` (`designates_type`, `range: uriorcurie`, `slot_uri: rdf:type`). The value is
+>   the subclass's exact `class_uri` (e.g. `voc4cat:0007795` for CoPrecipitation; upper-case
+>   `VOC4CAT:` is rejected). Plans and reactors with subclass fields now load in Python and
+>   serialise with the correct RDF type (`a CHMO:0002908`).
+> - **P2, S5 and product identification relaxed** to `recommended`: `precursor_quantity`,
+>   `calculated_property`, `product_identification_method`.
+> - **Data:** designators added to the records that use subclass fields, plus the MD and
+>   microkinetic plans. The 6mxw-xsrd second-generation synthesis is split into two chained
+>   records (co-precipitation, then impregnation).
+> - **Result:**
+>   - All 44 per-class and 6 combined records validate.
+>   - The three new combined records pass `just test` (64 pytest tests, `linkml-run-examples`
+>     over 18 fixtures), on LinkML 1.12.1.
+>   - Counter-examples: 8 caught, 5 open gaps, 3 beyond schema, 1 allowed. X01 and X02 are now
+>     caught when the reactor/technique is declared; X12 is allowed by decision.
+> - **Windows:** run `just test` with `PYTHONUTF8=1`, otherwise the TTL/JSON/YAML outputs
+>   garble non-ASCII characters (α → Î±).
+
 Earlier findings (Agent affiliation, `recommended` folded into `required`, the T7 dispatch fix)
 are in `schema_validation_analysis_2026-07.md` and are not repeated here.
 
@@ -115,8 +136,8 @@ changed, why it happens in practice, and what validation should do.
 
 | # | Mistake | Today | Needs |
 |---|---|---|---|
-| X01 | Fixed-bed fields on a batch autoclave | passes | T1 |
-| X02 | XRD 2θ range on a DRIFT measurement | passes | T1 |
+| X01 | Fixed-bed fields on a batch autoclave | caught since 2026-11 (with `reactor_designator`) | T1 |
+| X02 | XRD 2θ range on a DRIFT measurement | caught since 2026-11 (with `plan_designator`) | T1 |
 | X03 | Feed composition on a batch reaction | passes | R3 |
 | X04 | Research-field term used as reaction type | passes | T2 |
 | X05 | Reaction-type term used as research field | passes | T2 |
@@ -126,14 +147,17 @@ changed, why it happens in practice, and what validation should do.
 | X09 | Pressure with unit °C | passes | QUDT check |
 | X10 | Bare unit code `K` | passes | T3 |
 | X11 | Reactor missing | caught | — |
-| X12 | Product identification missing | caught | — |
+| X12 | Product identification missing | allowed since 2026-11 (field relaxed to recommended) | — |
 | X13 | Temperature as text "60-100 °C" | caught | — |
 | X14 | `heterogenous_catalysis` misspelled | caught | — |
 | X15 | Misspelled field name | caught | — |
 | X16 | Instrument missing | caught | — |
 | X17 | Quantity without quantity kind | caught | — |
 
-**Today 7 of 17 are caught.** Fixing T1, T2, T3, R3 and adding bounds (T4) would catch 14.
+**Before the 2026-11 changes, 7 of 17 were caught; now 8 of 16 that should fail.** X12 is
+allowed by decision. With designators, X01 and X02 are caught as long as the record declares the
+reactor or technique type; without the declaration they still pass. Fixing T2, T3, R3 and adding
+bounds (T4) would catch 13 of 16.
 X07–X09 need checks that LinkML and JSON Schema cannot express (see T4).
 
 What is caught today is missing mandatory fields, wrong shapes, misspellings and unknown
@@ -145,6 +169,9 @@ describes, or on what a number means.
 ## Typing and validation
 
 ### T1 Subclasses cannot be declared
+
+> **Resolved 2026-11 for plans and reactors** with class-URI designators (see the update box at
+> the top). `CalculatedProperty` still has no designator; no record needs one yet.
 
 `CharacterizationTechnique`, `PreparationMethod`, `SimulationMethod`, `ChemicalReactor` and
 `CalculatedProperty` are abstract ranges without a type designator. Two consequences:
@@ -336,6 +363,9 @@ crash the round trip (T1).
 
 ### S5 Every simulation must report a property
 
+> **Decision 2026-11:** `calculated_property` is now recommended. A conditional rule
+> (required for property-producing methods only) remains an option.
+
 `calculated_property` is mandatory on `Simulation`. That fits a DFT single point that produces
 an energy. It doesn't fit workflow steps whose output is a structure or a trajectory: protein
 preparation, docking and MD in 8ppb-aeky. Each of those three records fails on exactly this
@@ -440,6 +470,9 @@ that isn't `Precursor`), or ordered preparation steps.
 None of the three original datasets contains a `Synthesis` at all.
 
 ### P2 Precursor masses are rarely reported
+
+> **Decision 2026-11:** `precursor_quantity` is now recommended; `had_input_entity` (precursor
+> identity) stays mandatory. Accepting a target loading as an alternative remains an option.
 
 `had_input_entity` is mandatory, and each `Precursor` needs a `precursor_quantity`, which is a
 mass. Of the five synthesis records built from the articles, one is complete. That one is

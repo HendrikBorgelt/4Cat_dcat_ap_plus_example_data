@@ -75,9 +75,9 @@ precursor_masses:
   value: "5.25 g Cu nitrate, 8.37 g Al nitrate, 8.92 g Ga nitrate in 150 mL water"
   source: Article [2.1.1]
   note: >-
-    Given only for the worked example CuAlGaO4, hence one complete Synthesis record
-    (Synthesis-6mxw-xsrd-library-example.yaml). Masses for the first- and second-generation
-    catalysts are not stated; both records stay incomplete.
+    Given only for the worked example CuAlGaO4 (Synthesis-6mxw-xsrd-library-example.yaml).
+    Masses for the first- and second-generation catalysts are not stated; precursor_quantity is
+    recommended since 2026-11, so those records list the precursors without masses.
 
 library_calcination:
   value: "400, 500, 600, 700 and 900 C; screening samples at 600 C"
@@ -91,6 +91,8 @@ gen2:
   value: "Cu0.85Al0.15 HTC co-precipitated, calcined 450/550 C; incipient wetness impregnation with Ga(NO3)3 to 1 wt% Ga; dried 80 C; calcined 250/350 C; each calcination 4 h at 4 C/min in clean dry air"
   source: Article [2.1.2]; Performance_Test_Composition_and_CalcTemp_secondgen [all]
   note: >-
+    Recorded as two chained Synthesis records (gen2-step1 co-precipitation, gen2-step2
+    impregnation), the step-1 oxides being the input of step 2.
     Composition inconsistency: Article 2.1.2 and its sample abbreviation say Cu0.85Al0.15, as
     does the "Al ideal / [1]" column; the deposited sample names and the footnote of Article
     Table 1 say Cu0.85Al0.1. The records follow the method section. "Ga ideal / [1]" = 1 is
@@ -190,7 +192,7 @@ products:
 product_identification:
   value: missing
   source: none
-  note: Mandatory. Not stated in the deposit or the article's main text; presumably in the SI.
+  note: Recommended (relaxed from mandatory 2026-11). Not stated in the deposit or the article's main text; presumably in the SI.
 
 performance_results:
   value: not deposited

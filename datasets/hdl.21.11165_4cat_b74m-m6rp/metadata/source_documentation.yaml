@@ -67,7 +67,7 @@ loadings:
 
 precursor_masses:
   value: missing
-  note: Mandatory; the article gives a weight ratio and target loadings only. Both Synthesis records stay incomplete.
+  note: Recommended (relaxed from mandatory 2026-11); the article gives a weight ratio and target loadings only.
 
 support_properties:
   value: "BET: NiO-BCZY 1.1 m2/g, YSZ 14.1 m2/g; Ni dispersion of Ni-BCZY 3.17%"

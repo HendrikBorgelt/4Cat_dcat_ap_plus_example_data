@@ -4,9 +4,8 @@
 # was_generated_by and is_about_activity. Values come from the deposit and from the article
 # (doi:10.1016/j.apcata.2025.120571); see source_documentation.yaml for which is which.
 #
-# status: incomplete
-# Still missing with deposit + article: precursor masses for both synthesis steps (the article
-# gives weight ratios and target loadings only). Keywords are the article's.
+# Not stated in deposit + article (recommended field): precursor masses for both synthesis
+# steps (the article gives weight ratios and target loadings only). Keywords are the article's.
 id: hdl:21.11165/4cat/b74m-m6rp
 title:
 - 'Dataset for Publication: Experimental and Microkinetic Investigation of Thermo-Catalytic Ammonia Decomposition
@@ -94,6 +93,7 @@ was_generated_by:
     title: 1Ru/1Ba/Ni-YSZ
   realized_plan:
     id: coremeta4cat:SYN_b74m-m6rp_IWI_method
+    plan_designator: voc4cat:0007028
     title: stepwise incipient wetness impregnation, calcination, granulation
     description: Because of the low pore volume of the cermets the precursor solution was added in 100
       uL steps, each followed by drying at 348 K for 15 min, until the target loading was reached. Nitrates
@@ -180,6 +180,7 @@ was_generated_by:
     title: Ni-BCZY cermet powder
   realized_plan:
     id: coremeta4cat:CHAR_b74m-m6rp_TCD_method
+    plan_designator: CHMO:0002908
     title: H2-TPR, 10 K/min to 1223 K
     description: About 0.1 g sample, 10% H2 in Ar at 50 mL/min, TCD detection.
     has_temperature_range:
@@ -215,6 +216,7 @@ was_generated_by:
     title: 0.5Ru/1Ba/Ni-BCZY (modelled as Ru and Ni surface sites)
   realized_plan:
     id: coremeta4cat:SIM_b74m-m6rp_MKM_parametric_method
+    plan_designator: coremeta4cat:Microkinetics
     title: optimized microkinetic packed-bed model, parameter variation
     description: 'Mechanism with the optimized Ru and Ni parameters (article Table 4). Varied inputs:
       inlet NH3 mole fraction, GHSV, pressure, temperature.'
@@ -253,6 +255,7 @@ was_generated_by:
     title: Ni-BCZY (modelled as Ni surface sites)
   realized_plan:
     id: coremeta4cat:SIM_b74m-m6rp_MKM_method
+    plan_designator: coremeta4cat:Microkinetics
     title: microkinetic packed-bed model, literature and optimized parameters
     description: Modified Arrhenius rate expressions with coverage-dependent activation energies; catalytic
       area scaled by F_cat/geo from the metal dispersion. Parameter optimization in 5% steps with two
@@ -373,6 +376,7 @@ is_about_activity:
       title: dihydrogen
   used_reactor:
   - id: coremeta4cat:REAC_b74m-m6rp_reactor
+    reactor_designator: coremeta4cat:FixedBedReactor
     title: quartz glass tubular packed-bed reactor
     description: 0.8 cm inner diameter, 100 cm long, in a furnace; bed fixed by quartz wool, about 1.2
       cm long; catalyst and silica sieve fraction 120-250 um; Bronkhorst mass flow controllers; two type

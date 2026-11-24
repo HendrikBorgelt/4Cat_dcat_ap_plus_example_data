@@ -8,8 +8,8 @@
 # used for the whole library. This record is the only Synthesis in the dataset that can be
 # complete; the other compositions share the method but have no stated masses
 # (schema_gap_analysis_2026-10.md, P2).
-# Structured CoPrecipitation fields are used on realized_plan. They validate, but without a
-# type designator the Python round trip rejects them (TypeError) (T1).
+# Structured CoPrecipitation fields are used on realized_plan, declared with plan_designator
+# (voc4cat:0007795 = CoPrecipitation; T1).
 
 id: "coremeta4cat:SYN_6mxw-xsrd_CuAlGaO4"
 title:
@@ -47,6 +47,7 @@ had_output_entity:
     description: "One of the 13 screening samples (calcined at 600 C)."
 realized_plan:
   id: "coremeta4cat:SYN_6mxw-xsrd_coprecipitation_method"
+  plan_designator: voc4cat:0007795
   title: "automated co-precipitation at constant pH, ageing, freeze-drying, calcination"
   description: >-
     Metal nitrate solution fed at 1.6 mL/min into a glass reactor prefilled with 200 mL water,

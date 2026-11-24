@@ -4,10 +4,9 @@
 # was_generated_by and is_about_activity. Values come from the deposit and from the article
 # (doi:10.1021/acscatal.5c03876); see source_documentation.yaml for which is which.
 #
-# status: incomplete
-# Still missing with deposit + article main text: precursor masses for the first- and
-# second-generation catalysts (given only for the worked example), and the product analysis
-# method of both catalytic tests (presumably in the article's SI).
+# Not stated in deposit + article main text (both fields recommended): precursor masses for
+# the first- and second-generation catalysts (given only for the worked example), and the
+# product analysis method of both catalytic tests (presumably in the article's SI).
 id: hdl:21.11165/4cat/6mxw-xsrd
 title:
 - Copper Gallium Aluminum Mixed Metal Oxides as Alternative Catalyst Candidates for Efficient Conversion
@@ -74,6 +73,7 @@ was_generated_by:
     title: Cu0.465Ga0.07Al0.465(700)
   realized_plan:
     id: coremeta4cat:SYN_6mxw-xsrd_gen1_method
+    plan_designator: voc4cat:0007795
     title: automated co-precipitation at pH 9, ageing, freeze-drying, calcination at 500/600/700 C
     description: Same route as the library (precipitant 1.6 M NaOH / 0.2 M Na2CO3, pH 9, ageing 2 h at
       65 C, freeze-drying, see the library-example record). One precursor batch, calcined 4 h at 4 C/min
@@ -96,21 +96,64 @@ was_generated_by:
     - value: clean dry air
   other_identifier:
   - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
-- id: coremeta4cat:SYN_6mxw-xsrd_gen2
+- id: coremeta4cat:SYN_6mxw-xsrd_gen2_step1
   activity_designator: Synthesis
   title:
-  - Cu0.85Al0.15 oxide with 1 wt% Ga by impregnation, 2 x 2 calcination temperatures
+  - Co-precipitated Cu0.85Al0.15 precursor, calcined at 450 or 550 C
   nominal_composition:
-  - Cu0.85Al0.15 mixed oxide with 1 wt% Ga (target loading)
+  - Cu0.85Al0.15 (metal fractions Cu 0.85, Al 0.15)
   catalyst_measured_properties:
-  - No measured properties of these four samples are deposited.
+  - No measured properties of the intermediate oxides are deposited.
   had_input_entity:
   - id: coremeta4cat:PREC_6mxw-xsrd_CuNO3
     title: copper(II) nitrate trihydrate, Cu(NO3)2·3H2O (Sigma-Aldrich, 98.8%)
   - id: coremeta4cat:PREC_6mxw-xsrd_AlNO3
     title: aluminium nitrate nonahydrate, Al(NO3)3·9H2O (Sigma-Aldrich, 99.9%)
+  had_output_entity:
+  - id: coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_450
+    title: Cu0.85Al0.15 oxide calcined at 450 C
+  - id: coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_550
+    title: Cu0.85Al0.15 oxide calcined at 550 C
+  realized_plan:
+    id: coremeta4cat:SYN_6mxw-xsrd_gen2_step1_method
+    plan_designator: voc4cat:0007795
+    title: automated co-precipitation at pH 9, ageing, freeze-drying, calcination at 450/550 C
+    description: Same route as the library (precipitant 1.6 M NaOH / 0.2 M Na2CO3, pH 9, ageing 2 h at
+      65 C, freeze-drying, see Synthesis-6mxw-xsrd-library-example.yaml). Calcined 4 h at 4 C/min in clean
+      dry air at 450 or 550 C (Tcalc,1).
+    has_calcination_temperature_range:
+    - min_value: 723.15
+      max_value: 823.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: 450 or 550 C
+    has_calcination_dwelling_time:
+      value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Time
+      unit: https://qudt.org/vocab/unit/HR
+    has_calcination_heating_rate:
+    - value: 4
+      has_quantity_type: http://qudt.org/vocab/quantitykind/TemperaturePerTime
+      unit: https://qudt.org/vocab/unit/K-PER-MIN
+    has_calcination_atmosphere:
+    - value: clean dry air
+  other_identifier:
+  - notation: https://hdl.handle.net/21.11165/4cat/6mxw-xsrd
+- id: coremeta4cat:SYN_6mxw-xsrd_gen2_step2
+  activity_designator: Synthesis
+  title:
+  - 1 wt% Ga on Cu0.85Al0.15 oxide by incipient wetness impregnation, calcined at 250 or 350 C
+  nominal_composition:
+  - Cu0.85Al0.15 mixed oxide with 1 wt% Ga (target loading)
+  catalyst_measured_properties:
+  - No measured properties of these four samples are deposited.
+  had_input_entity:
+  - id: coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_450
+    title: Cu0.85Al0.15 oxide calcined at 450 C (output of step 1)
+  - id: coremeta4cat:INT_6mxw-xsrd_Cu0.85Al0.15_550
+    title: Cu0.85Al0.15 oxide calcined at 550 C (output of step 1)
   - id: coremeta4cat:PREC_6mxw-xsrd_GaNO3
-    title: gallium(III) nitrate hydrate, Ga(NO3)3·xH2O (Sigma-Aldrich, 99.9%), aqueous solution for impregnation
+    title: gallium(III) nitrate hydrate, Ga(NO3)3·xH2O (Sigma-Aldrich, 99.9%), aqueous solution
   had_output_entity:
   - id: coremeta4cat:CAT_6mxw-xsrd_G2_450_250
     title: Cu0.85Al0.15(450)-1wt.%Ga(250)
@@ -121,19 +164,23 @@ was_generated_by:
   - id: coremeta4cat:CAT_6mxw-xsrd_G2_550_350
     title: Cu0.85Al0.15(550)-1wt.%Ga(350)
   realized_plan:
-    id: coremeta4cat:SYN_6mxw-xsrd_gen2_method
-    title: co-precipitation of Cu/Al-HTC, calcination, incipient-wetness impregnation with Ga, second
-      calcination
-    description: 'Step 1: Cu0.85Al0.15 HTC precursor co-precipitated as for the library, calcined 4 h
-      at 4 C/min in clean dry air at 450 or 550 C. Step 2: incipient wetness impregnation with aqueous
-      Ga(NO3)3 to a target of 1 wt% Ga, drying at 80 C, calcination 4 h at 4 C/min in clean dry air at
-      250 or 350 C.'
-    has_calcination_temperature_range:
-    - min_value: 523.15
-      max_value: 823.15
+    id: coremeta4cat:SYN_6mxw-xsrd_gen2_step2_method
+    plan_designator: voc4cat:0007028
+    title: incipient wetness impregnation with Ga(NO3)3, drying, calcination at 250/350 C
+    description: Aqueous Ga(NO3)3 to a target of 1 wt% Ga, drying at 80 C, calcination 4 h at 4 C/min
+      in clean dry air at 250 or 350 C (Tcalc,2).
+    impregnation_type:
+    - incipient_wetness
+    has_drying_temperature:
+    - value: 353.15
       has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
       unit: https://qudt.org/vocab/unit/K
-      description: Step 1 at 450 or 550 C, step 2 at 250 or 350 C; the order cannot be expressed
+    has_calcination_temperature_range:
+    - min_value: 523.15
+      max_value: 623.15
+      has_quantity_type: http://qudt.org/vocab/quantitykind/Temperature
+      unit: https://qudt.org/vocab/unit/K
+      description: 250 or 350 C
     has_calcination_dwelling_time:
       value: 4
       has_quantity_type: http://qudt.org/vocab/quantitykind/Time
@@ -183,6 +230,7 @@ was_generated_by:
     description: One of the 13 screening samples (calcined at 600 C).
   realized_plan:
     id: coremeta4cat:SYN_6mxw-xsrd_coprecipitation_method
+    plan_designator: voc4cat:0007795
     title: automated co-precipitation at constant pH, ageing, freeze-drying, calcination
     description: Metal nitrate solution fed at 1.6 mL/min into a glass reactor prefilled with 200 mL water,
       overhead stirrer at 500 rpm, ambient temperature; precipitant dosed to hold pH 9 +- 0.1. Suspension
@@ -309,6 +357,7 @@ was_generated_by:
       SI.
   realized_plan:
     id: coremeta4cat:SIM_6mxw-xsrd_DFT_method
+    plan_designator: coremeta4cat:DFT
     title: periodic DFT, PBE, PAW
     description: Vienna Ab initio Simulation Package with the PBE functional and projector augmented waves.
       The article uses PBE-D3 when verifying the machine-learned potentials; whether D3 was applied for
@@ -471,6 +520,7 @@ is_about_activity:
       title: methane
   used_reactor:
   - id: coremeta4cat:REAC_6mxw-xsrd_reactor
+    reactor_designator: coremeta4cat:FixedBedReactor
     title: 16-fold parallel fixed-bed reactor system (hte GmbH)
     description: Stainless steel 1.4571 tubes, 4.5 mm inner diameter, 290 mm long; 0.5 mL catalyst, sieve
       fraction 250-315 um (tablets pressed at 9 t, crushed and sieved), pre- and post-bed of corundum.
@@ -607,6 +657,7 @@ is_about_activity:
       title: methane
   used_reactor:
   - id: coremeta4cat:REAC_6mxw-xsrd_reactor
+    reactor_designator: coremeta4cat:FixedBedReactor
     title: 16-fold parallel fixed-bed reactor system (hte GmbH)
     description: 'As for the optimized catalysts: 4.5 mm inner diameter, 0.5 mL catalyst, 250-315 um.'
     catalyst_bed_diameter:

@@ -5,9 +5,8 @@
 # complex binding mode"); ligand and cofactor from Weigmann et al., ACS Catal. (2025),
 # doi:10.1021/acscatal.5c04248
 #
-# status: incomplete
-# Not representable (schema): the result is a binding pose; docking scores are inside the
-# archive. calculated_property is mandatory (S5), there is no docking method class (S1), and
+# No calculated_property: the result is a binding pose; docking scores are inside the archive
+# (recommended since 2026-11; S5). There is no docking method class (S1), and
 # the ligand and cofactor cannot be described as structured entities (B1).
 
 id: "coremeta4cat:SIM_8ppb-aeky_induced_fit_docking"

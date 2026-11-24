@@ -78,10 +78,9 @@ build("6mxw-xsrd", {
 # was_generated_by and is_about_activity. Values come from the deposit and from the article
 # (doi:10.1021/acscatal.5c03876); see source_documentation.yaml for which is which.
 #
-# status: incomplete
-# Still missing with deposit + article main text: precursor masses for the first- and
-# second-generation catalysts (given only for the worked example), and the product analysis
-# method of both catalytic tests (presumably in the article's SI).
+# Not stated in deposit + article main text (both fields recommended): precursor masses for
+# the first- and second-generation catalysts (given only for the worked example), and the
+# product analysis method of both catalytic tests (presumably in the article's SI).
 """)
 
 build("b74m-m6rp", {
@@ -114,9 +113,8 @@ build("b74m-m6rp", {
 # was_generated_by and is_about_activity. Values come from the deposit and from the article
 # (doi:10.1016/j.apcata.2025.120571); see source_documentation.yaml for which is which.
 #
-# status: incomplete
-# Still missing with deposit + article: precursor masses for both synthesis steps (the article
-# gives weight ratios and target loadings only). Keywords are the article's.
+# Not stated in deposit + article (recommended field): precursor masses for both synthesis
+# steps (the article gives weight ratios and target loadings only). Keywords are the article's.
 """)
 
 build("8ppb-aeky", {
@@ -148,7 +146,6 @@ build("8ppb-aeky", {
 # was_generated_by. There is no CatalyticReaction: the deposit holds only the simulations.
 # Values come from the deposit metadata and the article (doi:10.1021/acscatal.5c04248).
 #
-# status: incomplete
-# Protein preparation, docking and MD fail on the mandatory calculated_property: their outputs
-# are structures and trajectories, not properties (schema gap S5). MM/GBSA is complete.
+# Protein preparation, docking and MD report no calculated_property (recommended): their
+# outputs are structures and trajectories, not properties (S5). MM/GBSA reports ddG values.
 """)

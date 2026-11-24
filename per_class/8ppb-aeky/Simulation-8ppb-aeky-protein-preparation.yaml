@@ -4,9 +4,8 @@
 # description "Protein preparation of the initial 3CFR-4M structure with the Protein Preparation
 # Wizard"); enzyme identity from Weigmann et al., ACS Catal. (2025), doi:10.1021/acscatal.5c04248
 #
-# status: incomplete
-# Not representable (schema): calculated_property is mandatory, but structure preparation
-# produces a structure, not a property (schema_gap_analysis_2026-10.md, S5). There is also no
+# No calculated_property: structure preparation produces a structure, not a property
+# (recommended since 2026-11; schema_gap_analysis_2026-10.md, S5). There is also no
 # method class for structure preparation (S1) and no place for a PDB identifier or the
 # mutations on the evaluated protein (B1). Preparation settings are in the article's SI.
 

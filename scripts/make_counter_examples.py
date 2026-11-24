@@ -31,11 +31,13 @@ UNIT = "https://qudt.org/vocab/unit/"
 
 
 def bed_height_on_autoclave(r):
+    r["used_reactor"][0]["reactor_designator"] = "NCIT:C93052"  # Autoclave
     r["used_reactor"][0]["catalyst_bed_height"] = [
         {"value": 2.0, "has_quantity_type": QK + "Length", "unit": UNIT + "CentiM"}]
 
 
 def two_theta_on_drift(r):
+    r["realized_plan"]["plan_designator"] = "CHMO:0000645"  # DRIFTS
     r["realized_plan"]["has_two_theta_range"] = [
         {"min_value": 2.0, "max_value": 90.0, "has_quantity_type": QK + "Angle", "unit": UNIT + "DEG"}]
 
@@ -107,18 +109,22 @@ def drop_quantity_kind(r):
 # read by check_examples.py; everything else is documentation.
 MUTATIONS = [
     ("fixed-bed-fields-on-autoclave", ARP5_CARBONYLATION, bed_height_on_autoclave, {
-        "Change": "used_reactor[0] (a batch autoclave) gains catalyst_bed_height, a FixedBedReactor field",
+        "Change": "used_reactor[0], declared as Autoclave (reactor_designator NCIT:C93052), gains "
+                  "catalyst_bed_height, a FixedBedReactor field",
         "Why it happens": "a fixed-bed template is reused for a batch experiment",
         "Paper claim": "Conclusion: validation flags a batch reactor reported together with flow parameters",
-        "expect": "gap",
-        "Catchable once": "the reactor subclass can be declared, so only Autoclave fields are allowed",
+        "expect": "caught",
+        "error-contains": "is not valid under any of the given schemas",
+        "Caught since": "reactor_designator (2026-11); without the designator it would still pass",
     }),
     ("xrd-parameters-on-drift", ARP5_DRIFT, two_theta_on_drift, {
-        "Change": "the DRIFT method gains has_two_theta_range, a PowderXRD field",
+        "Change": "the DRIFT method, declared as DRIFTS (plan_designator CHMO:0000645), gains "
+                  "has_two_theta_range, a PowderXRD field",
         "Why it happens": "a characterization template is copied between techniques",
         "Paper claim": "Figure 3: the technique determines which child fields apply",
-        "expect": "gap",
-        "Catchable once": "the CharacterizationTechnique subclass can be declared",
+        "expect": "caught",
+        "error-contains": "is not valid under any of the given schemas",
+        "Caught since": "plan_designator (2026-11); without the designator it would still pass",
     }),
     ("feed-composition-on-batch-reaction", ARP5_CARBONYLATION, feed_composition_on_batch, {
         "Change": "a batch-autoclave reaction gains feed_composition_range",
@@ -181,8 +187,9 @@ MUTATIONS = [
     ("missing-product-identification", P32_CAL_AL2O3, drop_product_identification, {
         "Change": "product_identification_method removed",
         "Why it happens": "analytics considered self-evident (\"GC as usual\")",
-        "expect": "caught",
-        "error-contains": "'product_identification_method' is a required property",
+        "Decision": "product_identification_method is recommended since 2026-11 (it is missing from "
+                    "the 6mxw-xsrd sources), so this record is accepted on purpose",
+        "expect": "allowed",
     }),
     ("temperature-as-text", ARP5_CARBONYLATION, temperature_as_text, {
         "Change": "reactor_temperature_range becomes the string '60-100 °C'",

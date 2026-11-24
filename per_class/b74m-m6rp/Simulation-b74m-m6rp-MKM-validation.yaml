@@ -38,6 +38,7 @@ evaluated_entity:
     title: "Ni-BCZY (modelled as Ni surface sites)"
 realized_plan:
   id: "coremeta4cat:SIM_b74m-m6rp_MKM_method"
+  plan_designator: coremeta4cat:Microkinetics
   title: "microkinetic packed-bed model, literature and optimized parameters"
   description: >-
     Modified Arrhenius rate expressions with coverage-dependent activation energies;
